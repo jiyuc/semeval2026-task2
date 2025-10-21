@@ -2,6 +2,7 @@ import argparse
 import numpy as np
 from typing import Dict, Any
 from datasets import load_dataset, DatasetDict, Dataset
+
 from transformers import (
     AutoTokenizer,
     AutoModelForSequenceClassification,
@@ -11,6 +12,16 @@ from transformers import (
 import evaluate
 from datetime import datetime
 import pandas as pd
+import os
+
+# set the wandb project where this run will be logged
+os.environ["WANDB_PROJECT"]="semeval2026"
+
+# save your trained model checkpoint to wandb
+os.environ["WANDB_LOG_MODEL"]="end"
+
+# turn off watch to log faster
+os.environ["WANDB_WATCH"]="false"
 
 
 class DataPreprocessor:
@@ -236,6 +247,7 @@ class MetricComputer:
         self._r2 = evaluate.load("r_squared")
         self._mae = evaluate.load("mae")
         self._rmse = evaluate.load("mse")
+        self._f1 = evaluate.load("f1")  # the predictions are rounded to the closest categorical integer, thus, enable f1
 
     def compute(self, eval_pred):
         """
@@ -248,8 +260,9 @@ class MetricComputer:
             Dict of scalar metrics.
         """
         preds, labels = eval_pred
-        preds = np.squeeze(preds).astype(np.float32)
-        labels = np.squeeze(labels).astype(np.float32)
+        preds = np.squeeze(preds).astype(np.int8)
+        preds = [round(n, 0) for n in preds]  # round to the closest integer
+        labels = np.squeeze(labels).astype(np.int8)
 
         print(len(preds), len(labels))
 
@@ -258,6 +271,7 @@ class MetricComputer:
         r2_val = float(self._r2.compute(predictions=preds, references=labels))
         mae_val = float(self._mae.compute(predictions=preds, references=labels)["mae"])
         rmse_val = float(self._rmse.compute(predictions=preds, references=labels, squared=False)["mse"])
+        f1_val = float(self._f1.compute(predictions=preds, references=labels, average="weighted")["f1"])
 
         return {
             "mse": mse_val,
@@ -265,6 +279,7 @@ class MetricComputer:
             "r_squared": r2_val,
             "mae": mae_val,
             "rmse": rmse_val,
+            "f1": f1_val,
         }
 
 
@@ -408,8 +423,8 @@ def main():
     results = reg.evaluate(encoded[eval_split_name])
     print(f"{eval_split_name} results:", results)
 
-    reg.save(args.save_dir)
-    print(f"Final model and tokenizer saved in {args.save_dir}")
+    # reg.save(args.save_dir)
+    # print(f"Final model and tokenizer saved in {args.save_dir}")
 
 if __name__ == "__main__":
     main()
