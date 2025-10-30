@@ -220,7 +220,7 @@ class MetricComputer:
         self._r2 = evaluate.load("r_squared")
         self._mae = evaluate.load("mae")
         self._rmse = evaluate.load("mse")
-        self._f1 = evaluate.load("f1")  # the predictions are rounded to the closest categorical integer, thus, enable f1
+        # self._f1 = evaluate.load("f1")  # the predictions are rounded to the closest categorical integer, thus, enable f1
 
     def compute(self, eval_pred):
         """
@@ -244,8 +244,8 @@ class MetricComputer:
         r2_val = float(self._r2.compute(predictions=preds, references=labels))
         mae_val = float(self._mae.compute(predictions=preds, references=labels)["mae"])
         rmse_val = float(self._rmse.compute(predictions=preds, references=labels, squared=False)["mse"])
-        f1_val = float(self._f1.compute(predictions=[round(n, 0) for n in np.squeeze(preds)],
-                                        references=np.squeeze(labels).astype(np.int8), average="weighted")["f1"])
+        # f1_val = float(self._f1.compute(predictions=[round(n, 0) for n in np.squeeze(preds)],
+        #                                 references=np.squeeze(labels).astype(np.int8), average="weighted")["f1"])
 
         return {
             "mse": mse_val,
@@ -253,7 +253,7 @@ class MetricComputer:
             "r_squared": r2_val,
             "mae": mae_val,
             "rmse": rmse_val,
-            "f1": f1_val,
+            # "f1": f1_val,
         }
 
 

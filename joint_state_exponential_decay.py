@@ -252,23 +252,22 @@ class MetricComputer:
         Compute metrics given model predictions and labels.
         """
         preds, labels = eval_pred
-        # preds = np.squeeze(preds).astype(np.int8)
-        # labels = np.squeeze(labels).astype(np.int8)
+
         mse_val = float(self._mse.compute(predictions=preds, references=labels, squared=True)["mse"])
         pearson_val = float(self._pearson.compute(predictions=preds, references=labels)["pearsonr"])
         r2_val = float(self._r2.compute(predictions=preds, references=labels))
         mae_val = float(self._mae.compute(predictions=preds, references=labels)["mae"])
         rmse_val = float(self._rmse.compute(predictions=preds, references=labels, squared=False)["mse"])
 
-        f1_val = float(self._f1.compute(predictions=[round(n, 0) for n in np.squeeze(preds)],
-                                        references=np.squeeze(labels).astype(np.int8), average="weighted")["f1"])
+        # f1_val = float(self._f1.compute(predictions=[round(n, 0) for n in np.squeeze(preds)],
+        #                                 references=np.squeeze(labels).astype(np.int8), average="weighted")["f1"])
         return {
             "mse": mse_val,
             "pearson": pearson_val,
             "r_squared": r2_val,
             "mae": mae_val,
             "rmse": rmse_val,
-            "f1": f1_val,
+            # "f1": f1_val,
         }
 
 
