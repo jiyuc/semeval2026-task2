@@ -9,6 +9,16 @@ from transformers import (
     Trainer,
 )
 import evaluate
+import os
+
+# set the wandb project where this run will be logged
+os.environ["WANDB_PROJECT"]="semeval2026"
+
+# save your trained model checkpoint to wandb
+os.environ["WANDB_LOG_MODEL"]="end"
+
+# turn off watch to log faster
+os.environ["WANDB_WATCH"]="false"
 
 
 class DataPreprocessor:
@@ -128,6 +138,8 @@ class DataPreprocessor:
         Returns:
             Dict with scaled values under the original column name.
         """
+
+        return batch # uncomment this line to skip the scaling
         vals = np.asarray(batch[col], dtype=np.float32)
         if scale == 0.0:
             scaled = np.full_like(vals, fill_value=min_adj, dtype=np.float32)
@@ -249,18 +261,16 @@ class MetricComputer:
             Dict of scalar metrics.
         """
         preds, labels = eval_pred
-        preds = np.squeeze(preds).astype(np.int8)
-        preds = [round(n, 0) for n in preds]  # round to the closest integer
-        labels = np.squeeze(labels).astype(np.int8)
-
-        print(len(preds), len(labels))
 
         mse_val = float(self._mse.compute(predictions=preds, references=labels, squared=True)["mse"])
         pearson_val = float(self._pearson.compute(predictions=preds, references=labels)["pearsonr"])
         r2_val = float(self._r2.compute(predictions=preds, references=labels))
         mae_val = float(self._mae.compute(predictions=preds, references=labels)["mae"])
         rmse_val = float(self._rmse.compute(predictions=preds, references=labels, squared=False)["mse"])
-        f1_val = float(self._f1.compute(predictions=preds, references=labels, average="weighted")["f1"])
+
+        f1_val = float(self._f1.compute(predictions=[round(n, 0) for n in np.squeeze(preds)],
+                                        references=np.squeeze(labels).astype(np.int8),
+                                        average="weighted")["f1"])
 
         return {
             "mse": mse_val,
@@ -449,7 +459,7 @@ def main():
     encoded = pre.prepare(tokenizer=reg.tokenizer, max_length=args.max_length)
 
     # Build, train, evaluate
-    trainer = reg.build_trainer(encoded, metrics)
+    _ = reg.build_trainer(encoded, metrics)
     reg.fit()
 
     # Prefer test if provided; else evaluate on validation
