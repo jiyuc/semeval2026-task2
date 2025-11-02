@@ -1,52 +1,68 @@
 ## Data statistics for the Train-Test Split
 - subtask1
-  - CV fold: 1
+  - Fold 1
     - Train users: 109; Test users: 28
-    - Train: 2198; Test: 566
-  - CV fold: 2
+    - Train: 2357; Test: 407
+  - Fold 2
     - Train users: 109; Test users: 28
-    - Train: 2006; Test: 758
-  - CV fold: 3
-    - Train users: 109; Test users: 28
-    - Train: 2445; Test: 319
-  - CV fold: 4
-    - Train users: 109; Test users: 28
-    - Train: 2376; Test: 388
-  - CV fold: 5
-    - Train users: 109; Test users: 28
-    - Train: 2060; Test: 704
+    - Train: 2004; Test: 760
+  - Fold 3
+    - Train users: 110; Test users: 27
+    - Train: 2208; Test: 556
+  - Fold 4
+    - Train users: 110; Test users: 27
+    - Train: 2282; Test: 482
+  - Fold 5
+    - Train users: 110; Test users: 27
+    - Train: 2205; Test: 559
 - subtask2a
-  - CV fold: 1
+  - Fold 1
     - Train users: 109; Test users: 28
-    - Train: 2154; Test: 610
-  - CV fold: 2
+    - Train: 2165; Test: 599
+  - Fold 2
     - Train users: 109; Test users: 28
-    - Train: 2384; Test: 380
-  - CV fold: 3
-    - Train users: 109; Test users: 28
-    - Train: 2239; Test: 525
-  - CV fold: 4
-    - Train users: 109; Test users: 28
-    - Train: 2164; Test: 600
-  - CV fold: 5
-    - Train users: 109; Test users: 28
-    - Train: 2176; Test: 588
+    - Train: 2320; Test: 444
+  - Fold 3
+    - Train users: 110; Test users: 27
+    - Train: 2187; Test: 577
+  - Fold 4
+    - Train users: 110; Test users: 27
+    - Train: 2290; Test: 474
+  - Fold 5
+    - Train users: 110; Test users: 27
+    - Train: 2094; Test: 670
 - subtask2b
-  - CV fold: 1
+  - Fold 1
     - Train users: 109; Test users: 28
-    - Train: 2154; Test: 610
-  - CV fold: 2
+    - Train: 2165; Test: 599
+  - Fold 2
     - Train users: 109; Test users: 28
-    - Train: 2384; Test: 380
-  - CV fold: 3
+    - Train: 2320; Test: 444
+  - Fold 3
+    - Train users: 110; Test users: 27
+    - Train: 2187; Test: 577
+  - Fold 4
+    - Train users: 110; Test users: 27
+    - Train: 2290; Test: 474
+  - Fold 5
+    - Train users: 110; Test users: 27
+    - Train: 2094; Test: 670
+- subtask2b_detailed
+  - Fold 1
     - Train users: 109; Test users: 28
-    - Train: 2239; Test: 525
-  - CV fold: 4
+    - Train: 2165; Test: 599
+  - Fold 2
     - Train users: 109; Test users: 28
-    - Train: 2164; Test: 600
-  - CV fold: 5
-    - Train users: 109; Test users: 28
-    - Train: 2176; Test: 588
+    - Train: 2320; Test: 444
+  - Fold 3
+    - Train users: 110; Test users: 27
+    - Train: 2187; Test: 577
+  - Fold 4
+    - Train users: 110; Test users: 27
+    - Train: 2290; Test: 474
+  - Fold 5
+    - Train users: 110; Test users: 27
+    - Train: 2094; Test: 670
 - subtask2b_detailed
   same as subtask2b
 

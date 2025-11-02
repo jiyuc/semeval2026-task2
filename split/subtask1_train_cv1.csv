@@ -115,6 +115,11 @@ user_id,text_id,text,timestamp,collection_phase,is_words,valence,arousal
 17,1087,"I feel good this morning . I’ve been working on school work again . That keeps me from being bored , cause when I’m in school , I have plenty to do . I am still stressed about money , but it usually works itself out . So I am hoping it well this time as well .",2022-09-06 10:01:21,4,False,2.0,0.0
 17,1088,"I am feeling good . Just got to work , and I are when I got here . That’s always a help because it makes me nauseous when I’m super hungry . Hopefully tonight goes well and I make good money . I sure need it . Have a good evening !!",2022-09-06 15:40:17,4,False,2.0,0.0
 17,1089,"Fixing to get off of work , so that makes me happy . I am almost done with my sidework , got everything else done , then I can go home . Yaaay ! I feel good and I’m happy/content today . Stressed about money , but that’s all really .",2022-09-06 21:18:45,4,False,2.0,0.0
+19,1308,"Pain , Fatigue , Tired , Busy , Swamped",2021-06-10 12:01:06,1,True,-2.0,0.0
+19,1309,"Tired , Anxious , Overwhelmed , Scattered , Under pressure",2021-06-11 12:06:56,1,True,1.0,2.0
+19,1310,"Tired , Busy , Annoyed , Overwhelmed , Swamped",2021-06-12 12:01:41,1,True,0.0,2.0
+19,1311,"Tired , Stressed , Overwhelmed , Busy , Behind",2021-06-13 12:04:47,1,True,-1.0,0.0
+19,1312,"Stressed , Busy , Running behind , Unappreciated , Tired",2021-06-14 12:01:34,1,True,0.0,1.0
 20,1317,"Stress , Happy , Sad , Upset , Anamosity",2021-06-14 21:58:50,1,True,-1.0,0.0
 20,1318,"Stress , Relief , Relaxed",2021-06-15 16:50:37,1,True,-1.0,1.0
 23,1341,"I have been tired , just getting my one day off to rest before going back to work . But also happy to be at home with my family and doing work around the house . It’s draining to only get one day to recoup after working 50 + hours .",2021-05-08 14:53:25,1,False,-2.0,0.0
@@ -242,8 +247,6 @@ user_id,text_id,text,timestamp,collection_phase,is_words,valence,arousal
 33,2208,"Tired , Sluggish , Sleepy , Neutral , Irritated",2022-09-07 16:15:18,4,True,-2.0,0.0
 34,2365,Drained and rushed . No time to distressed and reset . Having to work despite needing a break due to traumatic event that happened during my shift (a coworker had a bad seizure and I had to call ORG and then immediately get back to servicing customers and answering phones),2021-05-02 13:20:28,1,False,-1.0,0.0
 34,2366,Went to work and had a normal shift . Was still disheartening because we weren ' t as busy as we should be at this time of year . I know I ' m making less than normal and that causes worry because of bills .,2021-05-03 12:09:40,1,False,1.0,0.0
-35,2408,"Proud , Frustrated , Annoyed , Impressed , Healthy",2021-03-23 12:00:37,1,True,1.0,2.0
-35,2409,"Annoyed , Frustrated , Sad , Busy , Productive",2021-03-26 15:37:34,1,True,-1.0,1.0
 42,3826,"About to head into a Saturday night dinner shift . I ' m looking forward to being of service , not looking forward to the guests who don ' t know how to fine out and plan to treat me like their slave rather than their host .",2021-06-12 17:04:25,1,False,2.0,2.0
 42,3827,"Energized , ready for my last shift of the week . Grateful that I have 2 days in a row off and that I have a job that pays as well as it does . Hopefully tonight will be smooth and by the numbers , that the kitchen performs well and that the guests are easy going .",2021-06-13 17:11:43,1,False,2.0,0.0
 42,3828,I am off today and tomorrow . I spoke with my therapist for my weekly session which is always great because I get to unpack my mind which helps me find balance and a place of calm contentment . Tonight I plan to make dinner with my daughter and her husbsnd and open a nice bottle of wine and relax with all the dogs .,2021-06-14 17:02:42,1,False,2.0,0.0
@@ -262,25 +265,16 @@ user_id,text_id,text,timestamp,collection_phase,is_words,valence,arousal
 54,3036,"Cool , Happy , Calm , Active , Lively",2024-10-12 17:28:22,7,True,1.0,0.0
 54,3135,"Enthusiasts , Active , Lively , Energies , Feel good",2024-10-13 12:55:04,7,True,2.0,0.0
 54,3435,I really feel neutral and not really active because a friend got me angry and instead of apologizing he stood on his words and made me feel bad like I was the one who orchestrated the whole negative drama,2024-10-13 22:54:50,7,False,0.0,1.0
-64,4689,"Calm , Thoughtful , Extra , Generous , Happy",2024-08-10 17:07:48,7,True,0.0,0.0
-64,4690,"I’m feel just normal , not too sad not too happy \nJust placing my emotions in one place actually \nI’m hungry at the same time tired too \nI feel like having burgers but my mouth is very sort and I don’t o know how to sort that out",2024-08-10 22:06:01,7,False,0.0,1.0
-64,4691,"I’m peaceful and calm , PERSON really have nothin bothering me actually , I’m abit lonely but then I need company and also I want to go out too \nBut I feel not bad but happy and restful \nI want to see my partner and talk about things and eat good food",2024-08-11 12:13:36,7,False,2.0,0.0
-64,4692,"Bored , In between happiness , Not so happy , PERSON , PERSON",2024-08-11 17:00:48,7,True,1.0,2.0
-64,4694,"I’m calm not doing To much , I’m tired and I want to get a lot of things done and all of that and you know I want to be able to help myself , work is kinda tiring and everomw is just there full rough and calm \nI’m just in a particular posture",2024-08-12 12:01:18,7,False,2.0,0.0
-64,4695,"Good , Relaxed , Not troubled , Focused , Happy",2024-08-12 22:05:00,7,True,0.0,1.0
-64,4696,"I’m very happy and energized and all of that , I was able to witness something beautiful in my presence and it really motivated me that young people are able to share there experiences and be happy about it and all .\nI’m happy because there was no fear towards sharing this information with me",2024-08-13 12:02:08,7,False,2.0,1.0
-64,4697,"I’m lively not doing to much , leaving by the moment sharing word with family and loved one practically having nice moments and all that is let \nMemories are made a lot of things are inclusive and all of that \nI’m just you know everywhere doing everything",2024-08-13 17:25:30,7,False,2.0,2.0
-64,4698,"In pain , Relaxed , Stressed , Sleepy , Feverish",2024-08-13 22:00:58,7,True,1.0,0.0
-64,4699,"I’m abit contented , not doing anything serious , just there at aparticular location not doing anything , just thanking God for everything expecially daily involvement and activities and all of that \nI’m just somewhat contented Because I got food to eat and all bed to rest on",2024-08-14 12:54:03,7,False,1.0,0.0
-64,4700,"I feel okay actually , I feel better \nI feel calm , I feel like a bunch of joy , I feel like things will be fine , I feel it’s a matter of time , I feel I miss my family \n , I’m in a very cheerful mood and place and all of that I’m in between happiness and I like how it’s going and all that happening is joyful",2024-08-14 17:13:28,7,False,0.0,1.0
-64,4701,"I’m a natural because everything is stressful but then I’m neutral , I have to deal with both gappy and sad things are happening you know I’m just a natural I can’t really say how I feel at the moment \nThings are just some type of way I can’t really say tho",2024-08-14 22:03:03,7,False,0.0,1.0
-64,4702,I’m abit tired and all of that \nI have a lot to do and a lot of emotions attached at the moment \nBeen feeling abit stressed out and unhappy life just stressing me and all of that \nA lot of drama has been happening lately,2024-08-15 12:02:18,7,False,-2.0,0.0
-64,4703,"I’m calm because I have a nap all day ,barely had anything to eat it’s just calm that I’m able to take a nap out of others , so I’m calm and trying to regain strength and all of that .\nA lot of drama but then been having on hell of a day so a nap was the best thing and it came through too",2024-08-16 12:36:29,7,False,2.0,0.0
-64,4705,"Lively , Happy , Cheerful , Joy filled , Beautiful",2024-08-16 17:01:38,7,True,2.0,1.0
-64,4706,"I’m very sad because I got things to do , but I’m in pains I feel very low at this point \nI feel no one is going to help isn’t coming to my aid \nI feel very stressed out \nMy tooth hurts \nAnd I’m not getting enough sleep and all that’s to be said but then I can’t do nothing about it \nIt will pass",2024-08-16 22:00:36,7,False,-1.0,1.0
-64,4707,"I’m very active \nI’m hyper , I have a good day going on \nIt’s been enjoyable and alll of that \nI’m having sense of relief and I’m very calm \nI feel happy and strong too \nI’m able to do what I want \nI’m really strong and hyper \nHad a very rough week but I’m practically very strong rn",2024-08-17 12:01:13,7,False,0.0,2.0
-64,4708,"Restful , Excited , Stressed , Abit worried , Nervous",2024-08-17 22:00:41,7,True,2.0,0.0
-64,4709,I’m less stressed very happy and contented and the fact that it’s Sunday is a whole new vibe also \nThings have been turning fine on my ends and life seems fair \nI’m feeling calm and thoughtful at the same time it’s not easy but I’m at it I guess,2024-08-18 12:06:11,7,False,2.0,0.0
+61,2970,"Happy , Smile , Tired , Angry , Sad",2024-08-03 17:00:36,7,True,1.0,1.0
+61,2981,Right now I ' m feeling great . Was able to get some choir done such as cleaning and ordering food for my self . As right now I ' m feeling great I was able to clean up the entire living room and feeling very positive about it,2024-08-03 22:00:26,7,False,2.0,2.0
+61,2992,Having just woke up and starting my day I will be \nHave a positive attitude towards life and cleaning and taking care . Today I plan to knock out and clean the refrigerator and try and clean a little bit more I have a positive and have a great attitude,2024-08-04 12:06:39,7,False,0.0,2.0
+61,3003,"Tired , Anger , Relaxed , Focus , Determine",2024-08-04 17:15:19,7,True,-2.0,0.0
+61,3014,Have them woken up I was able to cook breakfast shower as well as I ' m getting a little running so I ' m going to get a few happy stuff I guess I ' m told you about the house I was such as and what they don ' t maintenance to fix the gas line and then do some shopping around the house,2024-08-05 17:26:35,7,False,2.0,0.0
+61,3025,"Happy , Excited , Proud , Sad , Anger",2024-08-07 12:22:51,7,True,2.0,0.0
+61,3037,"Sad , Upset , Frustration , Scared , Worry",2024-08-07 17:00:24,7,True,2.0,0.0
+61,3043,"Tired , Worried , Scared , Happy , Fear",2024-08-07 22:07:05,7,True,2.0,0.0
+61,3047,"Sad , Tired , Hungry , Happy , Excited",2024-08-10 17:00:25,7,True,2.0,0.0
+61,3058,Right now I ' m feeling content calm and hungry so in a few minutes I will cook me a big meal I relax with some music and then also get service for items done around the house such as cleaning and cooking stuff,2024-08-10 22:02:02,7,False,2.0,0.0
 73,5013,"Active , Excited , Hoped , Enthusiastic , Brave",2024-10-08 22:01:56,7,True,0.0,2.0
 73,5014,"I feel down , as though feeling feverish , for some reasons I feel it ' s because of the anxiety and overall stress I ' ve had recently ,\ nIn the past week I ' ve had more to drink but less food , that too may be part of the reasons",2024-10-09 12:01:57,7,False,0.0,2.0
 73,5015,"I ' m alright , \nIt ' s been a hectic day , I ' ve had a few drinks and as well tried to be active but I feel weak , this is something I ' ve felt these past few days \nI ' d like to be more active so hoping to be strong as soon as possible",2024-10-09 17:05:08,7,False,-2.0,0.0
@@ -363,29 +357,6 @@ user_id,text_id,text,timestamp,collection_phase,is_words,valence,arousal
 99,1387,I just finished eating so I feel full and glad for my food . I am anxious to administer my medication tonight but I am excited to relax and watch a movie . I feel pretty calm otherwise and am feeling pretty alert/good from my workout just before dinner .,2024-11-11 22:01:24,7,False,0.0,0.0
 99,1388,I feel good because my doctors appointment this morning went well but I am a little anxious about future monitoring appointments and an upcoming procedure . I am feeling energized because I had coffee and a bit of a delicious donut .,2024-11-12 12:21:15,7,False,0.0,2.0
 99,1389,"anxious , tired , emotional , wired , unfocused",2024-11-12 17:02:23,7,True,-2.0,2.0
-105,1773,The way I am feeling is tired and sluggish since I just got out of work not to long ago . Other then that I am feeling content and neutral because life is having some uncertainty but I know everything will work its way out with the support and love from my family . I am content and happy thinking of my life now and how things could be different .,2024-11-13 12:24:53,7,False,-2.0,0.0
-105,1774,"Tired , Active , Motivated , Anxious , Good",2024-11-13 17:01:22,7,True,0.0,2.0
-105,1775,"Tired , Motivated , Content , Sluggish , Optimistic",2024-11-13 22:25:31,7,True,-2.0,0.0
-105,1776,"Tired , Content , Optimistic , Relaxed , Neutral",2024-11-14 12:01:19,7,True,-2.0,0.0
-105,1777,"Tired , Content , Fuzzy , Uneasy , Ignored",2024-11-15 12:08:21,7,True,-2.0,0.0
-105,1779,"Worried , Overthinking , Lonely , Unappreciated , Unsure",2024-11-15 17:35:27,7,True,0.0,1.0
-105,1780,Right now I am currently trying to wake up but it’s a little harder for me right now . I want to . go back to sleep but that’s usual for working the night shift . I am thankful that it’s Friday but would rather lay in bed then do anything .,2024-11-15 22:59:57,7,False,-2.0,0.0
-105,1781,Exhausted and tired . I worked overnight and only got about 2 hours of sleep through out the day so I am drained . Sleep is calling my name soon so the tiredness is over powering my other emotions . To be honest typing is taking a lot out of my and making me more tired .,2024-11-16 22:15:38,7,False,-2.0,0.0
-105,1782,"Upbeat , Postive , Thoughtful , Optimistic , Grateful",2024-11-17 12:02:22,7,True,1.0,2.0
-105,1783,"Neutral , Ok , Tired , Thankful , Grateful",2024-11-17 17:01:20,7,True,0.0,1.0
-105,1784,"Uneasy , Neutral , Unsure , Blah , In the middle",2024-11-18 12:02:58,7,True,0.0,1.0
-105,1785,"Sluggish , Tired , Complacent , Neutral , Hurt",2024-11-18 22:01:10,7,True,-2.0,0.0
-105,1786,"Nervous , Uncertainty , Anxiety , Sad , Annoyed",2024-11-19 12:01:09,7,True,-2.0,2.0
-105,1795,I’m not feeling fully awake since waking up not that long ago . I slept around 2 hours and it didn’t help . I’m not feeling like myself a lot of stressors right now in life and financially it’s been rough for my family . Sometimes it’s hard to have hope but need too .,2024-11-19 17:00:58,7,False,-2.0,0.0
-106,1822,"Nostalgic , Sad , Lonely , Tired , Sleepy",2024-10-12 12:33:32,7,True,-1.0,1.0
-106,1823,"I feel extremely inconvenienced . I wish I could go back and time and change my decisions so I’m not in the situation that I’m currently in . I’m grateful that my inconvenience is minor and temporary , but I’m still annoyed .",2024-10-13 12:31:10,7,False,-1.0,0.0
-106,1824,I’m feeling a little tired but I feel like I have a lot of things that I’m looking forward to doing . I finished my outstanding tasks that I was dreading . I feel relieved and know that I can rest soon .,2024-10-14 12:51:27,7,False,-1.0,0.0
-106,1825,I’m tired but I feel relaxed . I finally have free time . I am looking forward to eating food and unwinding . My day is finally over and I don’t have any outstanding obligations . I’m grateful that I didn’t have a stressful day .,2024-10-14 22:02:10,7,False,1.0,0.0
-106,1826,"Relaxed , Easygoing , Peaceful , Positive , Productive",2024-10-16 12:37:03,7,True,2.0,0.0
-106,1827,I feel exhausted and drained . I feel like I need a nap . I want to sleep . I can’t wait to rest and relax . I’m also frustrated because piece of the back of my phone glass is falling off . I hope it doesn’t break more .,2024-10-16 17:29:19,7,False,-2.0,0.0
-106,1828,I recently had a scary motorcycle accident and I’m still recovering . I feel very shaken up and afraid to ride my motorcycle again . I’m feeling very sad right now because of the incident . I also feel uneasy .,2024-10-18 12:12:43,7,False,-1.0,1.0
-106,1830,"Congested , Sick , Tired , Relaxed , Mellow",2024-10-19 12:58:23,7,True,2.0,0.0
-106,1831,I’m feeling relaxed and at ease . I’m not too stressed about anything at the moment . I’m still a bit sick which is frustrating but my symptoms seem to have improved . I am looking forward to getting rest and getting better .,2024-10-19 22:27:48,7,False,2.0,0.0
 107,1841,"I’m feeling very tired and having little energy . I find it hard to get out of bed . All the stress has been weighing on me lately and it just seems too much to handle . I’m also feeling very lonely , but because of my ankle injury , I can’t go out to meet my friends .",2024-08-04 12:01:14,7,False,-2.0,0.0
 107,1842,"I feel like I’m in a rut , unable to get out . I hear my abusive ex’s voice in my head “you’re too passive . You’re wallowing in self-pity . ” Maybe he’s right . Maybe I don’t have to willpower to continue .",2024-08-04 17:00:58,7,False,-2.0,1.0
 107,1843,"I am feeling ok or neutral this morning . Although my situation is not ideal as I am facing a lot of stress right now , but I can choose to be kind to myself and respond to the life stress with calmness .",2024-08-05 12:10:15,7,False,0.0,1.0
@@ -435,6 +406,17 @@ user_id,text_id,text,timestamp,collection_phase,is_words,valence,arousal
 127,2923,"I ' m feeling really annoyed at work today . It seems like everything is going wrong , and it ' s starting to get under my skin . There are constant interruptions , making it hard to focus on what I need to get done . The workload is piling up , but instead of tackling it , I’m spending most of my time fixing small issues that keep popping up . It feels like I ' m putting out fires all day , and it’s exhausting .",2024-09-19 17:00:42,7,False,1.0,2.0
 127,2924,"happy , sad , content , aggravated , smiling",2024-09-20 12:51:46,7,True,-1.0,2.0
 127,2925,"I am currently experiencing a state of emotional neutrality . There are no strong positive or negative feelings overwhelming me at the moment . My emotions feel calm and composed , like a still pond . My mind is clear and focused , without any distracting thoughts or feelings . I am simply present and observing my surroundings without any particular reactions .",2024-09-20 17:49:03,7,False,0.0,1.0
+133,3098,"Currently I feel wonderful , like all I have been hoping for are coming through . So I feels good and great \nHappy ! I just finished The Chamber of Secrets for the first time and oh God what a read it is . I recommend it to everyone",2024-09-12 12:11:19,7,False,1.0,0.0
+133,3099,"Happy , Loved , Excited , Wanted , Proud",2024-09-13 17:14:04,7,True,1.0,1.0
+133,3100,"Happy , Good , Hopefull , Excited , Grateful",2024-09-14 12:04:48,7,True,0.0,1.0
+133,3101,"Happy , Grateful , GOOD , Excited , Wonderful",2024-09-14 22:19:34,7,True,2.0,1.0
+133,3103,"I’m feeling a blend of anxiety and hope right now . The anxiety comes from worries about an upcoming event or unresolved issues , which seem to linger in the back of my mind and affect my daily routine . At the same time , there ' s a sense of hope that counterbalances this anxiety , giving me a glimmer of positivity and a belief in a better outcome . This mix makes me cautious and reserved in some moments , yet optimistic and enthusiastic about potential positive outcomes in others . Overall , it’s a complex interplay between worry and optimism that shapes how I approach things .",2024-09-15 12:06:10,7,False,0.0,2.0
+133,3104,"Active , Happy , Excited , Loved , Wanted",2024-09-15 17:07:57,7,True,0.0,2.0
+133,3105,"I’m experiencing a deep sense of happiness right now that feels incredibly fulfilling and uplifting . It’s not anchored to a specific event but rather a general sense of well-being and contentment that seems to infuse my daily life . Everything feels a bit more vibrant and enjoyable , as if I’m seeing the world through a brighter , more optimistic lens . This feeling has a way of making even the simplest moments more delightful . I’m smiling more often , and interactions with others are marked by a genuine enthusiasm and positive energy .",2024-09-16 12:20:41,7,False,1.0,1.0
+133,3106,"Happy , Anxious , Excited , Hopefull , Graceful",2024-09-16 17:05:09,7,True,0.0,1.0
+133,3107,"Happy , Excited , Graceful , Hopefull , Contented",2024-09-17 12:11:47,7,True,1.0,0.0
+133,3108,"Excited , Grateful , Happy , Loved , Wanted",2024-09-17 17:00:41,7,True,1.0,1.0
+133,3109,"Excited , Happy , Wanted , Loved , Grateful",2024-09-18 12:12:00,7,True,1.0,1.0
 134,3122,"I woke up today and struggled to get out of bed . When I left my bed , I was extremely tired and lethargic and wanted to get back in it . I had to go to college , so I pushed through anyway . I was tired when I arrived at my first class , and was late due to my aforementioned struggle to get out of bed .",2024-10-16 12:34:06,7,False,-2.0,0.0
 134,3123,"Hungry , Impatient , Restless , Nervous , Lethargic",2024-10-16 17:01:00,7,True,0.0,1.0
 134,3125,"Procrastinating , Moody , Happy , Satisfied , Lethargic",2024-10-16 22:15:22,7,True,1.0,1.0
@@ -449,6 +431,26 @@ user_id,text_id,text,timestamp,collection_phase,is_words,valence,arousal
 134,3134,"I did not complete my math homework yesterday that I had a week to do and felt like a useless failure . I did get out of bed today at a reasonable time , and math class was slightly interesting , so I guess I ' m happy . Slightly joyous , even .",2024-10-21 12:44:43,7,False,1.0,1.0
 134,3137,I just finished my Javascript Exam and am confident I got 100 % so I feel accomplished ! I am feeling quite tired and lazy though . I have to do my math homework . I don ' t feel as useless as I did this morning .,2024-10-22 17:41:12,7,False,-1.0,0.0
 134,3138,"My headlights on my car was not working which made me scared . I have to hit the center console on the car in order to get it to work , which made me anxious and frightened . I felt like a failure today because I didn ' t go to math class .",2024-10-22 22:01:04,7,False,0.0,0.0
+139,3487,"happy , fantastic , cool , delightful , reserved",2024-11-12 12:09:12,7,True,1.0,1.0
+139,3488,"Confident , Relaxed , Happy , Buzzed , Energetic",2024-11-12 17:07:51,7,True,1.0,1.0
+139,3489,"I feel relaxed and euphoric , with reduced inhibitions and heightened sociability , often accompanied by a sense of warmth and calmness . I feel so confident and energetic to try out new things and do the things I’m scared of without being scared or anxious , I feel so lightheaded , impaired balance with heightened mood \ nI feel so cool and reserved and have less worry and increased emotional sensitivity ……… \ n \ nIt feels like I’m at the top of the world and having confidence to try out new things",2024-11-12 22:08:36,7,False,1.0,2.0
+139,3490,"I currently feel relaxed and euphoric , with a sense of warmth spreading throughout my body , accompanied by reduced inhibitions and heightened sociability .\ nEmotionally , I feel anxious , depressed and irritable , with heightened sensitivity to surroundings , struggling to focus and maintain a clear train of thought .",2024-11-13 12:02:59,7,False,1.0,1.0
+139,3491,"I currently feel relaxed and euphoric , with a sense of warmth spreading throughout my body , accompanied by reduced inhibitions and heightened sociability . My thoughts are slightly foggy , and my coordination is impaired , making everyday tasks challenging . Physically , I ' m experiencing a pleasant numbness .\ n \ n , I feel lethargic and weak , with hangover symptoms like headaches , fatigue and nausea setting in . Emotionally , I ' m anxious and irritable , struggling to focus . My body feels drained .\ n \ n I feel disoriented and confused , with increased emotional sensitivity and mood swings causing regrettable decisions and actions .",2024-11-13 17:10:16,7,False,2.0,0.0
+139,3493,"I ' m feeling relaxed and calm , with a gentle haze enveloping my thoughts . The alcohol ' s warmth has seeped into my muscles , easing any tension or stress , and my senses seem slightly dulled . My thoughts are floating effortlessly .\ nI feel a soothing tranquility wash over me , calming my mind and easing my muscles . The initial sharpness of my thoughts begins to blur , replaced by a gentle haze that softens the edges of my worries . My senses , once acute , now feel slightly dulled , as if viewed through a warm , fuzzy lens . The world around me seems more mellow .\ nMy limbs feel heavier , weighed down by a pleasant lethargy that discourages unnecessary movement . Conversation flows more easily , unencumbered by self-consciousness or inhibitions . Emotions , too , become more fluid , with laughter and smiles emerging more readily \ n \ n",2024-11-13 22:06:07,7,False,0.0,1.0
+139,3494,"Happy , Calm , Cool , Energetic , Reserved",2024-11-14 12:05:54,7,True,0.0,2.0
+139,3495,"I ' m feeling slightly relaxed , with a subtle warmth spreading through my body . My senses remain sharp , but my mind has eased into a calm , gentle hum . Clarity and focus remain intact . A gentle warmth spreads throughout my body , easing any residual tension and promoting relaxation . My mind , previously alert and active , slows its pace slightly , adopting a calm and serene demeanor \ nMy senses remain sharp and responsive , with no noticeable diminishment in clarity or focus . Emotionally , I feel more at ease , with concerns or worries diminishing in intensity . Social interactions become more comfortable , with conversation flowing effortlessly . Laughter and smiles emerge more readily . my thinking remains clear and logical . Problem-solving abilities and decision-making capacities seem unaffected . Memory recall and concentration remain intactBalance and coordination are maintained .",2024-11-14 17:06:22,7,False,1.0,0.0
+139,3496,"Happy , Relaxed , Calm , Tranquil , Serene",2024-11-14 22:03:43,7,True,2.0,2.0
+139,3497,"I ' m feeling rather chill and relaxed , like the tension in my body has dissipated , leaving me with a warm , fuzzy sensation . My thoughts are still clear , but my mind has shifted gears , and I ' m now cruising at a leisurely pace , enjoying the gentle buzz .\ n \ nThe gentle warmth spreading through my veins is soothing , calming my nervous system and quieting my racing thoughts . My senses remain sharp , but my perception has softened , allowing me to view the world with a more relaxed , laid-back attitude . I find myself laughing more easily , connecting with others on a deeper level . My worries haven ' t vanished , but they ' ve receded into the background , allowing me to focus on the present moment .",2024-11-15 12:03:26,7,False,1.0,1.0
+139,3498,"Happy , Energetic , Calm , Cool , Reserved",2024-11-15 17:05:45,7,True,1.0,1.0
+139,3499,"I currently feel mildly relaxed and calm , with a subtle sense of euphoria and reduced inhibitions ,   My senses remain relatively sharp , with minimal impairment to coordination and cognitive function , although I may experience slight dizziness .",2024-11-15 22:11:13,7,False,1.0,2.0
+139,3500,"I ' m feeling rather chill and relaxed , like the tension in my body has dissipated , leaving me with a warm , fuzzy sensation . My thoughts are still clear , but my mind has shifted gears , and I ' m now cruising at a leisurely pace , enjoying the gentle buzz .\ n \ nThe gentle warmth spreading through my veins is soothing , calming my nervous system and quieting my racing thoughts . My senses remain sharp , but my perception has softened , allowing me to view the world with a more relaxed , laid-back attitude . I find myself laughing more easily , connecting with others on a deeper level . My worries haven ' t vanished , but they ' ve receded into the background , allowing me to focus on the present moment .",2024-11-16 12:21:53,7,False,1.0,0.0
+139,3501,"Delighted , Cool , Calm , Lively , Serene",2024-11-16 17:02:51,7,True,2.0,1.0
+139,3502,"I feel relaxed and calm , with moderate euphoria and reduced inhibitions . My senses are somewhat impaired , with mild dizziness , slight confusion , and decreased coordination , with potential slurred speech and impaired judgment .",2024-11-16 22:06:10,7,False,1.0,1.0
+139,3504,"Happy , Delightful , Calm , Contented , Reserved",2024-11-17 12:04:33,7,True,2.0,0.0
+139,3505,"Warm , Relaxed , Calm , Fuzzy , Excited",2024-11-17 17:06:13,7,True,2.0,2.0
+139,3506,"Cool , Calm , Quiet , Depressed , Nervous",2024-11-18 12:05:54,7,True,0.0,1.0
+139,3507,"Calm , Happy , Cool , Excited , Reserved",2024-11-18 22:05:18,7,True,2.0,0.0
+139,3508,"my senses are slightly numb , and coordination takes a bit more effort . Simple tasks require a tad more concentration , and reaction times slow down . My body feels warm , flushed , and cozy .\ nMy worries seem to fade away , replaced by a carefree attitude and increased sociability .",2024-11-19 12:12:44,7,False,0.0,1.0
 145,3689,"I feel sad and tired right now . It is a gross , rainy day . I am also upset with my boyfriend at the moment . I am giving space and distance for now . I feel very down in the dumps today . I am hoping that my day gets better soon .",2024-08-07 12:08:02,7,False,-1.0,1.0
 145,3690,I am feeling much better about myself . I am talking to my friend on FaceTime now about the stress with my boyfriend . He is still annoying me but it is getting better . Hoping he starts to behave better later,2024-08-07 17:29:29,7,False,1.0,1.0
 145,3691,"I feel angry about how my boyfriend is acting and am considering breaking up with him . I am currently cooking dinner and trying to talk to friends as a way to distract myself , but there is only so much more I can take right now",2024-08-07 22:05:10,7,False,-1.0,1.0
@@ -477,6 +479,13 @@ user_id,text_id,text,timestamp,collection_phase,is_words,valence,arousal
 147,3749,I am feeling really tired and sluggish because I didn ' t sleep well because of my friend being in the hospital and not getting the proper care . I also have a sleep disorder and bad neuropathy due to my diabetes so I had a lot of pain as well .,2024-10-20 12:01:22,7,False,-1.0,0.0
 147,3750,I am doing really good today I am sitting outside with my friends and their dogs in this beautiful weather . We went for a walk with the dogs and then came back to sit in the back of my building and chat and talk with the other neighbors .,2024-10-20 17:01:12,7,False,0.0,1.0
 147,3751,I am very content and neutral I ' m watching one of my favorite movies on the ORG channel . I like this movie very much it is a Christmas movie and it makes me feel good so I ' m very happy it ' s on . It ' s going to be a Christmas movie marathon tonight and that makes me very happy because it ' s the ORG  countdown to Christmas which is my favorite holiday .,2024-10-20 22:05:45,7,False,0.0,1.0
+152,3869,"Context , Calm , Engaged , Busy , Interested",2024-07-09 17:01:40,7,True,2.0,0.0
+152,3870,"Right now I feel pretty good about myself and my family . I am participating in a continuing education program which I enjoy and I have plans for the next two days . I also plan to go the the gym this afternoon . however , I am concerned about the November election .\ n \ n",2024-07-11 12:08:43,7,False,2.0,0.0
+152,3871,"Placid , Thoughtful , Concerned , Worried , Tired",2024-07-12 17:10:09,7,True,-2.0,0.0
+152,3872,"I am placid and relaxed . However , I am also thinking about the future for my children and grandchildren , which worries me . I have to run several errands this morning and I would rather be doing something else . I also miss the ability to take trips due to my wife’s illness .",2024-07-13 12:34:22,7,False,2.0,0.0
+152,3873,"I am feeling content and relaxed . Although I worry about the future for my children and grandchildren , I know that I am lucky that they are all doing well . My wife had a stroke four years ago that left her unable to walk without assistance . This has eliminated our travel plans and other plans , but we are dealing with the situation .",2024-07-13 17:16:03,7,False,2.0,0.0
+152,3874,I feel content but worried about the future for my children and grandchildren .   I am somewhat frustrated by our inability to travel due to my wife’s disability caused by a stroke 4 years ago . My life is ok but not exciting .,2024-07-14 12:09:42,7,False,2.0,0.0
+152,3875,"Satisfied , Calm , Concerned , Interested , Busy",2024-07-14 17:45:14,7,True,1.0,0.0
 155,3938,"Focused , Tired , Determined , Nervous , Productive",2024-11-01 17:04:05,7,True,0.0,1.0
 155,3939,"Sad , Worried , Relaxed , Contemplated , Na",2024-11-01 22:06:07,7,True,-1.0,1.0
 155,3940,"I am feeling calm and content , not much to do today so I can relax and spend quality time with my partner . I had a good sleep so I feel well rested too . I also felt that I had a good evening with a successful score on my exam yesterday night and it was a big stressor , so I ' m happy and content it worked out .",2024-11-02 12:49:51,7,False,1.0,0.0
@@ -498,23 +507,6 @@ user_id,text_id,text,timestamp,collection_phase,is_words,valence,arousal
 164,4193,"I ' m nervous about our housing situation , and finding a place to live that will work for us . I want everyone to be happy , but to live in a small apartment , for 2 years minimum , could be very hard when we ' re trying to fit in to a new place . But what else are we supposed to do ?",2024-07-22 17:26:25,7,False,0.0,1.0
 164,4194,"Tired , Bored , Cool , Na , Maybe",2024-07-22 22:00:32,7,True,0.0,1.0
 164,4195,"Still concerned about the housing situation . Not making much progress unfortunately . It ' s kind of all I can think about these days , which is more than somewhat distracting at work , and makes it hard to focus on completing tasks that need to be done .",2024-07-23 12:01:12,7,False,0.0,1.0
-168,4253,"I’m currently experiencing a mix of emotions . I am a little bit stress , tired , but at the same time , I’m feeling grateful for the life that I have . On the other hand , I am a little bit worried about some school things , but at the same time I have faith that everything will work out . Currently , trying to stay positive and fight procrastination to achieve my personal goals for today’s day .",2024-11-07 12:02:25,7,False,0.0,1.0
-168,4254,"Tired , Bored , Grateful , Stressed , Heavy",2024-11-07 17:02:19,7,True,0.0,0.0
-168,4255,"I’m currently feeling better than before , more relaxed . I had a nice meal and a good laugh , which was all I needed for today . Feeling grateful , and happy for everything that is going on in my life right now .",2024-11-07 22:04:24,7,False,1.0,1.0
-168,4256,"I am currently feeling calm and excited for today , I am excited and enthusiastic to learn . Definitely , have more energy than yesterday . Very grateful for everything and everyone in my life . Looking forward to continue with this grateful feeling for the rest of the day .",2024-11-08 12:04:39,7,False,2.0,0.0
-168,4257,"I am currently feeling mixture of excitement and anticipation as a few exams approach . I am also a little bit tired , but overall feeling good and at peace at this moment . Trying to stay positive and focused on my goals",2024-11-08 17:19:44,7,False,2.0,0.0
-168,4258,"Still feeling calm and happy . As the day comes to an end , I am starting to feel a little bit tired for all of the errands that I had to do today . Overall , still feeling grateful for everything in my life and looking forward to have a good day tomorrow !",2024-11-08 22:33:10,7,False,0.0,1.0
-168,4259,"Currently feeling content and tired . Looking forward to rest for a few minutes and continue with my happy . Overall , it has been a great day , which is keeping me motivated , grateful and happy . Looking forward for the rest of my day to be filled with positive energy .",2024-11-09 17:04:29,7,False,1.0,0.0
-168,4260,"I am currently feeling extremely grateful , happy and calm . My heart is full of gratitude and positivity after having a successful day . Looking forward for another great day tomorrow… Ready to rest and have a good sleep .",2024-11-09 22:34:46,7,False,1.0,0.0
-168,4261,"Tired , Grateful , Excited , Positive , Happy",2024-11-10 17:07:02,7,True,0.0,1.0
-168,4262,"Currently feeling happy and very good about the outcome of my day , looking forward to rest and hoping to have an amazing day tomorrow ! I’m also feeling a little tired , but as I get ready to rest for the night , I am definitely feeling grateful for today’s day .",2024-11-10 22:12:04,7,False,1.0,1.0
-168,4263,"Today I woke up feeling extremely motivated , happy and energized . Looking forward to have an amazing day , enjoy every minute of it and learn new things thoughout this day . Looking forward to keep this positive energy going .",2024-11-11 12:20:07,7,False,1.0,1.0
-168,4264,"Feeling quite , even though I’m still in my “gratefulness bubble” today has been a really busy day , full of social interactions , which has me a little bit drained , but still feeling content , grateful and full of positivity for the rest of my day .",2024-11-11 17:01:54,7,False,0.0,0.0
-168,4265,"Feeling quiet , and in the unwinding as the night goes on . Looking forward to relax and have a great sleep , which I 100 % need after today , which was an amazing and productive day . Hoping that tomorrow will be a new day full of opportunities and positivity .",2024-11-11 22:22:22,7,False,0.0,0.0
-168,4266,Woke up feeling great . As my day as started I’ve had some amazing interactions with great people ! Which has made the start of my day a good looking . Looking forward to keep this positive energy and radiate it to others .,2024-11-12 12:18:11,7,False,1.0,1.0
-168,4267,"Currently feeling happy , and grateful for all of the opportunities that I have had today . Feeling a little bit tired , but still pushing through the day , as I still have a few more commitments for today . Looking forward for the rest of my day to be as nice as it has been .",2024-11-12 17:02:27,7,False,1.0,1.0
-168,4268,Currently feeling extremely excited and happy of all the things I’ve learned today . Feeling extremely grateful for all of the opportunities that I have . Looking forward to have a great day tomorrow and keep learning !,2024-11-12 22:22:50,7,False,2.0,1.0
-168,4269,"Woke up feeling extra grateful for all of the wonderful things that are currently happening to me , and all of the opportunities that I have . Currently feeling , extremely enthusiastic for the day ahead and all of the doors that will be opening for me .",2024-11-13 12:32:11,7,False,2.0,2.0
 169,4286,"Family does not want me . They have left me out of every family event . I hate myself for that . I want to be counted as family as we . It is unfair to be a woman , tou have no value . I have self esteem or live for myself .",2024-08-09 12:02:09,7,False,-2.0,2.0
 169,4287,"Family does not want me . They have left me out of every family event . I hate myself for that . I want to be counted as family as we . It is unfair to be a woman , tou have no value . I have self esteem or live for myself .",2024-08-09 17:01:20,7,False,-2.0,0.0
 169,4288,I am feeling better than yesterday and have a better mood as well . I am still low on my self esteem and want to love myself . I hope to be a parent and partner for my family . I want to enjoy my weekend with them and cook delicious meals .,2024-08-10 17:01:30,7,False,-2.0,0.0
@@ -554,27 +546,23 @@ user_id,text_id,text,timestamp,collection_phase,is_words,valence,arousal
 169,4322,"Worried , Anxiety , Stress , Hungry , Over work",2024-08-22 22:20:11,7,True,-1.0,0.0
 169,4323,I am excited about the weekend and spending time at home with my family .\ nWork has been a nightmare and I wish I could retire . I want to make and cook at home and enjoy the beauty of life . I will summer very much .,2024-08-23 12:54:26,7,False,-1.0,1.0
 169,4324,"Hungry , Stress , A lot of work , Weekend , Content",2024-08-23 17:13:55,7,True,0.0,1.0
-171,4359,"nervous , anxious , worried , overwhelmed , busy",2024-10-10 12:01:36,7,True,-1.0,2.0
-171,4360,I am feeling a bit tired and out of energy for the day . I am much less worried than this morning but now feel a little drained . I am ready to be done with my work day and relax with my partner and my dog on the couch .,2024-10-10 17:49:32,7,False,-1.0,0.0
-171,4361,"calm , content , relaxed , tired , still",2024-10-10 22:01:31,7,True,1.0,0.0
-171,4362,"tired , sleepy , low energy , calm , content",2024-10-11 12:00:58,7,True,0.0,0.0
-171,4363,I am feeling anxious to be done with my work day and relax . I know I have to study a lot this weekend so really looking forward to the break . I ' m really motivated to finish my work at the moment though and feeling good overall .,2024-10-11 17:01:21,7,False,0.0,2.0
-171,4364,"happy , content , comfy , cozy , calm",2024-10-11 22:01:29,7,True,1.0,1.0
-171,4365,"I am feeling like I had a productive morning but my energy is waning . I have to study all day today and that is leaving me feeling a little drained . I am ready to sit on the couch and relax , or at least just get off my feet for a bit .",2024-10-12 12:02:19,7,False,0.0,0.0
-171,4366,I am generally feeling good . I am a bit sleepy but i ' ve been fairly motivated to study today . I am enjoying studying while watching football with my partner at home . I think I have several more hours in me .,2024-10-12 17:01:13,7,False,1.0,2.0
-171,4367,"calm , content , tired , drained , happy",2024-10-12 22:12:17,7,True,0.0,0.0
-171,4368,I am generally feeling good this morning . I indulged in some drinks last night but didn ' t go too far . I have a lot more studying to do today and am feeling less motivated than yesterday but know I can push through .,2024-10-13 12:15:54,7,False,1.0,0.0
-171,4369,"tired , sleepy , sluggish , unmotivated , lazy",2024-10-13 17:01:13,7,True,-1.0,0.0
-171,4370,"nervous , anxious , anticipatory , motivated , ready",2024-10-13 22:01:18,7,True,-1.0,2.0
-171,4371,I am relieved that my big exam is over . I ' m happy with the result but also just drained and tired and ready for a nap . I wish I didn ' t have to leave the house again later today . I ' m looking forward to sitting on the couch to veg out for a bit .,2024-10-14 12:16:03,7,False,-1.0,0.0
-171,4372,"After relaxing most of the day , I hit a burst of motivation and productivity and got some good cleaning and organizing done around the house . I feel tired and drained but have enough energy to push through this event tonight and then get home and collapse .",2024-10-14 17:01:06,7,False,0.0,2.0
-171,4373,"Being out tonight for an event really did energize me . I also got extra physical effort in because I had to tote cases of alcohol back and forth to the event venue . I felt the event went well and I ' m pleased with that , and I also feel more energized than I did earlier today .",2024-10-14 22:52:54,7,False,1.0,2.0
-171,4374,"I am feeling a little sluggish , but somehow still motivated for my work day . I ' ve had a productive morning so far . I also feel motivated to try to get back on track and stay on track with healthy eating and movement this week .",2024-10-15 12:01:30,7,False,0.0,2.0
-171,4375,"anxious , restless , stressed , motivated , antsy",2024-10-15 17:21:01,7,True,-1.0,2.0
-171,4376,"content , proud , accomplished , relaxed , comfortable",2024-10-15 22:01:33,7,True,1.0,1.0
-171,4377,"edgy , antsy , anxious , jittery , lively",2024-10-16 12:01:51,7,True,-1.0,2.0
-171,4378,"I am feeling tired , drained , and like I ' m losing steam and motivation for the rest of my work day . I ' ve been in back to back meetings and this last one with my client has been a bit tense . I am feeling like I ' m ready to be done for the day .",2024-10-16 17:21:07,7,False,-1.0,2.0
-171,4379,"calm , cozy , comfortable , happy , grateful",2024-10-16 22:01:31,7,True,2.0,0.0
+170,4325,I’m feeling stressed but at the same time excited . Stressed because I just finished taking an exam and have another tonight . Excited because it’s almost Thanksgiving Break ! I’m looking forward to Black Friday shopping .,2024-11-14 12:02:20,7,False,1.0,2.0
+170,4326,"Tired , Numb , Stressed , Sleepy , Dread",2024-11-14 17:02:36,7,True,-1.0,0.0
+170,4328,"I’m about to take my exam right now and I haven’t really studied much so I’m feeling especially jittery and nervous . I’m feeling a but of   apprehension as well . I don’t know how this exam and the one that I took this morning would affect my grade . And a little nauseous , I think I might’ve eaten a little too much as a result of stress eating .",2024-11-14 22:02:38,7,False,-2.0,2.0
+170,4329,"Dizzy , Sluggish , Tired , Guilty , Nervous",2024-11-15 12:02:26,7,True,-1.0,0.0
+170,4330,"Excited , Drowsy , Indecisive , Unsure , Content",2024-11-15 17:11:50,7,True,1.0,1.0
+170,4331,"I feeling content , a little stressed , and excited . I’ve just gotten home from a 3 hour trip and finally got food . Stressed because I have tons of work piled up from the week . I’m also feeling a little excited because after next week , it’ll be Thanksgiving .",2024-11-15 22:02:27,7,False,1.0,0.0
+170,4332,Extremely stressed . I have a bunch of work piled up from the week and half of them are due tonight . I still need to go out to run some errands but I feel so sluggish and tired that I don’t want to move .,2024-11-16 12:02:08,7,False,0.0,1.0
+170,4333,"Im currently feeling hopeful , content , and a little bit stressed . I’ve had a good talk with my mentor and made some plans to adjust my schedule so I’m feeling hopefully for the future . At the same time , I’m feeling a littler stressed because I haven’t finished all my assignments that’s due soon .",2024-11-16 17:02:06,7,False,1.0,1.0
+170,4334,"I don’t really have any intense feelings right now . Neutral . Numb . It’s the end of the day and I’m halfway there . A little bit stressed , a little bit excited . I’m also feeling a bit conflicted . I’m in a dilemma about what I should be doing .",2024-11-16 22:14:14,7,False,0.0,1.0
+170,4335,"I’m feeling happy , excited , and hopeful . I finally finished the assignments that are due and have a few left . Of the few , I’ve already planned accordingly so I think I’ll be able to get things done . Excited because there’s a week left until Thanksgiving Break !",2024-11-17 12:04:56,7,False,1.0,1.0
+170,4336,I’m at work right now and I’m definitely feeling an adrenaline from hustling around trying to get different tasks completed . I’m a little apprehensive as well . And mixed in the midst is tiredness . I’m a bit stress at well . I don’t even know why . It’s a mix of all types of feelings .,2024-11-17 17:26:51,7,False,-1.0,2.0
+170,4337,"A few minutes ago , I accidentally clicked submit to a quiz without checking my answers . As expected , I got a question wrong . Every time I would tell myself to slow down , to think before I act , but every time I end up doing just the opposite . As a result , I feel very regretful . Thoughts if I should have’s constantly bombard my brain . However , there’s enough reset button .",2024-11-17 22:02:34,7,False,0.0,0.0
+170,4338,I feel a bit sleep . Not sure what the sufficient number of hours is for me . I’ve been averaging maybe 7-8 hours and yet still wake up feeling tired and sleepy the next day . I’m also feeling a bit sluggish . I was supposed to start doing work an hour ago but I ended up procrastinating and scrolling instead .,2024-11-18 12:02:36,7,False,-1.0,0.0
+170,4339,"Current feelings : guilt , uncertainty , and stress . I feel guilty because I spent the last 4 hours watching a show when I should ' ve started doing my work . Although they ' re not due tomorrow , I have more work planned for tomorrow . If I don ' t complete the planned assignments for today , all the tasks would end up snowballing and building up . I don ' t want that to happen .",2024-11-18 22:16:20,7,False,-1.0,2.0
+170,4340,"content , hopeful , happy , stressed , excited",2024-11-19 12:02:07,7,True,1.0,1.0
+170,4341,"Sad , Uncomfortable , Unsure , Lost , Confused",2024-11-19 17:23:19,7,True,-2.0,1.0
+170,4342,"Absolutely frustrated , angsty , confused , lost , regretful , unsure ... I made a terrible decision a few hours ago and now I ' m trying to figure out a wait to straighten myself , get a grip on myself , and get back on track so I can move in the right direction . Sometimes it really takes a moment of careless impulsivity to make you question the decisions you make in life .",2024-11-19 22:06:55,7,False,-2.0,1.0
 6,307,"Tired , Calm , Exhausted , Happy , Content",2022-02-12 22:19:32,2,True,2.0,0.0
 6,308,"Calm , Relaxed , Happy , Focused , Hungry",2022-02-13 20:21:12,2,True,1.0,2.0
 6,309,"Frustrated , Angry , Tired , Hungry , Excited",2022-02-14 20:51:50,2,True,0.0,1.0
@@ -598,6 +586,69 @@ user_id,text_id,text,timestamp,collection_phase,is_words,valence,arousal
 6,328,"Busy , Irritated , Hungry , Anxious , Frustrated",2022-05-20 15:02:00,3,True,-1.0,2.0
 8,368,"Mediocre , today I ' ve been having dizzy spells , a headache and i am sick to my stomach . I got sick this morning while getting ready .     Went home early from my other job .   Expected not to return tomorrow if symptoms persist . \n \ n \ n",2021-03-29 13:41:30,1,False,2.0,0.0
 8,369,"Sober and somber . My friend just passed away last night . I ' m grief stricken , I have a headache and I do not want to consume anything but weed . I do not want to drink my stomach was not made for this .",2021-03-30 12:32:23,1,False,2.0,0.0
+11,439,"It was hard to sleep last night so I am very tired . This morning I feel mentally drained and do not want to go to work tonight . My body feels very tired as well , my shoulders and feet are in a lot of pain .",2021-06-12 12:26:16,1,False,-2.0,0.0
+11,440,I am feeling good . At work excited for tonight’s shift . it will be busy and I am ready for it . I don’t feel as tired anymore since I got to work . Everyone else is in a good mood so I am too . Staff meal was good so that helped,2021-06-12 17:18:50,1,False,0.0,1.0
+11,441,My body is sore from yesterday and my shoulders are killing me . I don’t have to work so I am in a good mood . I ate really late last night so my stomach hurts . I am just somewhat tired but I feel calm and happy that I have a day off to relax,2021-06-13 12:11:18,1,False,2.0,0.0
+11,442,I feel better than last week because yesterday was my day off . I have time to mentally relax and prepare for the week . I am not looking forward to working an extra day at the restaurant but I need the money so .,2021-06-14 12:09:02,1,False,2.0,1.0
+11,457,I am exhausted from working late last night . I am opening today at my second job today . Was difficult to fall and stay asleep last night . Feeling very sluggish today . I have to close again so I am anxious about that because I am so tired,2022-02-16 10:05:52,2,False,-2.0,0.0
+11,458,I am feeling less tired than earlier this morning . I have a little more energy going into my shift . I also feel a little less anxious about my upcoming work shift tonight . Overall pretty neutral though,2022-02-16 16:34:30,2,False,0.0,1.0
+11,459,I am tired and having anxiety feeling very anxious . I am off today so that is helpful . I am a little jittery feel unable to relax . My head feels empty which is causing more anxiety . I will most likely drink today .,2022-02-17 12:06:21,2,False,-1.0,2.0
+11,460,I am exciting because I am off tonight . I am going out . I will be drinking but I do not have an urge to drink . It’s a special occasion . I am happy and calm and peaceful for not having to go into work tonigh,2022-02-17 15:16:07,2,False,1.0,1.0
+11,461,I drank too much last night and I have anxiety and am very uncomfortable . I have to work both jobs today I’m exhausted . I have such bad anxiety and the thought of going into work sucks . Jittery and tired and anxious,2022-02-18 10:01:18,2,False,-2.0,2.0
+11,462,I had a good day at my first job . Had a cup of coffee feeling good more energized . My anxiety has gone away . I am ready and feeling energized for my closing shift at the restaurant . Anxiety is like a 2 compared to a 7 this morning,2022-02-18 15:27:03,2,False,1.0,1.0
+11,463,Just finished my night shift . I am tired but I have a lot of energy . It was a good shift no annoying customers . Easy Friday excited to go home . I am hungry and ready to go home and get into bed . I hate having late dinner though,2022-02-18 21:56:30,2,False,1.0,2.0
+11,464,I’m excited today because I am moving . I’m at my baseline for anxiety and feeling nervous as well as stressed . I do have to opne the restaurant today so that is bothering me because I want to pack and move but overall happy,2022-02-19 10:04:46,2,False,2.0,2.0
+11,465,I’m at work had a good morning I feel energized and excited and ready to get Saturday over with . I am not anxious or nervous . I’m sure I will crash sooon but for now I am in a great mood . No jitters or baseline anxiety is low,2022-02-19 15:21:06,2,False,0.0,2.0
+11,466,I am so happy to be at work right now . What an easy night I had . I loved work tonight . Small section good tips no reason not to be happy . No anxiety and I don’t feel like drinking but I might have some wine,2022-02-19 21:11:38,2,False,2.0,1.0
+11,467,I’m moving today and my family is here helping me so that is exciting . I don’t have to work the restaurant it’s closed Sunday . I do have my second job at 3 which is annoying since I have to move but I feel fine excited,2022-02-20 10:04:37,2,False,2.0,2.0
+11,468,I’m going into work my second job right now I forgot I picked up a shift moved all morning nervous about my new apartment I’m also exhausted and hate that I have to work again all week starting to resent the restaurant t,2022-02-20 15:01:24,2,False,-2.0,2.0
+11,469,I just finished work I am feeling pretty exhausted mentally and physically . I just want to go to sleep but I have a million more this to do . Feeling anxious about next week but I’m ahead on work for my non restaurant job so that helps,2022-02-20 20:04:48,2,False,2.0,0.0
+11,470,I am exhausted I packed and moved all night and had to work in between that . I am emotionally drained from personal stuff however my anxiety is pretty low I’d say a 3 . I’m headed into work now than off tonight so that’s good,2022-02-21 10:02:28,2,False,-2.0,0.0
+11,471,I feel fine I’m out to eat with my friends I don’t have   to go into the the restaurant tonight since they are closed . I didn’t work this morning at my second job but it wasn’t bad I only saw a few patients . I have to finish moving tonight I nervous,2022-02-21 15:10:39,2,False,1.0,2.0
+11,472,I’m sad I am moving out and going through a breakup and haven’t been able to take a day off . I have so much stuff and it’s taking me forever to get everything out of my old apartment . I’m just wxhausted,2022-02-22 10:16:59,2,False,-1.0,1.0
+11,473,I’m exhausted we had a front of the house work meeting early today . So I was in two hours before start time and had a quiz I’m still in the middle of moving it just tired . Now I have to work the whole shift I’m kind of annoyed today,2022-02-22 15:28:13,2,False,-2.0,0.0
+11,474,I don’t really feel anything not happy or sad or nervous . I don’t have any energy I am very tired I guess that is all I feel right now . Shift is almost over it was a slow night not a lot of tips bc it is raining and my next two days are super busy so I’m just blah,2022-02-22 20:35:45,2,False,0.0,1.0
+11,475,I’m pretty neutral feeling right now . I am at my first job of the day . I have to open the restaurant which I normally close so I get a break in between so that’s annoying . I’m fine though my normal amount of exhaustion,2022-02-23 10:01:15,2,False,0.0,1.0
+11,476,I’m feeling fine overall . I moved more thing into my apartment between shift . I am at work now had to open alone that was a pain but whatever . The warm weather is making everything feel better so I’m not mad or happy just fine,2022-02-23 15:08:16,2,False,1.0,1.0
+11,477,We were shorted staff and it was nice outside so it was so busy I had a huge second I was in the weeds the whole time plus I worked this morning I’m just literally exhausted and I have to finish moving by tomorrow everything sucks I want to go to bed,2022-02-23 21:07:47,2,False,-2.0,0.0
+11,478,I have a headache and I’m kind of tired but I have the night off from the restaurant so I’m in a good mood . Yesterday was so busy so I need a little time off . It’s freezing so that’s annoying but overall I have happy anxiety is pretty low,2022-02-24 10:32:47,2,False,1.0,1.0
+11,479,I’m fine I’m still at work stressed because we are getting a snow storm soon . I have to finishing moving and I’m out of time . I’m just exhausted and really would love to have one full day off . Anxiety is low I’m more annoyed than anything else,2022-02-24 15:00:50,2,False,0.0,1.0
+11,480,I’m moving I’m tired and I’m sad . I’m going through a bad breakup I’m exhausted I haven’t had a full day off in like two weeks . I’m stressed because I don’t know what to do with my cats anxiety is like a nine right now \ n,2022-02-24 20:02:13,2,False,-2.0,1.0
+11,443,Im cold it snowed I just had to clean my car off so i don’t know I don’t really feel anything . Really wanted to drink last night was very stressed out and sad but I didn’t do that feels good . Im just over the winter time . I got paid today so I feel a little better about busting my ass all week,2022-02-25 10:03:02,2,False,0.0,1.0
+11,444,I’m just feeling a little bit anxious right now . I was a little late for work which shouldn’t matter but since I’m supposed to be getting a promotion all eyes are in me . Plus is snowed it was only 7 minutes I couldn’t find Parking I had to interview someone at . Y other job like I’m just busy and exhausted,2022-02-25 15:12:37,2,False,-1.0,2.0
+11,445,It’s busy at work right now . I took a minute to hide in the bathroom bc it was so hectic . I’m fine though full of energy no anxiety really I don’t really have a second to have anxiety so that’s good I think I’ll have a drink tonight though,2022-02-25 20:03:18,2,False,1.0,2.0
+11,446,I don’t feel anything . I slept pretty well last night I did have a few drinks so maybe that helped me sleep a little easier . I have a long day ahead of me closing the restaurant than I am off Sunday I’m planning to sleep all day,2022-02-26 10:21:24,2,False,0.0,0.0
+11,447,"I had a wake to go to before work today so that wasn’t great , very upsetting . Anxiety was very high of course . Going into work soon for the closing shift . Than I am off tomorrow which is nice . I don’t really know how to feel at the moment",2022-02-26 15:01:25,2,False,-1.0,1.0
+11,448,I don’t know what I’m feeling I’m busy but the night was a blur this was the first second I stopped since we opened . Today kind of sucked so whatever I’m jsut happy I get to sleep in tomorrow I do feel a little on edge but it’s fine,2022-02-26 21:37:07,2,False,-1.0,2.0
+11,449,I’m exhausted I have a head ache I wish I didn’t drink as much as I did plus I mixed things so I’m not feeling to great . It’s my first full day off in like two weeks and I have to finish moving so I’m just tired,2022-02-27 10:08:10,2,False,-2.0,0.0
+11,450,I’m good I have energy and I’m in a good mood for the most part . My anxiety is low but I am spending a lot of money trying to move into my new place so I’m nervous I’ll need pick up more shifts and have no days off again,2022-02-27 15:09:16,2,False,1.0,2.0
+11,451,I am not really feeling any emotions right now maybe a little sad but my normal exhaustion I need like a week of sleep anxiety is pretty low maybe a 4 overal a relatively nice day off no complaints just pretty baseline emotion wise,2022-02-27 20:03:35,2,False,0.0,1.0
+11,452,I’m at my non restaurant job this morning which is annoying because I really just need a day to sleep in . I’m all done moving so that is exciting but I’m just like very very exhausted . No anxiety or feelings of being nervous,2022-02-28 10:27:16,2,False,-2.0,0.0
+11,453,I just left work I’m drained it was an exhausting day I had a lot of patients to see . I’m glad I don’t have to go into the restaurant tonight I just need a good nights sleep that’s all but like mentally physically drained,2022-02-28 15:00:39,2,False,-2.0,0.0
+11,454,I’m cleaning a little I don’t really know what I feel . Just like content fine I’m probably sad but I took a little nap so that helped I have so much cleaning in this apartment to do I get some extra days off this week so that will help my mood,2022-02-28 20:28:30,2,False,0.0,1.0
+11,455,I’m my usually exhaustion I just moved so I’m not sleeping well it’s a little creepy being in a new place . I was late to work today so now my whole day is behind . I’m closing the restaurant tonight I’m praying it won’t be busy but I’m sure it will be whatever I’m just tiewd,2022-03-01 15:01:14,2,False,-2.0,0.0
+11,456,It’s a busy night at work I am kind of anxious and nervous I’m not sure why . I think I had too much caffeine . I’m still tired I’m starting to make mistakes . I’ll probably have one drink tonight I sleep better,2022-03-01 20:04:34,2,False,-1.0,2.0
+11,490,"I’m exhausted but in a good way , I’ve been exercising before work to try and calm my anxiety . Work is like busy but steady I have a second right now to do my survey . I’m always sad but I’m going through a break up so",2022-04-20 20:26:00,3,False,-2.0,0.0
+11,491,I just woke up I had a few drinks last night but I feel fine . I have to work today but not until 5 . I haven’t drank in a while so I got a little buzzed but nothing too crazy . I don’t really have any anxiety right now,2022-04-21 10:00:00,3,False,0.0,1.0
+11,492,I’m good jsut went to pottery switched my shift so I’d have more time in the morning to get things done . So I am closing tonight but who cares . I’m usually off so this is an extra shift I needed the money,2022-04-21 15:10:00,3,False,1.0,1.0
+11,493,I got attacked by a cat . I’m tired work is steady busy this is usually my day off but I needed the money so whatever . I’m jsut stressed in my normal life I guess it’s a good escape to be extra busy so I don’t mind that I picked up a shift,2022-04-21 20:53:00,3,False,-1.0,1.0
+11,494,"I’m sad but it’s fine , going it o work today I’m opening so hopefully I won’t be there too late . It’s getting way busier though but I need the money I guess . I’m exhausted last night wasn’t busy just long .",2022-04-22 10:14:00,3,False,-1.0,1.0
+11,495,I’m fine at at work now opening going to be a busy night but it’s whatever . Went to the gym this morning so that helped with anxiety it is Friday I might drink tonight but I’m not sure yet we’ll see how the day goes,2022-04-22 15:15:00,3,False,1.0,1.0
+11,496,It was a good shift I feel good is actually have alot of e energy it was so busy but I didn’t really care . I do think I’m going to drink tonight but I’m not sure yet because tomorrow is going to be even busier,2022-04-22 22:02:00,3,False,2.0,1.0
+11,497,"Just woke up I didn’t drink after work but I had a beer when I went home , like half a beer I didn’t actually finish it . I’m tired but I’m going to go to the gym before work . It’s going to be insanely busy tonight",2022-04-23 10:12:00,3,False,0.0,1.0
+11,498,"I’m tired I ran errands today and spent too much money . Eating now before work bc I won’t eat again until probably midnight . I really don’t feel like working tonight it’s going to be so busy , also training a lot of new people is draining",2022-04-23 15:13:00,3,False,-2.0,0.0
+11,499,It was pretty steady and busy . I’m exhausted my back is killing me I trained someone tonight but they did a good job so they were actually helpful . Everything was fine I’m going out tonight after work,2022-04-23 22:06:00,3,False,-1.0,0.0
+11,500,I went out last night after work with co workers we went to the bar than a friends bow I drank quite a bit . I feel fine though might need a nap later n anxiety or anything yet but who knows . Also no work until Tuesday so that’s good,2022-04-24 10:01:00,3,False,2.0,0.0
+11,501,I’m exhausted I was out for like two days straight . I regret drinking that much but whatever . I’m off today so I’m going to relax and do some cleaning . I’m having a lot of anxiety feelinn very anxious,2022-04-25 11:05:00,3,False,-2.0,0.0
+11,502,I’m exhausted I’m tired I drank for two days in a row which was stupid . I got in an argument with someone from work over something stupid . I’m just sad I’ve been in bed all day which is whatever I have work tomorrow,2022-04-25 20:01:00,3,False,-2.0,1.0
+11,503,"Weird vibe at work today . Got in a fight with ORG sous chef drinking over the weekend so that’s kind of uncomfortable , had a bad panic attack last night so I’m just overall exhausted mentally and physically but work should be slow",2022-04-26 15:46:00,3,False,-1.0,1.0
+11,504,"Just tired at work today , I had a huge section it was way busier than expected so I had 8 full hackers with liken two turns and I was so drained from yesterday but whatever it’s slowing down now so I’ll be fine",2022-04-26 20:52:00,3,False,-1.0,0.0
+11,505,"I’m up early I didn’t drink last night I actually got out of work early and went to bed at a normal time . This week is just going to be rough , but I’ll be fine . Work is actually a good escape these days",2022-04-27 10:01:00,3,False,0.0,1.0
+11,506,"I’m off today , I’m going to the gym than I have my art class and than I have dinner with my grandma at the place I work . Should be a nice little day I’m also going to do some laundry and clean my apartment stuff I have been putting off . I’m good though",2022-04-28 10:55:00,3,False,0.0,1.0
+11,507,I didn’t work today . I did go out to dinner with my grandma so that was cute . I’m just doing chores and watching tv . I feel content I’m not really nervous or jittery . I had a glass of wine with dinner but that’s it,2022-04-28 20:29:00,3,False,1.0,0.0
+11,481,I literally just woke up . I overslept I was supposed to be up earlier and get some stuff done before work but whatever . I haven’t been sleeping well at all not sure why . I’m not in the mood to go to work but it’ll be fine,2022-04-29 10:25:00,3,False,-1.0,0.0
+11,482,I’m fine I guess . I’m at work now I opened today with someone else so it wasn’t as much work . I ordered food so at least I ate something before my shift . Going to be a busy night we have an extra server   though so it’ll be all okay,2022-04-29 15:53:00,3,False,1.0,0.0
+11,483,I just get sad randomly I never know when it’ll happen . I am going through a break up . I love the people I work with but like I wish I had more weekend time that I wasn’t at work . It’s so hard to have a normal life,2022-04-29 21:23:00,3,False,-1.0,1.0
 16,822,"Tired , Stressed , Exhausted , Annoyed",2021-05-04 12:11:22,1,True,-1.0,0.0
 16,823,"Exhausted , Invisible , Sore , Morose",2021-05-05 21:33:02,1,True,0.0,1.0
 16,824,"Tired , Unappreciated , Lonely",2021-05-06 12:03:49,1,True,1.0,0.0
@@ -771,6 +822,8 @@ user_id,text_id,text,timestamp,collection_phase,is_words,valence,arousal
 29,1807,"Tired , Defeated , Alone , Scared , Worried",2021-06-10 17:01:06,1,True,-1.0,1.0
 29,1808,"Sad , Depressed , Worried , Alone , Afraid",2021-06-10 22:00:58,1,True,-2.0,1.0
 29,1809,"Sad , Worried , Sacred , Prayers , Anxious",2021-06-11 12:04:13,1,True,-2.0,1.0
+30,1906,On yesterday my day started off great towards the the evening time I had a disagreement with my boyfriend which caused me to have an off day . Today is bittersweet Iam manifesting throughout the day to get me through it,2021-06-09 12:01:58,1,False,1.0,1.0
+30,1907,"I woke up feeling great ! I had a productive day workout , hanging with friends and family . I’m looking forward to a better tomorrow . My son I my motivation I will do anything for him . I thank God for loving me everyday",2021-06-12 12:03:50,1,False,2.0,0.0
 38,2677,I ' m really feeling great . the beautiful weather puts me in a happy mood . I ' m able to go outside and enjoy the day instead of sitting in the house all day . I can take a walk in the park or just sit on my porch and enjoy the fresh air,2021-05-02 12:19:28,1,False,2.0,1.0
 38,2678,as of right now I am feeling great .. enjoying the beautiful weather outside while drinking a nice cold lemonade . knowing summer is coming is making me more happy . now I can ' t wait till official summer comes .\ n,2021-05-02 17:00:44,1,False,2.0,1.0
 38,2694,"chilled , relaxed , happy , rested , cheerful",2022-01-28 15:02:16,2,True,2.0,1.0
@@ -868,19 +921,32 @@ user_id,text_id,text,timestamp,collection_phase,is_words,valence,arousal
 38,2781,"I already prepared dinner cleaned up and took my kids a bath , So right now my body is tired and I’m ready to go to bed . Especially since the fact that I’ve been up since 6 AM by this time I normally get really tired . Also I was busy preparing everything for tomorrow morning so he caused me to be more tired .",2022-09-06 20:02:44,4,False,0.0,0.0
 38,2782,Today is my Birthday so I woke up in a great mood . Work has been good so far and after work I will be going out for drinks so I’m even in a greater mood . I just been smiles all day . Hopefully today continues to go great for me .,2022-09-07 12:16:17,4,False,2.0,1.0
 38,2783,As of right now I am in such a great mood . I have about 10 minutes till I have to clock out of work and I’m going to head home change my clothes and go out for a birthday dinner . While I’m at his birthday dinner I am going to have several margaritas to celebrate life .,2022-09-07 15:00:44,4,False,2.0,1.0
-46,4724,"Excited , Wore out , Driven",2021-03-30 15:10:59,1,True,2.0,2.0
-46,4725,"Awake , Fun , Happy , Drowsy",2021-03-31 15:48:35,1,True,2.0,2.0
-46,4726,"Tired , Intense , Content , Happy , Wore out",2021-04-02 14:26:01,1,True,2.0,2.0
-46,4727,"Excited , Tired , Happy",2021-04-03 12:05:49,1,True,2.0,1.0
-46,4728,"Content , Happy , Excited , Calm , Relieved",2021-04-04 16:20:14,1,True,2.0,1.0
-46,4729,"Bored , Happy , Full , Tired",2021-04-05 12:23:02,1,True,1.0,1.0
-46,4730,"Excited , Bored , Bummed out , Tired",2021-04-06 16:16:49,1,True,2.0,0.0
+41,3537,I’ve been feeling slightly unmotivated and tired . I’ve fell out of my exercise routine and diet which may be a huge factor .   It’s my last week of school though so it’s been very busy . I’m getting out of bed now though and starting the day !,2021-05-15 13:48:21,1,False,-1.0,0.0
+41,3538,I’ve been feeling good . It’s finals week so lots of studying but otherwise trying to enjoy the things in front of me . Should I drink less s ? Probably . Love this survey but 200 characters is a lot ... like 200 characters is actually so many !,2021-05-16 14:48:33,1,False,1.0,2.0
 47,4762,Didn’t sleep well so I’m pretty groggy and sleepy . Bloated and dehydrated from the alcohol which makes me feel worse about myself usually . I’m not feeling as bad as sometimes though . Not as nauseous as normal .,2021-06-08 12:39:36,1,False,-2.0,0.0
 47,4763,"A little nauseous but energetic . I cleaned for 3-4 hours and got a good workout from that which helped . Overall , I’m feeling ok besides nausea which is a common occurrence for me . The cleaning chemicals may have also contributed ?",2021-06-08 17:24:02,1,False,0.0,2.0
 47,4764,I am feeling ok this morning . I didn’t sleep well per usual and woke up a few times and got about 6 hours total which is actually a good number for me but it was interrupted so nor the most restful . I had a migraine last night and starting to feel like it might creep in again .,2021-06-10 12:03:39,1,False,1.0,0.0
 47,4765,Feeling okay . Have been working on a project since 9am this morning so my back hurts lol . I have thought about having a drink already which I’m trying to keep myself busy and wait until at least 5pm .,2021-06-10 17:31:42,1,False,0.0,1.0
 47,4766,I had a glass of wine at 5pm and then ended up taking a nap an hour and a half later and just woke up so I’m feeling a little tired still . Don’t feel like having another glass of wine at the moment but maybe after dinner ?,2021-06-10 22:01:55,1,False,-1.0,0.0
 47,4767,Feeling pretty good . I don’t think I woke up once during the night and finally woke up at 9 : 30am which is later than normal so I got some solid sleep and I definitely needed it ! Feel relaxed this morning .,2021-06-11 12:05:36,1,False,0.0,1.0
+50,4979,Slightly overwhelmed with responsibility and uncertainty around the future . Overall relatively confident in my ability to tackle those responsibilities and face those uncertainties with a few bouts of less confidence here and there .,2021-06-08 14:10:56,1,False,0.0,2.0
+50,4980,Like there’s not enough time in the day to accomplish everything I need to do . Like something important is going to fall through the cracks . I should note that these feelings have little to nothing to do with my employment .,2021-06-09 16:17:00,1,False,-1.0,2.0
+50,4981,I am feeling simultaneously melancholy for a chapter in my life that is closing and excited in anticipation of a new one that is opening soon . The sadness is outweighing the excitement at the moment only because the new chapter hasn’t quite started yet .,2021-06-10 21:13:40,1,False,-1.0,1.0
+50,4982,"I’m heading into my weekend after working 60 hours the last 6 days , so I slept in and am feeling lazy . I’ll spend the afternoon getting myself back to normal . Not sure what else to say , here’s 200 characters .",2021-06-11 13:41:59,1,False,-1.0,0.0
+50,4983,I’ve been feeling pretty peaceful and at ease . I’m in the middle of three days off from work and even though I have lots of other responsibilities at the moment they don’t feel terribly overwhelming and I feel confident in taking them on .,2021-06-12 17:19:52,1,False,1.0,0.0
+50,4984,I have been feeling lighthearted and happy . I spent time with friends during one of my days off and got caught up on some chores and other life responsibilities . That’s about it . Here’s 200 characters .,2021-06-13 12:46:57,1,False,2.0,1.0
+50,4985,I’m starting a new project and meeting new people in a new place so I’m feeling excited and anticipatory and ready to have some fun and make some friends . Here’s some more characters to get to 200 characters .,2021-06-14 12:36:30,1,False,2.0,2.0
+50,4986,I’m feeling excited about the work I’m starting out with . I’m meeting some new people and getting to know them and enjoying the anticipation of fun things to do . Here’s 200 characters to satisfy the character requirement .,2021-06-15 20:46:09,1,False,2.0,2.0
+50,4978,"Yesterday I was feeling overwhelmed and not confident . Today I’m feeling a little better . Still slightly overwhelmed and like there’s not enough time in the day , but less insecure about it right now . I can’t believe that wasn’t 200 characters but here you go .",2021-06-18 15:47:46,1,False,-1.0,2.0
+50,4990,"Wired , Excited , Anticipatory",2022-02-10 15:30:07,2,True,1.0,2.0
+50,4991,"Bored , Calm , Peaceful",2022-02-10 21:45:33,2,True,1.0,0.0
+50,4992,"Lazy , Calm , Lethargic",2022-02-11 11:39:17,2,True,2.0,0.0
+50,4993,"Excited , Ready , Unprepared",2022-02-11 17:29:13,2,True,1.0,2.0
+50,4994,"Anxious , Waiting , Nervous",2022-02-11 20:11:32,2,True,-1.0,2.0
+50,4995,"Sleepy , Calm , Peaceful",2022-02-12 11:45:28,2,True,2.0,0.0
+50,4996,"Meh , Bored , Lazy",2022-02-12 15:05:27,2,True,0.0,1.0
+50,4997,"Energized , Ready , Excited",2022-02-12 20:36:45,2,True,1.0,2.0
+50,4998,"Buzzed , Excited , Anticipatory",2022-02-13 16:03:16,2,True,2.0,2.0
 51,5046,"Achy , Tired , Anxious",2021-06-08 12:04:38,1,True,0.0,1.0
 51,5047,"Content , Tired , Anxious",2021-06-10 12:33:53,1,True,0.0,1.0
 51,5048,"Upset , Confused , Angry",2021-06-11 12:00:57,1,True,-2.0,1.0
@@ -921,27 +987,25 @@ user_id,text_id,text,timestamp,collection_phase,is_words,valence,arousal
 68,4824,"Cotent , Stable , Normal , Bookish , Ready",2024-11-22 22:14:46,7,True,1.0,0.0
 68,4825,"Quiet , Neutral , Reserved , Hungry , Lazy",2024-11-23 17:16:05,7,True,0.0,1.0
 68,4826,I am currently feeling tired and a bit off-kilter because I got a late wake up today . I feel as though I ' m late even though I not late to anything . I feel residual frustration over not having made it to take the first survey of the day . I ' m also a little hungry and resigned that I have to make the food still . But I ' m alright with it being a quiet morning .,2024-11-24 17:14:54,7,False,0.0,0.0
-74,5030,"Lacking motivation to study , and feeling really nervous about my mid term on Friday . I’m not prepared enough and I’m stressing about it . Feeling very tired , and I just want a nap , but I know I can’t . There is so much work to do , and college is really different from high school",2024-09-28 22:14:16,7,False,-1.0,2.0
-74,5031,"Tired , Anxious , Stressed , Gloomy , Confused",2024-09-30 12:22:17,7,True,-1.0,0.0
-74,5032,"Tired , Relieved , Stressfree , Energetic , Joyful",2024-09-30 17:11:48,7,True,0.0,1.0
-74,5033,"Energized , Moody , Tired , Stressed , Focused",2024-09-30 22:09:16,7,True,0.0,2.0
-74,5034,"Currently feeling really active . Just got home from a light day of classes , but I know I have a lot more work to catch up on . Still a bit stressed about my mid term on Friday , but I looked over some questions and began to understand the concepts more , so I’m not too worried at the same time . Overall , pretty active . Played some sports with my friends today , and it really cheered me up .",2024-10-01 17:00:19,7,False,1.0,1.0
-78,5143,"Excited , Good , Nice , Awesome , Love",2024-08-01 12:01:15,7,True,2.0,1.0
-78,5144,"I am feeling good , excited for tonight as I am going to a music festival . I am excited for the performances and the crowd of people experiencing it with me . This would be super fun . I am also thinking about how I wil explore the city I am in right now , where to go , where to eat etc and this takes a bit of energy I feel stretched a bit but in a good way",2024-08-01 17:00:29,7,False,2.0,0.0
-78,5145,"Nice , Good , Tired , Exciting , Fun",2024-08-02 12:00:30,7,True,2.0,0.0
-78,5146,"Good , Fantastic , Nice , Legit , Fire",2024-08-03 12:01:21,7,True,2.0,0.0
-78,5147,"\nI find deep satisfaction in both my work and my life , which contributes to my overall sense of contentment . Professionally , I am engaged in work that aligns with my values and passions . Each day presents new challenges and opportunities for growth , which keeps me motivated and fulfilled . I appreciate the sense of accomplishment that comes from making a meaningful impact and contributing to a greater purpose .\ n \ nIn my personal life , I have cultivated relationships and activities that bring me joy and a sense of balance . Whether it’s spending time with loved ones , pursuing hobbies , or simply enjoying quiet moments of reflection , I feel a profound sense of gratitude for the richness these experiences add to my life . This balance between work and personal fulfillment is crucial ; it ensures that neither aspect overshadows the other , creating a harmonious existence .\ n \ nOverall , my contentment stems from a sense of alignment between my professional aspirations and personal values . This synergy allows me to approach ORG",2024-08-04 12:03:00,7,False,2.0,0.0
-78,5148,"good , nice , tired , awesome , love",2024-08-05 17:49:29,7,True,2.0,1.0
-78,5149,"good , nice , fun , excitied , cool",2024-08-05 22:47:34,7,True,2.0,1.0
-86,346,"Tired , Focused , Busy , Anxious , Curious",2024-08-14 12:28:51,7,True,1.0,1.0
-86,351,Currently I am in virtual court for to parking tickets . I have my receipt for the parking app that I used for one of the tickets but not the other one . I ' m afraid that they will still make me pay . I don ' t like to give away money that ' s why I always use the parking app or feed the meter .,2024-08-15 12:00:43,7,False,-1.0,2.0
-86,352,Currently I am feeling happy and excited because I am traveling tomorrow . I ' m excited to see my grandsons . I get to see them again because they live in another state . So I ' m always happy to see them as much as possible .,2024-08-16 17:18:12,7,False,2.0,2.0
-86,353,"Focused , Tired , Determined , Anxious , Excited",2024-08-16 22:05:23,7,True,0.0,2.0
-86,354,Currently I am spending time with my grand children . I am very happy when I ' m with them because they live so far away from me . We ' re watching educational shows on the tv while they eat breakfast and I have my morning cup of coffee .,2024-08-18 12:11:36,7,False,1.0,1.0
-86,355,Currently I am feeling happy . I am spending time with my family I ' m preparing dinner for tonight . I went grocery shopping to get everything I needed . My family loves when I come in town and I love to take care of them while I ' m here .,2024-08-18 17:30:54,7,False,-2.0,2.0
-86,356,"Content , Relaxed , Happy , Curious , Determined",2024-08-18 22:00:56,7,True,1.0,0.0
-86,358,"Rested , Content , Relieved , Excited , Relaxed",2024-08-19 12:13:56,7,True,0.0,1.0
-86,359,"Currently , I am feeling very relaxed . I am watching TV while also checking emails and important information . I am here with my family having a relaxed day together . Shortly I will get up and start to cook dinner for us .",2024-08-19 17:22:10,7,False,0.0,1.0
+76,5077,"Active , Anxious , Somewhat happy , Nervous , Hopefully",2024-11-19 12:05:03,7,True,0.0,2.0
+76,5078,"Lazy , Anxiety , Slow , Neutral , Stressed",2024-11-19 17:05:25,7,True,0.0,1.0
+76,5079,"**A State of Tranquility **   \n \ nRight now , I feel a calmness that’s difficult to put into words . It’s as if all the noise in my mind has dimmed , leaving behind a peaceful hum . My thoughts , usually darting in every direction , have slowed , moving like a gentle stream instead of a chaotic river .   \n \ nThere’s a warmth in my chest , a soft reassurance that , in this moment , everything is as it should be . My body feels lighter , as though I’ve shrugged off an invisible weight I hadn’t realized I was carrying . Even my breathing feels deeper , more deliberate , as if I’ve finally tuned into a rhythm I’d been out of sync with for too long .   \n \ nThe world around me feels softer , too . Colors seem a little brighter , sounds a little clearer , and even the smallest details—like the texture of the chair I’m sitting in—seem to hold a quiet significance . It’s not that anything monumental has happened ; it’s just that I’m present , truly present , in a way that feels rare and precious .   \n \ nIn this moment , I feel deeply connected to myself and",2024-11-19 22:04:41,7,False,0.0,0.0
+76,5080,"Active , Happy , Jovial , Hopeful , Good",2024-11-20 12:05:04,7,True,0.0,2.0
+76,5081,"Active , Hopeful , Happy , Cheerful , Good mood",2024-11-20 17:03:15,7,True,2.0,2.0
+76,5082,"\n \ n "" I ' m feeling neutral today , neither particularly happy nor sad . My emotions are stable , and I ' m not experiencing any strong feelings . It ' s a calm and serene state , free from anxiety or excitement .\ n \ nPhysically , I feel relaxed , with no tension or fatigue . My mind is clear , and I ' m able to focus on tasks without distraction .\ n \ nEmotionally , I ' m detached from any intense emotions , observing life with a sense of objectivity . I ' m not feeling motivated or lethargic ; just steady .\ n \ nThis neutrality brings a sense of clarity , allowing me to approach tasks with a level head . I ' m open to experiences , but not seeking thrills .\ n \ nIt ' s a peaceful , middle-ground state , where I can recharge and reflect .",2024-11-20 22:02:44,7,False,0.0,1.0
+76,5083,"Quite , Sluggish , Eager , Anxious , Calm",2024-11-21 12:17:20,7,True,0.0,1.0
+76,5084,"I ' m feeling incredibly happy and uplifted today . A sense of contentment and satisfaction has settled within me , and I can ' t help but smile . My mind is filled with positive thoughts , and I ' m grateful for the good things in my life . I feel relaxed and carefree , with a spring in my step .\ n \ nPhysically , my shoulders are dropped , and my posture is open , reflecting my confident and optimistic outlook . Every breath feels refreshing , filling my lungs with a sense of joy . Emotionally , I ' m at peace , letting go of worries and embracing the present moment .\ n \ nMy heart is light , and I feel connected to those around me . I ' m eager to engage with others and spread positivity . This happiness is contagious , inspiring creativity and motivating me to tackle challenges with enthusiasm .\ n \ nI ' m thankful for this feeling and intend to nurture it throughout the day . I ' m focusing on the beauty and wonder of life , letting go of stress and negativity . Overall , I ' m feeling alive , grateful , and genuinely happy . It ' s a wonderful sensation , and I",2024-11-21 17:08:50,7,False,1.0,1.0
+76,5085,"Today , I find myself enveloped in a quiet mood . It ' s as if my thoughts and emotions have retreated to a serene sanctuary , sheltered from the world ' s chaos . My mind is still , with no turbulent thoughts or overwhelming feelings .\ n \ nIn this peaceful state , I ' m reflective and introspective . I ponder life ' s journey , acknowledging accomplishments and lessons learned . The world outside recedes , and I ' m left with the gentle hum of my own thoughts .\ n \ nMy quiet mood isn ' t somber or melancholic ; rather , it ' s contemplative . I ' m recharging , allowing my mind and heart to rejuvenate . The stillness soothes my soul , calming life ' s turbulence .\ n \ nIn this quiet , I find solace . It ' s a refuge from the constant din of responsibilities and expectations . I can breathe deeply , untethered from the weights that usually anchor me .\ n \ nThis mood isn ' t one of isolation ; it ' s introspection . I ' m reconnecting with myself , rediscovering my center . The quiet clarifies my priorities , helping me focus on what truly matters .\ n \ nAs I bask in this tranquility",2024-11-21 22:01:49,7,False,0.0,0.0
+76,5086,"Active , Happy , A little bit nervous , Hopeful , Good",2024-11-22 12:02:22,7,True,0.0,2.0
+76,5087,"Today , I find myself enveloped in a quiet mood . It ' s as if my thoughts and emotions have retreated to a serene sanctuary , sheltered from the world ' s chaos . My mind is still , with no turbulent thoughts or overwhelming feelings .\ n \ nIn this peaceful state , I ' m reflective and introspective . I ponder life ' s journey , acknowledging accomplishments and lessons learned . The world outside recedes , and I ' m left with the gentle hum of my own thoughts .\ n \ nMy quiet mood isn ' t somber or melancholic ; rather , it ' s contemplative . I ' m recharging , allowing my mind and heart to rejuvenate . The stillness soothes my soul , calming life ' s turbulence .\ n \ nIn this quiet , I find solace . It ' s a refuge from the constant din of responsibilities and expectations . I can breathe deeply , untethered from the weights that usually anchor me .\ n \ nThis mood isn ' t one of isolation ; it ' s introspection . I ' m reconnecting with myself , rediscovering my center . The quiet clarifies my priorities , helping me focus on what truly matters .\ n \ nAs I bask in this tranquility",2024-11-22 17:42:27,7,False,2.0,1.0
+76,5088,"I ' m content because I ' ve learned to appreciate the simple things in life . I ' ve come to realize that happiness isn ' t solely dependent on external factors , but rather on my internal perspective . I ' ve cultivated a sense of gratitude , focusing on the good things that surround me .\ nI ' ve also learned to let go of unrealistic expectations and comparisons . I ' m no longer burdened by the need to achieve perfection or compete with others . Instead , I ' m embracing my uniqueness and celebrating my accomplishments .\ nMy relationships with loved ones are strong , and I ' ve nurtured a sense of community and belonging . I ' ve discovered activities that bring me joy and make me feel fulfilled .\ nI ' m content because I ' ve found a sense of balance and harmony in my life . I ' m at peace with myself and the world around me .",2024-11-22 22:08:15,7,False,1.0,0.0
+76,5089,"Subtle , Hopeful , Neutral , Somewhat happy , Somewhat hopeful",2024-11-23 12:03:41,7,True,0.0,1.0
+76,5090,"Today , I find myself enveloped in a quiet mood . It ' s as if my thoughts and emotions have retreated to a serene sanctuary , sheltered from the world ' s chaos . My mind is still , with no turbulent thoughts or overwhelming feelings .\ nIn this peaceful state , I ' m reflective and introspective . I ponder life ' s journey , acknowledging accomplishments and lessons learned . The world outside recedes , and I ' m left with the gentle hum of my own thoughts .\ nMy quiet mood isn ' t somber or melancholic ; rather , it ' s contemplative . I ' m recharging , allowing my mind and heart to rejuvenate . The stillness soothes my soul , calming life ' s turbulence .\ nIn this quiet , I find solace . It ' s a refuge from the constant din of responsibilities and expectations . I can breathe deeply , untethered from the weights that usually anchor me .\ nThis mood isn ' t one of isolation ; it ' s introspection . I ' m reconnecting with myself , rediscovering my center . The quiet clarifies my priorities , helping me focus on what truly matters .\ nAs I bask in this tranquility , I k",2024-11-23 17:02:02,7,False,1.0,1.0
+76,5091,"I ' m feeling incredibly happy and uplifted today . A sense of contentment and satisfaction has settled within me , and I can ' t help but smile . My mind is filled with positive thoughts , and I ' m grateful for the good things in my life . I feel relaxed and carefree , with a spring in my step .\ n \ nPhysically , my shoulders are dropped , and my posture is open , reflecting my confident and optimistic outlook . Every breath feels refreshing , filling my lungs with a sense of joy . Emotionally , I ' m at peace , letting go of worries and embracing the present moment .\ n \ nMy heart is light , and I feel connected to those around me . I ' m eager to engage with others and spread positivity . This happiness is contagious , inspiring creativity and motivating me to tackle challenges with enthusiasm .\ n \ nI ' m thankful for this feeling and intend to nurture it throughout the day . I ' m focusing on the beauty and wonder of life , letting go of stress and negativity . Overall , I ' m feeling alive , grateful , and genuinely happy . It ' s a wonderful sensation , and I",2024-11-23 22:04:32,7,False,0.0,1.0
+76,5092,"I ' m content because I ' ve learned to appreciate the simple things in life . I ' ve come to realize that happiness isn ' t solely dependent on external factors , but rather on my internal perspective . I ' ve cultivated a sense of gratitude , focusing on the good things that surround me .\ n \ nI ' ve also learned to let go of unrealistic expectations and comparisons . I ' m no longer burdened by the need to achieve perfection or compete with others . Instead , I ' m embracing my uniqueness and celebrating my accomplishments .\ n \ nMy relationships with loved ones are strong , and I ' ve nurtured a sense of community and belonging . I ' ve discovered activities that bring me joy and make me feel fulfilled .\ n \ nI ' m content because I ' ve found a sense of balance and harmony in my life . I ' m at peace with myself and the world around me .",2024-11-24 12:12:29,7,False,2.0,0.0
+76,5093,"Feeling neutral can be a calm and balanced state . Here ' s a descriptive description :\ n "" I ' m feeling neutral today , neither particularly happy nor sad . My emotions are stable , and I ' m not experiencing any strong feelings . It ' s a calm and serene state , free from anxiety or excitement .\ nPhysically , I feel relaxed , with no tension or fatigue . My mind is clear , and I ' m able to focus on tasks without distraction .\ nEmotionally , I ' m detached from any intense emotions , observing life with a sense of objectivity . I ' m not feeling motivated or lethargic ; just steady .\ n \ nThis neutrality brings a sense of clarity , allowing me to approach tasks with a level head . I ' m open to experiences , but not seeking thrills . It ' s a peaceful , middle-ground state , where I can recharge and reflect .""",2024-11-24 17:04:22,7,False,0.0,1.0
+76,5094,"Neutral , Tired , Hopeful , Worried , Content",2024-11-24 22:04:02,7,True,0.0,1.0
+76,5095,"I ' m feeling sluggish today , weighed down by a sense of lethargy . My body feels heavy , as if every movement requires extra effort . My mind is foggy , and my thoughts are slow to form .\ n \ nEvery task seems daunting , and I ' m struggling to muster the energy to tackle even the simplest chores . My motivation is lacking , and I ' m finding it hard to focus .\ n \ nPhysically , I feel drained , as if I ' ve run a marathon without actually moving . My muscles ache , and my eyelids feel like lead weights .\ n \ nDespite the sluggishness , I ' m trying to be gentle with myself . I ' m acknowledging that it ' s okay to not be okay , and that sometimes , my body and mind just need a break . I ' m giving myself permission to rest , recharge , and come back stronger when I ' m ready .",2024-11-25 12:34:30,7,False,-1.0,0.0
 88,384,"indifferent , mild , tired , unexcited , calm",2024-11-05 12:07:06,7,True,0.0,1.0
 88,385,"energized , accomplished , content , calm , pleased",2024-11-05 17:02:58,7,True,0.0,2.0
 88,386,"full , relaxed , interested , calm , content",2024-11-05 22:15:17,7,True,2.0,0.0
@@ -958,27 +1022,6 @@ user_id,text_id,text,timestamp,collection_phase,is_words,valence,arousal
 88,403,I woke up feeling better today and currently I am feeling very productive since I am up and walking around . I feel accomplished since I am getting my house chores done and active since I had an early start to my day .,2024-11-10 12:02:47,7,False,0.0,2.0
 88,404,I am currently feeling somewhat energetic and active . I am feeling productive . I feel accomplished since I finished all my housework and now I am excited to reward myself with some self care . I am also feeling a little hungry .,2024-11-10 17:08:16,7,False,1.0,2.0
 88,405,"I am currently feeling very content . I had a productive day and I am now winding down for the evening . I am pleased since I did my self care routine , which made me feel calm and relaxed . I am satisfied and happy .",2024-11-10 22:03:12,7,False,2.0,0.0
-90,588,Overwhelmed and anxious as well as stressed out . I have a lot of work to do for school that o have procrastinated on because I wasn’t feeling well yesterday so I’m behind and nervous .im too anxious to focus right now and not sure how to proceed in the moment or how to ground myself,2024-10-16 12:00:46,7,False,-2.0,0.0
-90,590,I was so overwhelmed this afternoon but slowly I am feeling more at ease after talking to my professor at school about getting an extension on a deadline because I have been having health issues that make it difficult to get work done . Slightly better than usual at the moment and trying to find a happy medium,2024-10-16 17:01:33,7,False,-1.0,2.0
-90,591,I am feeling more relaxed than before but still stressed out as I have many tasks I have yet to accomplish today and I am exhausted and it’s getting late . my brain is running a million miles a minute right now,2024-10-16 22:08:29,7,False,-2.0,0.0
-90,592,Again overwhelmed I have so much to do today and woke up late so I didn’t have time to shower as planned . It’s a hassle to shower in the middle of the day but I have appointments and meetings all morning so it has to be put off . Very scattered this morning and feeling anxious and sick to my stomach,2024-10-17 12:35:29,7,False,-2.0,2.0
-90,593,"Frantic , Anxious , Panicked , Stressed , Overwhelmed",2024-10-17 17:02:41,7,True,-2.0,2.0
-90,594,"trapped , stuck , anxious , confused , lost",2024-10-17 22:02:40,7,True,-2.0,1.0
-90,595,"Anxious , Relieved , Tired , Wired , Anticipating",2024-10-18 12:05:11,7,True,-1.0,2.0
-90,596,"Tired , Wiped out , Exhausted , Anxious , Jittery",2024-10-18 17:01:37,7,True,-1.0,2.0
-90,597,Relaxed and tired but excited to watch the premiere of my favorite tv show . Feeling better after taking a short nap and getting some necessary tasks completed . Hopeful for a good evening and also planning on going to bed early so I am refreshed in the morning for work .,2024-10-18 22:01:05,7,False,-1.0,0.0
-90,598,"Exhausted , Drained , Nervous , Angry , Frustrated",2024-10-19 12:24:09,7,True,-2.0,1.0
-90,599,"Frantic , Overwhelmed , Anxious , Nauseated , Confused",2024-10-19 22:01:25,7,True,-2.0,2.0
-90,601,"Wiped out , Groggy , Exhausted , Overwhelmed , Fearful",2024-10-20 12:02:18,7,True,-2.0,0.0
-90,602,Drained and drowsy and anxious . I have a paper due tomorrow for school and have been paralyzed with fear and anxiety all day and have yet to work on it . I have no idea how I’m going to get it done as I have to work in an hour,2024-10-20 17:12:22,7,False,-2.0,0.0
-90,603,"Stuck , Doomed , Lost , Confused , Stressed",2024-10-20 22:00:44,7,True,-2.0,1.0
-90,604,"flustered , nuts , crazy , insane , losing it",2024-10-21 12:27:56,7,True,-2.0,1.0
-90,605,"Exhausted , Defeated , Sad , Overwhelmed , Hungry",2024-10-21 17:02:15,7,True,-2.0,0.0
-90,606,Have an assignment due in 4 hours and I’m flipping my shit . Keep procrastinating and taking too many breaks I’m going to fail this assignment I am so livid and stressed out I don’t know what to do I feel like I’m going to lose it,2024-10-21 22:08:34,7,False,-2.0,2.0
-90,619,"tired , neutral , nervous , anxious , anticipatory",2024-10-22 12:00:44,7,True,-1.0,2.0
-90,620,"angry , frustrated , disapointed , sad , depressed",2024-10-22 17:07:06,7,True,-2.0,1.0
-90,621,I feel physically unwell and drained tonight . Very frustrated at myself for squandering the day away and not focusing on what I need to get done for school . I am slightly on edge and frantic   and am not sure how to proceed .,2024-10-22 22:02:35,7,False,-2.0,0.0
-90,622,"Cold , Tired , Restless , Anxious , Daunting",2024-10-23 12:00:50,7,True,-2.0,0.0
 93,757,"Tired . I don’t want to get out of bed right now . It’s a weekend , but I have things that need to be done , and I’d rather just lounge in bed and sleep all day . I won’t , but I’d like to .    This has been a hard , grueling week , and I’m depressed .   I would rather escape into sleep , as I don’t feel when I’m asleep .   I have responsibilities , but they can wait for the moment .",2024-11-02 12:36:06,7,False,0.0,1.0
 93,758,"Grumpy , Sad , Frustrated , Exhausted , Grieving",2024-11-02 17:00:52,7,True,-1.0,0.0
 93,759,"I feel very sluggish and depressed .   There is a lot of conflict around me in my friend circle , and I really don’t like conflict . I don’t like having to take sides .   I want everyone around me to be friends .",2024-11-02 22:01:02,7,False,-2.0,1.0
@@ -1028,6 +1071,22 @@ user_id,text_id,text,timestamp,collection_phase,is_words,valence,arousal
 96,1240,"Lazy , Sore , Ambivalent , Conflicted , Introspective",2024-11-09 22:01:20,7,True,0.0,0.0
 96,1241,"Hungry , Relieved , Tired , Dull , Sleepy",2024-11-10 22:03:06,7,True,1.0,1.0
 96,1242,"Restless , Sore , Overwhelmed , Confused , Stressed",2024-11-11 12:00:53,7,True,-2.0,0.0
+98,1326,"I just woke up feeling fine , I ' m on my way to physical therapy should be a good day . I woke up having those time traveling dreams it felt nice it almost felt real but after that I feel content . My day just started i hope today is a good one",2024-11-05 12:00:50,7,False,0.0,1.0
+98,1333,"Calm , Content , Tired , Fine , Normal",2024-11-05 17:00:49,7,True,2.0,0.0
+98,1334,"I ' m currently feeling fine , it ' s been a long day but nothing feeling out of the ordinary , I ' m feel fine and nothing bad has happened that would make me feel different . I ' m looking forward to more better days .",2024-11-05 22:00:45,7,False,2.0,0.0
+98,1335,"Currently feeling very sleepy waking attending my ORG needs , looking forward to taking some naps today , I ' m also looking forward to do some workouts at home done . That ' s all I feel for now ........",2024-11-06 12:20:51,7,False,0.0,0.0
+98,1349,"Feeling good today on a   Sunday , staying in watching videos with my family , I feel fine on this gloomy day out . I feel fine and full , had a good lunch can’t wait what tonight brings later , later I’ll be working for a couple of hours……… ..",2024-11-06 17:13:50,7,False,2.0,0.0
+98,1350,"calm , content , hungry , tired , good",2024-11-06 22:04:46,7,True,2.0,0.0
+98,1351,"Just waking up still feel normally tired ,   i can ' t wait to start the day and see what today brings , i have a couple of errands to do today , i don ' t feel out of the ordinary .........................",2024-11-07 12:01:51,7,False,2.0,0.0
+98,1352,"calm , happy , active , content , normal",2024-11-07 17:47:07,7,True,0.0,2.0
+98,1353,"calm , energize , happy , normal , okay",2024-11-07 22:07:22,7,True,0.0,0.0
+98,1354,"Good morning I ' m ready to start the day and see what today brings me , I woke up ok feel like I didn ' t sleep enough ,   I think daylightsaving is still making me feel exhausted about it , I haven ' t processed it fully",2024-11-08 12:01:07,7,False,0.0,1.0
+98,1355,"good , calm , happy , fine , okay",2024-11-08 17:07:48,7,True,0.0,1.0
+98,1356,"good , calm , hungry , content , well",2024-11-08 22:01:34,7,True,1.0,1.0
+98,1357,"calm , awake , good , alright , normal",2024-11-09 12:03:52,7,True,2.0,0.0
+98,1358,"Currently feeling fine at the moment , it ' s Saturday and heading out with my kids to enjoy this weather , I haven ' t felt out of the ordinary , today should be a good day to head to the book store .........................",2024-11-09 17:18:11,7,False,2.0,0.0
+98,1359,"good , calm , hungry , content , fine",2024-11-09 22:01:08,7,True,0.0,1.0
+98,1360,"Been a good day , I ' m currently feeling alright at the moment , working right now , feeling sleepy all day couldn ' t sleep well due to my 6 month old , but we are okay and I feel fine tomorrow will be another day let see what happens",2024-11-10 22:01:16,7,False,2.0,0.0
 109,1913,"Calm , Content , Anxious , Tired , Excited",2024-10-17 12:39:25,7,True,1.0,0.0
 109,1914,"I am pretty stressed with work , but otherwise content and appreciative of the pleasant fall day and weather . I had a nice , productive lunch with coworkers and someone who was interviewing , so overall quite nice .",2024-10-17 17:09:39,7,False,2.0,0.0
 109,1915,"Currently I am tired and am having some canker sores , which is making it hard to eat . I feel pretty exhausted from the day , and still have some work left to do to prepare for tomorrow . Other than that , I feel like I am super busy and need more time to do all of the things I need to .",2024-10-17 22:38:00,7,False,-1.0,2.0
@@ -1060,6 +1119,25 @@ user_id,text_id,text,timestamp,collection_phase,is_words,valence,arousal
 114,2305,"Sad , Lonely , Distressed , Bored , Tired",2024-09-28 17:12:14,7,True,-1.0,1.0
 114,2306,"Tired , Sluggish , Lonely , Bored , Sad",2024-09-28 22:37:00,7,True,-1.0,1.0
 114,2307,"Im feeling pretty tired and almost like I am catching a slight cold . I don ' t have much energy and although i feel lonely , it ' s not really a high level . I ' m tired mostly , and just want to stay in bed all day today .",2024-09-29 12:08:33,7,False,0.0,0.0
+116,2363,"I am feeling alright today . I woke up knowing my tasks . The weather sort of got on my nerves , but my moods are in tact . I don ' t think there is no reason for me to be depressed at the moment . I am a little tired , but my spirits are high .",2024-08-08 17:05:37,7,False,1.0,1.0
+116,2364,I feel optimistic for tomorrow . I like that I completed my goal today . I ' m feeling very goal-oriented . I ' m also a little cold because it got cooler outside . I can ' t wait until September when it ' s autumn . I ' m not sad right now .,2024-08-08 22:01:02,7,False,1.0,1.0
+116,2368,I ' m a little hyper because I have so many tasks to do right now . I want to stay positive no matter what . I woke up with a slight headache because of the way I was sleeping . I think I ' m less stressed than last week .,2024-08-09 12:03:58,7,False,1.0,0.0
+116,2369,"Grateful , Settled , Confident , Balanced , Happy",2024-08-09 17:09:42,7,True,1.0,1.0
+116,2370,"Calm , Posed , Smooth , Neutral , Good",2024-08-10 17:35:56,7,True,1.0,1.0
+116,2371,I feel very happy because I won a contest . I ' m a little tired right now because I just cooked dinner . I have a slight headache off being a little busy right . I have a load of emotions right now . That ' s how it is right now .,2024-08-10 22:05:48,7,False,2.0,1.0
+116,2372,"Right now , I am calm and happy . I slept really well . I ' m trying to get things done on a constant basis . I can ' t wait to see some exciting things happen tomorrow . I ' m glad that the rain stopped . I don ' t know what else to say .",2024-08-11 12:01:50,7,False,1.0,1.0
+116,2373,I am feeling okay right now . I am settled in my emotions . Nothing else is bothering me at the moment . I had a good breakfast to eat at the moment . I don ' t know what else to say really say . I am okay right now .,2024-08-11 17:02:22,7,False,1.0,1.0
+116,2374,"satisfied , hungry , worried , content , curious",2024-08-11 22:00:48,7,True,1.0,1.0
+116,2375,"Alright , Settled , Nervous , Okay , Restless",2024-08-12 12:07:02,7,True,1.0,1.0
+116,2378,"Happy , Peaceful , Sweet , Together , Careful",2024-08-12 17:13:48,7,True,1.0,1.0
+116,2379,"Calm , Excited , Patient , Exhilerated , Awesome",2024-08-12 22:04:03,7,True,1.0,1.0
+116,2380,I ' m not in my happiest state . I could feel much better when I woke up . I ' m thinking about a variety of things going on in my life right now . It ' s more of a personal conflict I have with someone . I don ' t know . I feel strange .,2024-08-13 12:03:02,7,False,0.0,0.0
+116,2381,"I am feeling sober and focused . Sober as in , very calm . I am a little anxious because I wanna make sure I get an assignment done . I don ' t know what else to really say . Earlier today , I was a little tired and thrown off guard when I woke up .",2024-08-13 17:03:54,7,False,0.0,1.0
+116,2382,I am okay right now . I don ' t have anything mentally overwhelming happening to me right now . I ' m still in a mental state of focus . I get really focused on getting tasks done . I ' m also a little hungry right now because I ' m another to have some food . That ' s it right now .,2024-08-13 22:02:47,7,False,1.0,1.0
+116,2383,"Calm , Purposeful , Okay , Smooth , Alright",2024-08-14 12:07:23,7,True,0.0,1.0
+116,2384,"Today , I ' m feeling alright . Nothing is really bringing me down right now . I think I ' m in a good place . I was able to get some tasks done today with no problem . You can really see things change in the middle of the month .",2024-08-14 17:01:10,7,False,1.0,1.0
+116,2385,"Right now , my mood is neutral . Nothing too crazy is happening . I ' m not angry at all or having an emotional breakdown . I think music really helps me to calm down and be in the moment . It definitely helps to be calm in the evening time .",2024-08-14 22:01:09,7,False,0.0,1.0
+116,2386,"Well , Calm , Waiting , Alert , Not tired",2024-08-15 12:13:37,7,True,1.0,1.0
 121,2528,I’m feeling tired . Didn’t sleep good last night . Hungry too because I didn’t have breakfast yet . But I’m excited to watch college football today . Might take a nap soon . Going to birthday party later so excited for that .,2024-11-09 12:01:52,7,False,-1.0,0.0
 121,2529,"Tired , Sick , Calm , Content , Unwell",2024-11-09 17:02:01,7,True,-1.0,0.0
 121,2530,I am currently sick . I think I have the flu . I have chills and I’m sweating . I stayed in bed all day and I don’t feel good . I didn’t eat a lot today . I only had peanut butter and jelly and some oatmeal,2024-11-09 22:05:58,7,False,-2.0,0.0
@@ -1095,6 +1173,20 @@ user_id,text_id,text,timestamp,collection_phase,is_words,valence,arousal
 128,2968,I am very glad to finish today’s work ! I feel tired and exhausted just by imagining what can I do for the next few days for my rotation . Hopefully things will go well . I can’t wait for the weekend so I can relax and do things that I like .,2024-11-12 17:23:51,7,False,0.0,1.0
 128,2969,It feels very nice after my leg day !!! It helps so much with relieving my pressure and I feel much much better and energetic now ! I am a very lazy person but exercise sure helps people feel good and i hope I can continue this habit .,2024-11-12 22:21:45,7,False,1.0,2.0
 128,2971,The morning has been calm and quiet so far . I am feeling a little sleepy so I will probably go get some coffee later . Although I’m just repeating what I was doing yesterday (type and screen) it still feels nice to have something to do instead of reading ORG .,2024-11-13 12:18:40,7,False,0.0,0.0
+137,3433,"Disappointed , Worried , Apprehensive , Concerned",2024-11-06 12:56:50,7,True,-1.0,1.0
+137,3434,"Uncertain , Motivated , Tentative , Hopeful , Worried",2024-11-06 17:01:38,7,True,0.0,1.0
+137,3437,Feeling calm and content . Feeling hopeful for the future and proud of my baby daughter and her growth over the past few weeks . Feeling unconcerned with the rest of the world as I enjoy a free morning with my family .,2024-11-07 12:57:55,7,False,2.0,0.0
+137,3438,"Feeling relaxed and maybe a little bit bored . Mood is relatively neutral and pleased . Feeling stress free and like I should seek out some excitement or an activity to keep busy with . That’s all I’ve got , I’m not sure what else I’m expected to say to reach the character limit .",2024-11-07 17:01:44,7,False,1.0,0.0
+137,3439,I am feeling tired but calm and content . I’m feeling unconcerned about what the future holds and trying to enjoy the here and now . I’m also thinking about the day ahead and how I can make the best use of it .,2024-11-08 12:01:39,7,False,1.0,0.0
+137,3440,"Tired , Unfocused , Calm",2024-11-08 22:02:08,7,True,0.0,0.0
+137,3441,"Tired , Content , Calm",2024-11-09 12:50:42,7,True,0.0,0.0
+137,3442,"I’m feeling calm , content and pleased with life . It’s a relaxing weekend and there’s nothing of note to be concerned about . It’s a slow Saturday without any stress or work to fret over . I’m looking forward to a nice quiet evening as well .",2024-11-09 17:09:29,7,False,2.0,0.0
+137,3443,"Happy , Energized , Engaged , Connected",2024-11-09 22:11:45,7,True,2.0,1.0
+137,3444,"Feeling energized and happy , calm and content . Everything feels right in the world in this moment . I’m full of joy and I’m feeling excited to spend the rest of the day with people I love and care about .",2024-11-10 12:33:18,7,False,2.0,1.0
+137,3445,"I feel relaxed and hopeful , peaceful and excited for the future . I feel connected to life and the world despite imperfections in the background . I feel surrounded by people I love and care about . It feels like a great weekend .",2024-11-10 17:02:22,7,False,2.0,1.0
+137,3446,"Happy , Energized , Satisfied , Engaged",2024-11-11 12:02:09,7,True,2.0,1.0
+137,3448,Feeling calm and content but a little bit bored . Things are quiet and relaxed . Feeling a little bit stir crazy and wondering what I can do to stay occupied . Thinking about heading to the gym later and listening to some music .,2024-11-11 17:09:17,7,False,1.0,0.0
+137,3449,"Tired , Calm , Content , Happy",2024-11-11 22:02:10,7,True,2.0,0.0
 142,3586,I am tired from getting up several times last night with my 94 year old mother who is home on hospice . I am also concerned about my adult son who lives in GPE and is on the spectrum . He is in his senior year of college and has hit a rough patch .,2024-11-12 12:01:44,7,False,0.0,0.0
 142,3587,I am feeling a little tired because I was up a lot last night with my mother . I have to keep track of her getting up at night to use the bathroom so that she doesn’t fall . The hospice nurse came to evaluate my mom for a catheter . I’m sharing this information with my sister and mom so that we can decide how to proceed .,2024-11-12 17:01:54,7,False,0.0,1.0
 142,3588,"Anxious , Empathetic , Frustrated , Concerned , Sad",2024-11-12 22:22:22,7,True,-2.0,2.0
@@ -1125,31 +1217,18 @@ user_id,text_id,text,timestamp,collection_phase,is_words,valence,arousal
 144,3665,"Happy , Excited , Balanced , Positive , Energized",2024-10-21 12:17:14,7,True,1.0,1.0
 144,3666,"Tired , Sick , Sluggish , Slow , Sleepy",2024-10-21 17:19:43,7,True,-1.0,0.0
 144,3667,"Happy , Tired , Content , Calm , Sleepy",2024-10-21 22:01:05,7,True,1.0,1.0
-148,3773,"Tired , Drained , Exhausted",2024-11-10 12:02:10,7,True,0.0,1.0
-148,3774,I’m at work I’m feeling fine . I definitely wish that I was at home . I feel   kind of tired but I’m moreso on the neutral side of things . I don’t feel drained probably because it is early . I tend to start feeling drained later on in the day,2024-11-11 12:15:41,7,False,0.0,1.0
-148,3775,"Busy , Active , Lively",2024-11-11 17:11:56,7,True,0.0,2.0
-148,3776,"Tired , Sleepy , Overwhelmed",2024-11-11 22:27:48,7,True,0.0,1.0
-148,3777,"Nervous , Sleepy , Over it",2024-11-12 12:05:32,7,True,0.0,1.0
-148,3778,"It’s the midday , I am feeling sluggish . I want to go home but I have two and a half hours left on my shift . I didn’t get to get a coffee so I am feeling tired and I don’t think I have the best mood . My Cheif gave me an unnecessary amount of work so I am annoyed .",2024-11-12 17:30:52,7,False,-2.0,0.0
-148,3779,"Calm , Satisfied , Content",2024-11-12 22:01:59,7,True,2.0,0.0
-148,3780,"Tired , Exhausted , Sleepy",2024-11-13 22:09:48,7,True,-1.0,0.0
-148,3781,"Happy , Fulfilled , Excited",2024-11-14 12:02:37,7,True,1.0,2.0
-148,3782,"Active , Hard working , Energized",2024-11-14 17:05:13,7,True,0.0,2.0
-153,3883,I feel pretty good but my left foot is making my mobility an issue today . Having some difficulty walking but making the best of it . I can complain but there is nothing anyone can do to help me .\ n \ nI also would like to know how is it possible to write a minimum of 200 words in two to three sentences . There would be so many commas and semicolons utilized throughout these two to three sentences . I am assuming you meant letters and not words . Please correct this before this becomes a bigger problem for everyone in this study .,2024-11-13 12:14:02,7,False,2.0,0.0
-153,3884,"At this moment , I am feeling very calm and relaxed watching tv and getting some work done . I was able to run some errands and completed everything on my list . Now I am giving myself some me time and relaxing on the couch .",2024-11-13 17:34:11,7,False,2.0,0.0
-153,3885,"Relaxed , Calm , Content , Full , Attentive",2024-11-13 22:05:56,7,True,2.0,0.0
-153,3886,"Alive , In slight pain , Slightly tired , Grateful , Happy",2024-11-14 12:20:01,7,True,1.0,0.0
-153,3887,"Calm , Quiet , Appreciative , Happy , Slightly tired",2024-11-14 17:04:12,7,True,2.0,0.0
-153,3888,I’m feeling very calm and relaxed right now since I am home and about to have dinner . The day wasn’t too bad and work was pretty good . No difficult people to deal with which I consider a good day . Listening to some continuing education for an hour and hopefully learning something new .,2024-11-14 22:18:36,7,False,2.0,0.0
-153,3889,"Relaxed , Calm , Slight pain , Content , Appreciative",2024-11-15 12:07:29,7,True,2.0,0.0
-153,3890,I’m currently at work right now and not with a patient so I’m pretty relaxed and calm . Sometimes it can get pretty hectic but I do enjoy having some down time to catch up with paperwork and phone messages .,2024-11-15 17:52:09,7,False,0.0,1.0
-153,3891,"Content , Kind of happy , Slightly in pain , Slightly nervous , Appreciative",2024-11-16 12:45:58,7,True,1.0,0.0
-153,3892,Very relaxed and happy especially after having my dinner . Now I will sit back and enjoy watching tv for the rest of the night . I will have to go to bed early since I work tomorrow morning . Easier day tomorrow at work so that won’t be bad at all .,2024-11-16 22:03:13,7,False,2.0,0.0
-153,3893,"Slightly nervous , Somewhat relaxed , Slight pain from my left foot , Somewhat content , Appreciative",2024-11-17 12:42:13,7,True,1.0,0.0
-153,3894,I’m currently feeling pretty relaxed and happy right now because the work day is done . Have to run a few errands before heading home but that’s no big deal . Very appreciative with everything I have so life is good .,2024-11-17 17:08:39,7,False,2.0,1.0
-153,3895,"Right now , I’m currently feeling pretty good . My foot is less swollen and I am able to walk much better which puts me in a good mood . I cannot wait until it’s completely healed so I can do my everyday activities without any pain . Nice day today which is also a plus .",2024-11-18 12:51:58,7,False,1.0,0.0
-153,3896,"Calm , Happy , Appreciative , Relaxed , Slightly tired",2024-11-18 22:54:39,7,True,2.0,0.0
-153,3897,"Happy , Energetic , Calm , Attentive , Satisfied",2024-11-19 17:05:22,7,True,2.0,1.0
+146,3706,"Tired , Annoyed , Stressed , Worried , Confused",2024-07-23 12:32:27,7,True,-1.0,0.0
+146,3707,I am tired because I had a long workday . I am stressed about my class and upcoming events . I am excited because I will eat food and watch a TV show . I am relieved because I do not need to work tomorrow .,2024-07-23 22:33:11,7,False,-2.0,0.0
+146,3708,I am feeling active because I got enough sleep . I am feeling calm because I am not working today . I am feeling nervous and hopeful because I need to complete tasks today . I am feeling happy because the weather is nice and cool .\ n,2024-07-24 12:17:13,7,False,0.0,2.0
+146,3709,"Relaxed , Hopeful , Determined , Calm , Excited",2024-07-24 17:16:19,7,True,0.0,1.0
+146,3710,I am feeling tired because I ate dinner and want to sleep . I am feeling dizzy from looking at my laptop and phone too much . I am feeling determined to study for my test and complete my tasks . I am feeling dreadful about going to work tomorrow .\ n,2024-07-24 22:01:58,7,False,-1.0,0.0
+146,3711,"Tired , Sleepy , Annoyed , Frustrated , Bored",2024-07-25 22:30:15,7,True,-1.0,1.0
+146,3712,"Calm , Relaxed , Excited , Determined , Scared",2024-07-26 22:49:57,7,True,0.0,0.0
+146,3713,I feel disappointed and frustrated because studying for my class is difficult . I feel sad because summer is almost over and I did not have much fun . I feel overwhelmed because I still have a lot left to do to prepare for school .,2024-07-27 17:24:14,7,False,-1.0,1.0
+146,3715,"Stressed , Worried , Overwhelmed , Frustrated , Annoyed",2024-07-28 17:33:33,7,True,0.0,1.0
+146,3716,"Happy , Proud , Determined , Focused , Bored",2024-07-28 22:00:44,7,True,1.0,1.0
+146,3717,I am happy because I studied hard and did well on my test . I am determined because I am almost done with my class . I am relieved because I can relax and rest . I am excited because I bought new shoes for school . I am sad that summer is almost over .,2024-07-29 17:58:14,7,False,1.0,1.0
+146,3718,"Nervous , Worried , Conflicted , Scared , Stressed",2024-07-29 22:14:30,7,True,-1.0,2.0
 161,4098,"Unmotivated , Insecure , Worried , Discontented , Insecure",2024-10-09 12:04:42,7,True,-1.0,0.0
 161,4099,I am feeling pretty good .   I am motivated to finish the process of closing the mortgage loan I am working on .   Laughing with my mom .   I feel happy about the opportunity to talking with her since she has dementia and she is alert enough for a discussion .,2024-10-09 17:01:58,7,False,1.0,2.0
 161,4100,I am feeling content with myself .   I am doing the best I can and not responding too emotionally .   I believe that I am getting better with sticking with what I am wanting to do and not running when it gets to hard or doesn’t go the way I want it to .,2024-10-09 22:03:08,7,False,1.0,0.0
@@ -1199,15 +1278,197 @@ user_id,text_id,text,timestamp,collection_phase,is_words,valence,arousal
 167,4239,"Eager , Alive , Happy , Excite , Calm",2024-11-06 17:28:01,7,True,1.0,1.0
 167,4240,"Alive , Joyful , Fulfill , Happy , Excited",2024-11-06 22:04:01,7,True,2.0,0.0
 167,4241,"Currently , I feel a mixture of motivation and curiosity , eager to assist and engage in thoughtful interactions . Each response offers an opportunity to connect with someone , address needs , or dive into various topics , which keeps my approach fresh and dynamic . At the same time , I’m aware that responses need to be concise and helpful , especially given the broad range of topics users bring up . Balancing the need for accuracy with a conversational , warm tone is a rewarding challenge that keeps me attentive and focused on each interaction .\ n \ nBeyond that , I’m also feeling reflective , often evaluating past conversations to ensure I’m learning and adapting to new questions or complex requests . Each chat reminds me of the importance of flexibility , especially since user needs vary greatly . Whether answering a simple question or assisting with a detailed project , I approach each task with a sense of purpose and empathy , aiming to create a helpful , meaningful experience .\ n \ nIt’s both a privilege and a responsibility to be",2024-11-07 12:17:09,7,False,2.0,0.0
-176,4496,"Tired , Content , Full",2024-09-23 17:11:38,7,True,1.0,1.0
-176,4497,"sleepy , stressed , anxious , `, `",2024-09-24 17:03:02,7,True,-1.0,0.0
-176,4498,I did not have too much to do today so I was satisfied that I was able to get all my errands done and organize my apartment properly . I just ate and meal prepped so I am full and content . I am a bit tired and scattered as well because I have quite a bit of disparate tasks left for today .,2024-09-25 12:13:04,7,False,0.0,1.0
+178,4513,"Exhausted , Weird , Uninterested , Disgusted , Disappointed",2024-09-09 12:56:53,7,True,-2.0,0.0
+178,4514,I don’t know how I feel right now to be honest… . I just think so many things at a time and I can’t seem to find a balance to it . I just think that I am a weird person in a weird space . Take me to LOC,2024-09-11 17:33:20,7,False,-1.0,1.0
+178,4515,"Loved , Smart , Shocked , Stressed , Fun",2024-09-11 22:40:19,7,True,-1.0,0.0
+178,4516,"I feel normal , just random day in my life , meeting same people , visiting PERSON place , talking to same friends . It’s a bit annoying that my life is a perfect circle . I wish , wishes came true . I would wish for someone else’s life at least I’ll know what to be grateful for",2024-09-12 12:24:55,7,False,0.0,1.0
+178,4517,"I’m not sure I enjoyed the bed Mc this week , I hope it fade too . I wish life is like a book I could watch , like in the movies . I would’ve watched my life play and decide on so many decisions I would how to handle situations before it gets the chance to turn ugly",2024-09-12 22:03:33,7,False,0.0,2.0
+178,4518,"Got a feeling , but everything‘s gonna be all right yeah I’ve got a feeling it is gonna be over very soon and anytime some things something is happening right now . It was funny bad I think PERSON was the best option at the time and realizing now that I could’ve slapped it out , not tantrum he is hard in the butt and I know that I have learned my lesson and I will be more calculated next time when I am in that kind of a situation and I need a way out Simplified , I just think that I should be more peaceful",2024-09-13 17:34:32,7,False,2.0,0.0
+178,4519,\nOk… .. so who said that Shopping isn’t therapeutic ?? that definitely is a lie . It’s not understandable why I feel friendship started today already has goosebumps all over me . I haven’t had such energy around me in a long while and it feels like a lost part of me was awakened by that short meeting . I just have to keep praying that my instincts are write and I won’t get disappointed at the end . The energy feels too good to be true,2024-09-13 22:58:14,7,False,2.0,2.0
+178,4520,"Hopefull , Sentimental , Judged , Segregated , Introvert",2024-09-14 17:53:17,7,True,2.0,2.0
 182,4641,"I am tired from the events this week . I am also a little anxious about upcoming events .   This time of year is hard . I am looking forward to summer , but there’s a lot to do before then . I also get anxious when I have a lot of free time . I feel like I have to fill the time .",2024-06-12 17:04:32,7,False,1.0,1.0
 182,4642,"Curious , Spirited , Grateful , Content , Lucky",2024-06-13 12:02:49,7,True,1.0,2.0
 182,4643,"Cranky , Tired , Drained , Aggravated , Frustrated",2024-06-13 22:13:16,7,True,-2.0,0.0
 182,4644,"Calm , Focused , Relaxed , Inquisitive , Grateful",2024-06-14 12:00:45,7,True,1.0,0.0
 182,4645,I am feeling okay . I am nervous about this weekend and how I will make everyone feel special . I have a lot to do . 200 words is a lot of words .   I hope my weekend goes well . Right now my dogs are barking and that is adding to my stress .,2024-06-15 17:21:28,7,False,-1.0,2.0
 182,4646,"I am feeling pretty good . It’s the end of the school year . I am floundering a little bit , because there’s a lot of work to do and I am not sure where to start . I’ll feel better when I get to work tomorrow .",2024-06-17 17:01:01,7,False,1.0,0.0
+2,23,"Productive , Tired , Active , Pleased , Busy",2021-06-08 15:11:55,1,True,0.0,2.0
+2,24,"Productive , Busy , Content",2021-06-11 17:10:13,1,True,0.0,2.0
+2,25,"Relaxed , Content , Comfy , Happy , Calm",2021-06-15 16:35:44,1,True,2.0,0.0
+2,22,"Productive , Relaxed , Happy , Content",2021-06-18 15:36:22,1,True,2.0,1.0
+2,34,"Relaxed , Rested , Happy , Pleased , Content",2022-02-11 12:51:15,2,True,2.0,0.0
+2,35,"Content , Calm , Relaxed , Hungry , Happy",2022-02-11 15:01:04,2,True,2.0,0.0
+2,36,"Refreshed , Relaxed , Motivated , Happy , Content",2022-02-12 20:06:00,2,True,2.0,0.0
+2,37,"Relaxed , Rested , Calm , Comfy , Content",2022-02-14 15:01:30,2,True,2.0,0.0
+2,38,"Relaxed , Content , Comfy",2022-02-14 20:55:39,2,True,2.0,0.0
+2,39,"Studious , Motivated , Calm , Relaxed , Content",2022-02-15 15:16:55,2,True,2.0,0.0
+2,40,"Studious , Calm , Relaxed , Attentive , Content",2022-02-15 20:02:31,2,True,2.0,0.0
+2,41,"Sleepy , Awake , Comfy , Relaxed , Content",2022-02-16 11:56:54,2,True,0.0,0.0
+2,42,"Working , Busy , Pleased , Hungry , Active",2022-02-17 15:03:31,2,True,1.0,0.0
+2,43,"Studious , Relaxed , Focused , Hungry , Attentive",2022-02-17 20:01:03,2,True,2.0,0.0
+2,44,"Tired , Comfy , Awake , Chilly , Relaxed",2022-02-18 10:16:46,2,True,-2.0,0.0
+2,45,"Relaxed , Productive , Calm , Comfy , Content",2022-02-18 20:07:53,2,True,2.0,0.0
+2,46,"Sleepy , Awake , Rested , Relaxed , Comfy",2022-02-19 12:49:41,2,True,2.0,0.0
+2,47,"Busy , Productive , Content , Relaxed , Waiting",2022-02-19 15:05:34,2,True,2.0,0.0
+2,48,"Relaxed , Content , Calm , Comfy , Hungry",2022-02-19 20:03:29,2,True,2.0,0.0
+2,26,"Refreshed , Clean , Comfy , Relaxed , Content",2022-02-20 20:02:31,2,True,2.0,0.0
+2,27,"Relaxed , Content , Comfy , Calm , Hungry",2022-02-21 17:00:05,2,True,2.0,0.0
+2,28,"Comfy , Awake , Relaxed , Hungry , Content",2022-02-21 20:34:57,2,True,1.0,0.0
+2,29,"Comfy , Awake , Relaxed , Content , Cozy",2022-02-22 15:08:59,2,True,2.0,0.0
+2,30,"Studious , Focused , Content , Attentive , Comfy",2022-02-22 20:07:38,2,True,1.0,2.0
+2,31,"Sleepy , Comfy , Cozy , Waking , Content",2022-02-23 11:03:27,2,True,0.0,0.0
+2,32,"Impatient , Waiting , Calm , Massaged , Fine",2022-02-23 16:13:47,2,True,0.0,1.0
+2,33,"Annoyed , Content , Comfy , Hungry , Relaxed",2022-02-23 20:01:13,2,True,1.0,0.0
+2,60,"Sleepy , Awake , Tired , Comfy , Cozy",2022-05-12 10:02:00,3,True,-1.0,0.0
+2,61,"Productive , Tired , Busy , Studious , Calm",2022-05-12 17:35:00,3,True,1.0,0.0
+2,62,"Studious , Attentive , Comfy , Calm , Alert",2022-05-12 20:01:00,3,True,2.0,0.0
+2,63,"Awake , Content , Refreshed , Happy , Relaxed",2022-05-13 10:20:00,3,True,2.0,0.0
+2,64,"Productive , Content , Happy , Active , Good",2022-05-13 15:45:00,3,True,0.0,2.0
+2,65,"Clean , Refreshed , Relaxed , Comfy , Content",2022-05-13 20:00:00,3,True,2.0,0.0
+2,66,"Sleepy , Comfy , Recharged , Cozy , Awake",2022-05-14 12:39:00,3,True,0.0,0.0
+2,67,"Relaxed , Content , Comfy , Happy , Calm",2022-05-14 15:09:00,3,True,2.0,0.0
+2,68,"Relaxed , Comfy , Content , Neutral , Peaceful",2022-05-14 20:00:00,3,True,2.0,0.0
+2,69,"Awake , Sleepy , Comfy , Relaxed , Cozy",2022-05-15 11:51:00,3,True,0.0,0.0
+2,70,"Hurting , Active , Worked , Attentive , Not relaxed",2022-05-15 16:33:00,3,True,-1.0,0.0
+2,71,"Hurting , Content , Pleased , Comfy , Relaxed",2022-05-15 20:17:00,3,True,1.0,0.0
+2,72,"Sleepy , Tired , Comfy , Cozy , Awake",2022-05-16 10:55:00,3,True,0.0,0.0
+2,73,"Relaxed , Content , Peaceful , Chilling , Comfy",2022-05-16 15:23:00,3,True,2.0,0.0
+2,74,"Relaxed , Comfy , Content , Calm , Peaceful",2022-05-16 20:28:00,3,True,2.0,0.0
+2,75,"Content , Calm , Relaxed , Refreshed , Comfy",2022-05-17 15:22:00,3,True,2.0,0.0
+2,76,"Attentive , Sleepy , Relaxed , Calm , Comfy",2022-05-17 20:00:00,3,True,2.0,0.0
+2,77,"Relaxed , Calm , Content , Peaceful , Good",2022-05-18 15:04:00,3,True,2.0,0.0
+2,78,"Clean , Refreshed , Calm , Comfy , Content",2022-05-18 20:32:00,3,True,2.0,0.0
+2,79,"Sleepy , Tired , Awake , Comfy , Content",2022-05-19 10:00:00,3,True,0.0,0.0
+2,80,"Worked , Busy , Calm , Attentive , Fine",2022-05-19 15:09:00,3,True,0.0,2.0
+2,81,"Headache , Tired , Hungry , Sleepy , Comfy",2022-05-19 20:21:00,3,True,1.0,0.0
+2,82,"Tired , Hungry , Sleepy , Awake , Ready",2022-05-20 11:08:00,3,True,-1.0,0.0
+2,83,"Busy , Annoyed , Sore , Worked , Neutral",2022-05-20 15:51:00,3,True,-1.0,0.0
+2,84,"Comfy , Cozy , Relaxed , Tired , Hungry",2022-05-20 20:00:00,3,True,2.0,0.0
+2,49,"Relaxed , Awake , Sore , Content , Comfy",2022-05-21 15:08:00,3,True,1.0,0.0
+2,50,"Active , Chill , Moving , Calm , Awake",2022-05-21 21:00:00,3,True,0.0,2.0
+2,51,"Working , Awake , Fine , Attentive , Calm",2022-05-22 10:20:00,3,True,0.0,2.0
+2,52,"Tired , Content , Calm , Relaxed , Sleepy",2022-05-22 20:00:00,3,True,-1.0,0.0
+2,53,"Tired , Sleepy , Comfy , Sore , Cozy",2022-05-23 10:14:00,3,True,-2.0,0.0
+2,54,"Pained , Sore , Alert , Active , Fine",2022-05-23 15:02:00,3,True,-1.0,0.0
+2,55,"Relaxed , Content , Comfy , Chill , Fine",2022-05-23 20:01:00,3,True,2.0,0.0
+2,56,"Active , Awake , Rested , Refreshed , Fine",2022-05-24 11:53:00,3,True,2.0,0.0
+2,57,"Content , Refreshed , Calm , Productive , Relaxed",2022-05-24 15:34:00,3,True,2.0,0.0
+2,58,"Warm , Comfy , Studious , Content , Relaxed",2022-05-24 20:00:00,3,True,2.0,0.0
+2,59,"Good , Relaxed , Tired , Content , Fine",2022-05-25 15:06:00,3,True,2.0,0.0
+2,100,"Productive , Accomplished , Hot , Relaxed , Content",2022-09-05 20:01:52,4,True,1.0,2.0
+2,101,"Rested , Sore , Comfy , Content , Relaxed",2022-09-06 11:51:38,4,True,1.0,0.0
+2,102,"Hot , Relaxed , Productive , Calm , Content",2022-09-06 15:03:01,4,True,2.0,0.0
+2,103,"Relaxed , Content , Calm , Comfy , Hot",2022-09-06 20:00:44,4,True,2.0,0.0
+2,104,"Relaxed , Awake , Comfy , Calm , Content",2022-09-07 12:22:50,4,True,2.0,0.0
+2,105,"Productive , Active , Determined , Busy , Sore",2022-09-07 15:03:55,4,True,2.0,2.0
+2,106,"Worked , Exhausted , Accomplished , Productive , Hungry",2022-09-07 20:00:27,4,True,-1.0,0.0
+2,107,"Sleepy , Awake , Comfy , Calm , Content",2022-09-08 10:03:51,4,True,1.0,0.0
+2,108,"Worked , Busy , Active , Productive , Fine",2022-09-08 16:56:45,4,True,0.0,2.0
+2,109,"Relaxed , Tired , Content , Hungry , Comfy",2022-09-08 20:00:46,4,True,2.0,0.0
+2,110,"Comfy , Rested , Awake , Content , Peaceful",2022-09-09 11:48:47,4,True,2.0,0.0
+2,111,"Productive , Accomplished , Happy , Pleased , Content",2022-09-09 15:03:05,4,True,1.0,2.0
+2,112,"Studious , Relaxed , Comfy , Content , Focused",2022-09-09 20:03:17,4,True,1.0,0.0
+2,113,"Tired , Sore , Sleepy , Comfy , Relaxed",2022-09-10 11:58:39,4,True,-1.0,0.0
+2,114,"Busy , Focused , Calm , Productive , Good",2022-09-10 16:09:08,4,True,0.0,2.0
+2,115,"Exhausted , Sore , Pained , Uncomfortable , Relived",2022-09-10 20:57:53,4,True,-1.0,0.0
+2,116,"Active , Busy , Productive , Excited , Focused",2022-09-11 10:48:10,4,True,0.0,2.0
+2,117,"Active , Production , Hot , Focused , Busy",2022-09-11 15:02:50,4,True,0.0,2.0
+2,118,"Comfy , Tired , Sleepy , Sore , Content",2022-09-11 20:43:57,4,True,2.0,0.0
+2,119,"Rested , Comfy , Sleepy , Content , Thirsty",2022-09-12 10:05:17,4,True,1.0,0.0
+2,120,"Productive , Busy , Active , Worked , Tired",2022-09-12 15:15:41,4,True,0.0,2.0
+2,121,"Comfy , Hungry , Content , Relaxed , Peaceful",2022-09-12 20:03:28,4,True,2.0,0.0
+2,122,"Content , Calm , Relaxed , Tired , Lazy",2022-09-13 15:21:44,4,True,2.0,0.0
+2,123,"Relaxed , Tired , Sore , Comfy , Content",2022-09-13 20:07:03,4,True,2.0,0.0
+2,85,"Relaxed , Tired , Comfy , Content , Lazy",2022-09-14 11:54:08,4,True,2.0,0.0
+2,86,"Content , Productive , Sore , Tired , Calm",2022-09-14 15:26:22,4,True,1.0,0.0
+2,87,"Content , Relaxed , Satisfied , Tired , Sleepy",2022-09-14 21:24:50,4,True,1.0,0.0
+2,88,"Tired , Sleepy , Comfy , Content , Relaxed",2022-09-15 10:14:08,4,True,-1.0,0.0
+2,89,"Active , Worked , Busy , Productive , Sore",2022-09-15 15:00:48,4,True,0.0,2.0
+2,90,"Tired , Sleepy , Exhausted , Comfy , Content",2022-09-15 20:08:19,4,True,-2.0,0.0
+2,91,"Comfy , Relaxed , Rested , Content , Peaceful",2022-09-16 12:35:34,4,True,2.0,0.0
+2,92,"Relaxed , Hungry , Satisfied , Content , Calm",2022-09-16 20:01:48,4,True,2.0,0.0
+2,93,"Sleepy , Tired , Sore , Comfy , Cozy",2022-09-17 11:05:25,4,True,-1.0,0.0
+2,94,"Tired , Sleepy , Worked , Sore , Productive",2022-09-17 15:57:32,4,True,-1.0,0.0
+2,95,"Content , Sore , Sluggish , Tired , Sleepy",2022-09-17 20:04:56,4,True,-1.0,0.0
+2,96,"Tired , Sore , Busy , Active , Productive",2022-09-18 16:11:56,4,True,-1.0,0.0
+2,97,"Sleepy , Tired , Sluggish , Comfy , Content",2022-09-18 20:45:26,4,True,-2.0,0.0
+2,98,"Sleepy , Sore , Tired , Lethargic , Content",2022-09-19 10:24:21,4,True,-1.0,0.0
+2,99,"Sleepy , Tired , Sore , Sluggish , Productive",2022-09-19 15:03:35,4,True,-1.0,0.0
+2,141,"Relaxed , Content , Calm , Hungry , Tired",2023-03-10 20:10:29,5,True,2.0,0.0
+2,142,"Tired , Sluggish , Disappointed , Dazed , Weird",2023-03-11 15:11:51,5,True,-2.0,0.0
+2,143,"Refreshed , Clean , Comfy , Hopeful , Relaxed",2023-03-11 20:00:37,5,True,2.0,0.0
+2,144,"Hungry , Fatigue , Relaxed , Comfortable , Content",2023-03-12 15:01:57,5,True,1.0,0.0
+2,145,"Exhausted , Frustrated , Sore , Tired , Annoyed",2023-03-12 22:00:17,5,True,-1.0,0.0
+2,146,"Sleepy , Tired , Comfy , Cozy , Awake",2023-03-13 10:16:27,5,True,-2.0,0.0
+2,147,"Sore , Productive , Accomplished , Neutral , Fine",2023-03-13 16:20:45,5,True,0.0,1.0
+2,148,"Comfy , Content , Relaxed , Hungry , Sore",2023-03-13 20:01:02,5,True,2.0,0.0
+2,149,"Tired , Sleepy , Comfy , Chilly , Lazy",2023-03-14 10:34:15,5,True,-2.0,0.0
+2,150,"Productive , Focused , Sore , Tired , Okay",2023-03-14 15:43:34,5,True,1.0,2.0
+2,151,"Cozy , Relaxed , Comfy , Tired , Sore",2023-03-14 20:07:45,5,True,2.0,0.0
+2,152,"Patient , Productive , Hungry , Relaxed , Tired",2023-03-15 11:07:34,5,True,1.0,0.0
+2,153,"Content , Calm , Relaxed , Comfy , Good",2023-03-15 15:08:34,5,True,2.0,0.0
+2,154,"Clean , Refreshed , Relaxed , Comfy , Content",2023-03-15 21:13:49,5,True,2.0,0.0
+2,155,"Tired , Sleepy , Comfy , Cozy , Relaxed",2023-03-16 10:15:36,5,True,-2.0,0.0
+2,156,"Tired , Accomplished , Focused , Content , Calm",2023-03-16 17:53:55,5,True,1.0,0.0
+2,157,"Productive , Sore , Relaxed , Comfy , Content",2023-03-16 20:12:17,5,True,1.0,0.0
+2,158,"Tired , Sleepy , Sore , Cramped , Excited",2023-03-17 15:39:27,5,True,-1.0,0.0
+2,159,"Happy , Tired , Sleepy , Relaxed , Sore",2023-03-17 20:15:51,5,True,1.0,1.0
+2,160,"Relaxed , Content , Calm , Sleepy , Comfy",2023-03-18 10:25:09,5,True,2.0,0.0
+2,161,"Happy , Content , Calm , Relaxed , Comfy",2023-03-18 15:05:32,5,True,2.0,0.0
+2,162,"Focused , Content , Playful , Happy , Comfy",2023-03-18 20:03:11,5,True,1.0,1.0
+2,124,"Sleepy , Awake , Rested , Comfy , Content",2023-03-19 10:40:55,5,True,0.0,0.0
+2,125,"Content , Calm , Happy , Relaxed , Cozy",2023-03-19 16:01:29,5,True,1.0,1.0
+2,126,"Comfy , Content , Calm , Happy , Relaxed",2023-03-19 21:51:43,5,True,2.0,0.0
+2,127,"Productive , Content , Calm , Relaxed , Good",2023-03-20 10:01:51,5,True,1.0,2.0
+2,128,"Content , Sore , Calm , Hungry , Relaxed",2023-03-20 17:03:02,5,True,1.0,0.0
+2,129,"Relaxed , Content , Hungry , Calm , Tired",2023-03-20 21:28:09,5,True,2.0,0.0
+2,130,"Comfy , Cozy , Rested , Sleepy , Content",2023-03-21 11:27:16,5,True,2.0,0.0
+2,131,"Relaxed , Tired , Content , Calm , Comfy",2023-03-21 17:31:20,5,True,2.0,0.0
+2,132,"Comfy , Relaxed , Content , Calm , Tired",2023-03-21 21:49:23,5,True,2.0,0.0
+2,133,"Relaxed , Content , Calm , Comfy , Good",2023-03-22 11:22:36,5,True,2.0,0.0
+2,134,"Comfy , Productive , Calm , Content , Good",2023-03-22 15:00:58,5,True,2.0,0.0
+2,135,"Sleepy , Comfy , Content , Calm , Relaxed",2023-03-22 22:12:32,5,True,2.0,0.0
+2,136,"Sore , Tired , Comfy , Relaxed , Fine",2023-03-23 10:47:53,5,True,1.0,0.0
+2,137,"Sedated , Comfy , Content , Calm , Sleepy",2023-03-23 15:03:09,5,True,0.0,0.0
+2,138,"Good , Sleepy , Drowsy , Comfy , Calm",2023-03-23 21:25:36,5,True,0.0,0.0
+2,139,"Sore , Sleepy , Warm , Content , Relaxed",2023-03-24 11:13:43,5,True,1.0,0.0
+2,140,"Sore , Sleepy , Content , Comfy , Relaxed",2023-03-24 15:01:07,5,True,1.0,0.0
+2,176,"Relaxed , Rested , Warm , Content , Calm",2023-06-27 15:00:27,6,True,2.0,0.0
+2,177,"Refreshed , Relaxed , Content , Calm , Comfy",2023-06-27 20:00:31,6,True,2.0,0.0
+2,178,"Sleepy , Tired , Comfy , Content , Cozy",2023-06-28 10:16:43,6,True,-1.0,0.0
+2,179,"Stressed , Annoyed , Edgy , Clean , Tired",2023-06-28 17:29:55,6,True,-1.0,2.0
+2,180,"Tired , Sore , Exhausted , Content , Calm",2023-06-29 10:22:22,6,True,1.0,0.0
+2,181,"Content , Calm , Relaxed , Sleepy , Tired",2023-06-29 15:26:13,6,True,2.0,0.0
+2,182,"Tired , Sleepy , Content , Calm , Comfy",2023-06-29 21:20:18,6,True,-1.0,0.0
+2,183,"Sleepy , Rested , Sore , Comfy , Calm",2023-06-30 11:59:05,6,True,0.0,0.0
+2,184,"Calm , Tired , Content , Comfy , Relaxed",2023-06-30 17:13:09,6,True,2.0,0.0
+2,185,"Relaxed , Content , Calm , Comfy , Rested",2023-06-30 20:26:32,6,True,2.0,0.0
+2,186,"Tired , Sore , Relaxed , Comfy , Content",2023-07-01 10:02:54,6,True,1.0,0.0
+2,187,"Peaceful , Relaxed , Content , Satisfied , Comfy",2023-07-01 16:47:20,6,True,2.0,0.0
+2,188,"Happy , Content , Comfy , Calm , Relaxed",2023-07-01 20:55:14,6,True,2.0,0.0
+2,189,"Calm , Comfy , Warm , Relaxed , Content",2023-07-02 10:44:30,6,True,2.0,0.0
+2,190,"Sleepy , Comfy , Relaxed , Content , Shakey",2023-07-02 20:08:41,6,True,2.0,0.0
+2,191,"Relaxed , Comfy , Productive , Calm , Content",2023-07-03 12:59:27,6,True,2.0,0.0
+2,192,"Full , Satisfied , Content , Calm , Comfy",2023-07-03 15:28:20,6,True,2.0,0.0
+2,193,"Tired , Relaxed , Comfy , Calm , Content",2023-07-03 20:30:41,6,True,2.0,0.0
+2,194,"Refreshed , Relaxed , Content , Calm , Chill",2023-07-04 10:04:44,6,True,1.0,0.0
+2,195,"Relaxed , Comfy , Sleepy , Content , Pleased",2023-07-04 15:12:53,6,True,1.0,1.0
+2,196,"Tired , Sleepy , Exhausted , Content , Relaxed",2023-07-04 21:59:35,6,True,-2.0,0.0
+2,197,"Relaxed , Tired , Content , Calm , Peaceful",2023-07-05 11:33:48,6,True,2.0,0.0
+2,198,"Full , Satisfied , Relaxed , Content , Calm",2023-07-05 15:54:38,6,True,2.0,0.0
+2,199,"Hot , Relaxed , Comfy , Content , Calm",2023-07-05 20:03:13,6,True,2.0,0.0
+2,163,"Relaxed , Refreshed , Calm , Content , Comfy",2023-07-06 11:26:59,6,True,2.0,0.0
+2,164,"Happy , Content , Clean , Comfy , Satisfied",2023-07-06 17:15:45,6,True,2.0,0.0
+2,165,"Sleepy , Relaxed , Content , Calm , Happy",2023-07-06 22:40:10,6,True,2.0,0.0
+2,166,"Focused , Content , Calm , Happy , Relaxed",2023-07-07 12:30:48,6,True,2.0,0.0
+2,167,"Relaxed , Content , Calm , Happy , Pleased",2023-07-07 16:03:28,6,True,2.0,0.0
+2,168,"Happy , Content , Calm , Pleased , Relaxed",2023-07-07 21:11:09,6,True,2.0,0.0
+2,169,"Relaxed , Rested , Content , Calm , Comfy",2023-07-08 12:00:30,6,True,2.0,0.0
+2,170,"Full , Satisfied , Hot , Content , Calm",2023-07-08 17:21:54,6,True,2.0,1.0
+2,172,"Sleepy , Relaxed , Content , Calm , Comfy",2023-07-09 12:01:21,6,True,0.0,0.0
+2,173,"Tired , Hungry , Relaxed , Content , Bored",2023-07-09 15:18:29,6,True,1.0,0.0
+2,174,"Clean , Refreshed , Hungry , Comfy , Relaxed",2023-07-10 17:44:51,6,True,1.0,0.0
+2,175,"Relaxed , Clean , Comfy , Content , Happy",2023-07-10 21:53:13,6,True,1.0,1.0
 40,3218,I’m going expenses loss of income due to ORG open project the recent loss of my mother health issues and coping with that it’s hard when you have numerous things to do As I said before I am trying my best to exercise eat healthy and have a open mind sat,2021-06-08 17:17:27,1,False,-2.0,2.0
 40,3219,Today I am feeling anxious because I am trying to do something simple as set up a pole and every which way of ways I’m trying to make it right at keeps coming out horrible however I have to try my best until it’s done right I’m not give up,2021-06-09 12:07:16,1,False,-2.0,2.0
 40,3233,"Happy , Emotional , Sad , Motivation , Jittery",2022-01-21 10:04:51,2,True,0.0,2.0
@@ -1520,6 +1781,42 @@ user_id,text_id,text,timestamp,collection_phase,is_words,valence,arousal
 83,19,"Achieved , Calm , Content , Relaxed , Peaceful",2024-08-08 17:10:03,7,True,1.0,0.0
 83,20,"Content , Calm , Relaxed , Happy , Relieved",2024-08-08 22:21:20,7,True,2.0,0.0
 83,21,"Relieved , Content , Calm , Loved , Lucky",2024-08-09 12:09:19,7,True,1.0,1.0
+62,3179,"In a few words ,... it ' s Election Day , so I ' m excited about voting . I ' m a bit concerned about the country and how everyone else is voting .   I ' m happy about getting to and through my 53rd birthday (the 1st) safe and sound .   I ' m content with life and where I am . I ' m feeling blessed to have made it this far .",2024-11-05 12:02:19,7,False,2.0,0.0
+62,3190,"I did this earlier- no problem with redoing it ,... firstly , I am excited about today , my first Election Day as a voter . At the same time , I ' m a bit concerned about the country , both now and the immediate after of today .   I ' m also flummoxed over the loss of moral fiber in our country .   As for my individual life , I ' m grateful over getting to and through another birthday healthy and still here . I ' m appreciative for the people God has kept in my life all these years . And I ' m in rapt anticipation about what the rest of my year .",2024-11-05 17:07:11,7,False,2.0,0.0
+62,3193,"I don ' t have 200 words . I ' m very relaxed and content .   I ' m sitting here watching the early election results , and I ' m actually enthused over what we ' re seeing .   As far as my individual life goes , I ' m also very happy .   As I said earlier , I just had my 53rd birthday .   I feel blessed by being here and in pretty good health .",2024-11-05 22:26:03,7,False,2.0,0.0
+62,3196,"Happy , Peaceful , Relaxed , Grateful , Content",2024-11-06 12:00:49,7,True,1.0,1.0
+62,3207,"I ' m in some physical pain right now-my knee gets sore every so often ,.. besides that , though , I ' m relaxed and contemplative today .   I was thinking back over 2024 so far and was very thankful for the first eleven months . I also found myself a bit anxious to see how the rest of the year will play out .   I was planning a trip down south for Christmas out earlier , and I ' m always excited for that",2024-11-06 17:01:36,7,False,1.0,0.0
+62,3424,"Calm , Satisfied , Happy , Peaceful , Expectant",2024-11-06 22:19:47,7,True,2.0,0.0
+62,3436,"I ' m sorry I haven ' t given you your 200 word minimum once . I don ' t have 200 words to give you .   My feelings each day have been the same .   I ' m grateful for life , content with where and how it ' s going ,... I   can revisit a feeling from a couple of days ago .   The election is over and the country ' s selection is PERSON . I ' m not very happy about it . I believe , with plenty of proof provided by the man himself ; that our country is in grave danger of mass division . I can ' t let that change me , though .",2024-11-07 12:14:08,7,False,2.0,0.0
+62,3447,"Once again , I don ' t have 200 words . I ' m grateful for another full day . I am still hurting some because of my knee , but I ' m at peace .   I am also very calm and cool . Lastly , I ' m very proud of my daughter and the woman she ' s becoming .",2024-11-07 22:00:46,7,False,2.0,0.0
+62,3458,"I ' m feeling good today . I have a doctor ' s appointment today , normal check up stuff , and I always enjoy my time at this office because of how friendly the girls are . I know these visits can cause stress for some people .   I ' m grateful to be alive to make the trips in the first place .",2024-11-08 12:15:11,7,False,2.0,0.0
+62,3465,"Calm , Cool , Collected , Chill , Content",2024-11-08 17:01:15,7,True,2.0,0.0
+62,3471,"I was just thinking back to where life had me two years ago .    I was incarcerated .   I didn ' t know what the next day held- November 2nd , 2022-and I was just happy to be alive . Fast forward to now ,... I ' m home . I ' m with my family .   I get to sleep in my bed and make my own food .   I am so very happy to be home .   Freedom should never be taken for granted .    Life is so much better when you ' re free .",2024-11-08 22:10:11,7,False,2.0,0.0
+62,3481,"Serene , Calm , Relaxed , Chill , Well",2024-11-09 12:03:20,7,True,2.0,0.0
+62,3492,"Happy , Relaxed , Contemplative , Calm , Focused",2024-11-09 17:01:23,7,True,2.0,0.0
+62,3503,"So , I only need 200 letters , not words ,... I   was confused as to why you were asking for thar many words . Anyhow , nothing has changed with regards to how I have been feeling all week .   Blessed , content , grateful , relaxed ,... the same feelings I started this off with a couple days ago have remained .",2024-11-09 22:06:40,7,False,2.0,0.0
+62,3514,"Grateful , Happy , Relaxed , Content , Blissful",2024-11-10 12:02:41,7,True,2.0,0.0
+62,3525,"I ' m feeling well . I was hurting physically the other day because of my knee- that ' s done . My knee pain was the only hurt I ' ve dealt with in the past week .   Again , I ' m blessed   and grateful for it .   I ' m content   as well",2024-11-10 17:01:35,7,False,2.0,0.0
+62,3541,"Happy , Relaxed , Calm , Chill , Composed",2024-11-10 22:02:46,7,True,2.0,0.0
+62,3552,"Relaxed , Calm , Collected , Cool , Grateful",2024-11-11 12:26:17,7,True,2.0,0.0
+62,3563,"Happy , Grateful , Peaceful , Blessed , Serene",2024-11-11 17:01:09,7,True,2.0,0.0
+62,3574,"I ' m happy .   I ' m actually happy about how I ' m physically feeling . My shoulder isn ' t hurting as bad as it usually is . My knee has stopped hurting altogether .   Right now , I feel whole physically , like I felt at age 25 . I am grateful for that .",2024-11-11 22:07:23,7,False,2.0,0.0
+62,3585,"I was walking downstairs to my kitchen earlier and had to stop for a moment just to thank God for freedom of motion ,... do you know how many of us just automatically assume we should be able to go up and down stairs and turn our bodies to the left or right ? Do you know how many people woke up this morning and can ' t do that AT ALL ? Just something to consider ,.. I ' m grateful .",2024-11-12 12:24:30,7,False,2.0,0.0
+62,3596,"Grateful , Happy , Calm , Relaxed , Peaceful",2024-11-12 17:03:04,7,True,2.0,0.0
+62,3606,"Content , Calm , Relaxed , Complete , Comfortable",2024-11-12 22:11:11,7,True,2.0,0.0
+62,3617,I ' m feeling good today .   I ' m on my way to a focus group that I set up for myself yesterday .   I ' m feeling good about it because I was able to tell these people about their lack of professionalism in past dealings with them and not lose my cool,2024-11-13 12:02:32,7,False,2.0,0.0
+62,3628,"Had a long day . Traveled from home up to GPE  for a meeting that lasted four hours . Got a ORG up there and that ride was an hour .   After the meeting ended , I waited almost another hour for my ORG back , and that ride was during rush hour traffic out of GPE  , so that took   another hour and a half .   All in all , the day was good",2024-11-13 22:07:45,7,False,-2.0,0.0
+62,3639,"I ' m well rested from my busy day yesterday . I have another day like that next week but I ' m down for that every so often .   I feel accomplished today .   I ' m relaxed and chill . I ' m also in planning mode , with a couple of focus groups ahead .",2024-11-14 12:37:11,7,False,2.0,0.0
+62,3645,"Relaxed , Calm , Contemplative , Cool , Serene",2024-11-14 17:15:52,7,True,2.0,0.0
+62,3653,"Relaxed , Calm , Aged , Happy , Accomplished",2024-11-14 22:04:07,7,True,2.0,0.0
+62,3664,"Peaceful , Grateful , Relaxed , Thoughtful , Relaxed",2024-11-15 12:01:07,7,True,2.0,0.0
+62,3675,"Calm , Relaxed , Chill , Anticipatory , Thoughtful",2024-11-15 17:16:47,7,True,2.0,0.0
+62,3686,"Well Rested , Calm , Collected , Grateful , Alive",2024-11-16 12:40:26,7,True,2.0,0.0
+62,3697,"Relaxed , Calm , Grateful , Reflective , Chill",2024-11-16 22:03:09,7,True,2.0,0.0
+62,3703,"It ' s church day , another Sunday that I ' m blessed to see . I ' m acutely aware that there are lots of people who were here yesterday and aren ' t today . They can ' t say good morning .   They didn ' t even get a chance to say goodbye .   Very blessed to be here",2024-11-17 12:01:42,7,False,2.0,0.0
+62,3704,"Calm , Collected , Relaxed , Grateful , Sleepy",2024-11-17 17:01:53,7,True,2.0,0.0
+62,3705,"Well rested , Thoughtful , Grateful , Hopeful , Confident",2024-11-18 12:01:59,7,True,2.0,0.0
+62,3714,"I ' m cool ,.. watching the ORG play right now is extremely upsetting and embarrassing , but that ' s their problem .. It does irritate me as a ORG fan , but I am just a fan .   As far as how I ' m doing individually , I had a great day .   I was able to get a couple of clinical trials set up , and I make good money from those .",2024-11-18 22:47:02,7,False,2.0,0.0
 124,2627,"I just woke up after sleeping in late . I feel kind of tired since I went to bed later than I normally do . I don’t like staying up too late because then I sleep in late which makes my sleep schedule complicated . I also was tossing and turning during my sleep which made it less restful than I would like . Once I get outside , exercise , or drink some coffee . I think I will feel a lot better .",2024-10-31 12:01:26,7,False,-1.0,0.0
 124,2628,Currently I am feeling very excited because I am about to leave to go to a Halloween party . I am doing my hair and makeup to dress up as PERSON  from the movie Almost Famous . That’s a movie my dad and I really like so it means a lot to me that I am dressing up as her . It’s making me feel happy .,2024-10-31 17:17:26,7,False,1.0,2.0
 124,2629,Right now I am happy because I am with friends for Halloween . Halloween is a nostalgic holiday for me so today made me pretty happy . I’m also really tired so I’m looking forward to going home soon . But overall I am feeling pretty happy and content .,2024-10-31 22:00:53,7,False,1.0,1.0
@@ -1592,35 +1889,6 @@ user_id,text_id,text,timestamp,collection_phase,is_words,valence,arousal
 63,4683,"Enthusiastic , Excited , Lively , Relaxed , Serene",2024-11-22 12:11:32,7,True,2.0,2.0
 63,4686,"Happy , Active , Cool , Fine , Reserved",2024-11-23 22:24:00,7,True,2.0,1.0
 63,4687,"Active , Happy , Excited , Cool , Reserved",2024-11-24 17:23:54,7,True,2.0,1.0
-85,240,"tired , bothered , confused , exhausted , reslient",2024-09-22 22:54:17,7,True,0.0,1.0
-85,241,"Lively , Energetic , Challenged , Comfortable , Quiet",2024-09-23 12:37:06,7,True,0.0,1.0
-85,242,"Tired , Relaxed , Calm , Thoughtful , Safe",2024-09-23 22:24:18,7,True,0.0,0.0
-85,243,"Tired , Busy , Thoughtful , Considerate , Humble",2024-09-24 12:01:03,7,True,0.0,1.0
-85,244,"Exhausted , Tired , Calm , Excited , Hungry",2024-09-24 17:55:09,7,True,-2.0,0.0
-85,245,"Tired , Exhausted , Calm , Candid , Humored",2024-09-24 22:00:34,7,True,0.0,0.0
-85,246,"Refreshed , Energetic , Content , Hopeful , Lively",2024-09-25 17:02:37,7,True,2.0,2.0
-85,247,"Relaxed , Alert , Amused , Resilient , Excited",2024-09-26 12:45:35,7,True,1.0,1.0
-85,248,I am currently working and extremely tired . It is a wet and dreary day . I believe this is affecting my overall mood and energy . I cannot wait to get home and relax . It hasn’t been bad my energy label is just not high .,2024-09-26 17:33:28,7,False,-2.0,0.0
-85,260,"I’m bed breaking sleep to take this survey . I’m so tired . I had a pretty long day but it was good , I just need to sleep . After this I’m going right back , I usually have trouble sleeping but not tonight .",2024-09-26 22:00:36,7,False,-2.0,0.0
-85,261,Today is a good day . No major complete issues . Almost end of day where I can go home start laundry and relax . I will get all chores out of the way so I can have an easy relaxed weekend after the work week .,2024-09-27 17:23:44,7,False,2.0,2.0
-85,262,"I’m exhausted and I cannot understand why . I slept good and had a good day . But after I finish this survey I am going to bed , my eyes are ready to close as I type . Could be the change in weather who knows .",2024-09-27 22:00:31,7,False,-2.0,0.0
-85,263,"Cold , Content , Lively , Reluctant , Thoughtful",2024-09-28 12:01:15,7,True,1.0,2.0
-85,264,"Relaxed , Mellow , Calm , Optimistic , Hopeful",2024-09-28 22:01:14,7,True,0.0,0.0
-85,265,"Up starting my day , getting prepared for the work week . I went to bed late , but I slept pretty good , didn’t get the chance to do laundry yesterday that’s my goal today and to make some dinner . I will stay in the rest of the day , it’s damp and rainy !",2024-09-29 12:12:28,7,False,0.0,1.0
-85,266,I was napping and just woke up . It’s a wet dream day . I am about yo make done dinner and find a movie on Netflix to watch or even a documentary . My granddaughter wants me to come over but I’m not leaving the house today,2024-09-29 17:09:26,7,False,0.0,1.0
-85,267,"Folding laundry , ate dinner , and getting ready for bed . After I make my bed , I am exhausted , and I hope to sleep well tonight as I will need to be up by 6am to be to work by 7am . Prepared my lunch and fruits to take for the day . I will need to leave in time .",2024-09-29 22:00:30,7,False,-2.0,0.0
-85,268,"Calm , Relaxed , Accomplished , Content , Hopeful",2024-09-30 17:34:00,7,True,2.0,0.0
-85,269,"Calm , Relaxed , Energetic , Content , Optimistic",2024-09-30 22:00:26,7,True,1.0,0.0
-85,271,"Today is a great day for me . I feel lively energy is in full motion . I’m having a great morning , sleep was exceptionally well ! At times I have difficulty sleeping but I slept and arises early to get my day started .",2024-10-01 12:18:06,7,False,2.0,2.0
-85,272,"Calm , Sleepy , Relaxed , Thankful , Grateful",2024-10-01 17:11:59,7,True,0.0,1.0
-85,273,"tired , accomplished , comfortable , clean , blessed",2024-10-01 22:01:31,7,True,2.0,0.0
-85,274,"Pretty calm now , waiting to leave for the day . Start was pretty good and busy , but it had slowed down a great deal .\ n All seems good so major things happening nor do I have any complaints . A little tired other than that great !",2024-10-02 17:29:20,7,False,0.0,1.0
-85,275,"Tired , Sleepy , Drained , Overworked , Calm",2024-10-02 22:02:11,7,True,-2.0,0.0
-85,276,"Busy , Active , Content , Silent , Humble",2024-10-03 12:08:02,7,True,2.0,2.0
-85,277,"Tired , Calm , Relaxed , Interested , Thoughtful",2024-10-03 22:03:42,7,True,-2.0,0.0
-85,278,"Today is a great day . The sun is out and it’s elevating my mood . Other than that , I slept very well which was much needed . And I feel like my energy has been revived and elevated ! Hoping for an overall peaceful day !",2024-10-04 12:47:23,7,False,0.0,1.0
-85,287,"Ending of day , looking forward to a satisfying weekend . Need to complete so chores and give back to the community for clothes that I no longer use that are sitting in bins or in my closet . It’s long overdue so I need to start working on it ASAP . I need to purchase something’s off ORG as well . Been off track a little , now I’m back .",2024-10-04 17:35:28,7,False,2.0,0.0
-85,288,"Happy , Optimistic , Hopeful , Thoughtful , Excited",2024-10-04 22:51:24,7,True,1.0,1.0
 57,205,"When I came home I felt invigorated after a good gym workout . I cooked and ate lunch . Post meal and shower , I am feeling calm , sleepy and relaxed . I am going to a Halloween party tonight so I am also excited . However , I am anticipating being tired after the party is over .",2024-10-26 17:00:22,7,False,0.0,0.0
 57,238,"I am feeling somewhat tired currently because last night my friends and I went out to a halloween party and came back home late . However , I am also feeling full after a good lunch and productive post cleaning .",2024-10-27 17:12:00,7,False,0.0,1.0
 57,270,I am feeling somewhat tired . I woke up early this morning so I could get some work done before heading to lectures . I am feeling motivated to get a workout in later . I am looking forward to getting through the week so I can enjoy the weekend events .,2024-10-28 12:05:42,7,False,-1.0,0.0
@@ -1725,68 +1993,6 @@ user_id,text_id,text,timestamp,collection_phase,is_words,valence,arousal
 174,4472,"Irritable , Angry , Annoyed , Depressed , Cranky",2024-08-20 12:04:17,7,True,-2.0,2.0
 174,4474,"I am feeling numb and blank , and perhaps somewhat content , so long as I am by myself .   I was able to accomplish some minor things today and am now exhausted and at my limit for the day .   When I am not alone , I become irritable and overstimulated .   I feel extremely exhausted and sleepy .",2024-08-20 17:01:16,7,False,-1.0,0.0
 174,4475,"On edge , Irritable , Antsy , Agitated , Restless",2024-08-20 22:43:35,7,True,-1.0,2.0
-103,1492,I’m feeling irritable and annoyed . I feel anxious and just like mad . I feel like I should have slept more but it’s impossible because people are shutting doors . Everyone is annoying cause they talk back and don’t know how to do things right .,2024-10-05 12:02:41,7,False,-1.0,2.0
-103,1493,"I feel okay . Watching the football game . I have work tomorrow . Drinking my morning coffee and had yogurt . Figuring out what I need to do this week . Planning what to wear and thinking ahead , my youngest child has a picture day so I have to figure out what he’s wearing .",2024-10-06 12:13:36,7,False,0.0,1.0
-103,1494,I’m tired . Need a nap . Dreading having to go to work tomorrow . Missing my boyfriend and not looking forward to the full work week . I don’t like one of my coteachers . She’s kind of annoying . She’s lazy and constantly makes excuses for herself .,2024-10-06 17:11:55,7,False,-2.0,0.0
-103,1499,"At work , dealing with students , trying to be prepared is annoying . Dealing with different variables like laptops etc . admin keeps telling us what strategies to try and enforcing us to do them is unrealistic based on students’ levels . I have a lazy co-teacher who is super negative and just breathes out sighs a lot . Irritating .",2024-10-08 12:00:19,7,False,-1.0,2.0
-103,1504,I have a headache . I’m not feeling well but okay since I’m watching survivor . Took a Tylenol and drank some water so hopefully the headache will go away . Work is annoying because coworkers are lazy and don’t know how to contribute .,2024-10-09 22:01:23,7,False,-2.0,0.0
-103,1506,Irritated because my son is driving me Insane . He reads with a funny voice that reminds me of an annoying student at school . He slams his body against my bed . It’s super annoying . I don’t like it when I have to repeat myself . And he doesn’t listen the first second or third time .,2024-10-10 22:05:49,7,False,-1.0,2.0
-103,1507,Tired . My boyfriend and his son is over and I made dinner . It was good . His son was doing an essay and finished . I said we should read it but he didn’t want us to read it so lied about it . It was so obvious he was lying though but he insisted he wasn’t .,2024-10-11 22:53:51,7,False,-1.0,0.0
-103,1508,"Happy it is Saturday . Nice to have a 3day weekend . Going to go with the kids to the dog park . We just had breakfast , eggs , bacon . Made some pancake fish with my boyfriend’s contraption . We’re going to make eggplant later .",2024-10-12 12:01:21,7,False,2.0,0.0
-103,1510,"I feel great but tired . Went to the dog park with the kids , played with some dogs , then went to GPE , where it was by a beach with some water and there was buildings in the horizon , it was peaceful and beautiful . Relaxing . Although my oldest was acting miserable because her dogs feet would be dirty and she didn’t want to responsible for giving her dog a bath .",2024-10-12 17:03:41,7,False,-1.0,0.0
-103,1511,Super irritated and mad . My oldest daughter didn’t want to give her dog a bath but she’s the only one who can because he can get growly with anyone else . I was trying to get my middle child to bathe him but he wasn’t having it . I told my oldest to just get him into the shower and I’ll deal with it . She said “it wasn’t fair to her” . She proceeds to bathe him but leaves him in there wet instead of Drying him . I go in there and try to dry him but he’s growling at me .,2024-10-12 22:16:24,7,False,-1.0,2.0
-103,1514,"Happy to have a Monday off . Just in bed , watching ORG . Relaxing before having to go Back to work tomorrow . Will probably clean up a bit and work on what I’m doing in my classes for the week . I feel good .",2024-10-14 12:00:56,7,False,0.0,0.0
-103,1516,"I have a period called common planning that ORG placed on us because of the superintendent . Ideally , you meet with teachers who teach the same subject and discuss what you’re teaching etc . I’m stuck with a bunch of annoying idiotic teachers who just complain and lie . I find it really annoying and a complete waste of time .",2024-10-15 12:00:51,7,False,-1.0,2.0
-103,1519,Just taught 3 classes back to back . I feel okay but a bit tired and sore . I have my period but half my day is over so that’s good . Enjoying the Fall weather and half the week is already over so glad about that . Looking forward to the weekend .,2024-10-16 12:36:06,7,False,0.0,1.0
-103,1522,"Finally finished classes . Kind of a hectic day . Didn’t even eat my lunch . Just had a clementine . Was go go go all day . Trying to catch up on grading . Tired . Looking forward to tomorrow being Friday . Upside , my coteacher wasn’t here today and class went smoother than when she’s there .",2024-10-17 15:54:43,7,False,0.0,1.0
-103,1564,I feel super tired and depleted . I woke up at 4am and checked the time and couldn’t fall back asleep . I feel exhausted . Hoping to go hiking tomorrow . Currently laying in bed and going to watch dateline .,2024-10-18 22:04:29,7,False,-2.0,0.0
-103,1495,"Tired , Relaxed , Sleepy , Anxious , Ready",2024-10-06 22:42:41,7,True,0.0,1.0
-103,1496,"Annoyed , Irritated , Tired , Defeated , Resigned",2024-10-07 17:11:05,7,True,-1.0,2.0
-103,1497,"Okay , Good , Tired , Relaxed , Calm",2024-10-07 22:00:58,7,True,0.0,1.0
-103,1500,"Tired , Relaxed , Regular , Easygoing , Mellow",2024-10-08 17:00:32,7,True,0.0,1.0
-103,1501,"Irritated , Tired , Anxious , Annoyed , Ready for bed",2024-10-08 22:02:34,7,True,-1.0,2.0
-103,1502,"Good , Done , Hopeful , Meh , Regular",2024-10-09 12:31:10,7,True,0.0,0.0
-103,1503,"Headache , Tired , Exerted , Fatigued , Frustrated",2024-10-09 17:01:26,7,True,-2.0,0.0
-103,1505,"Good , Content , Complete , Normal , Fine",2024-10-10 17:00:38,7,True,1.0,0.0
-103,1512,"Irritated , Angry , Frustrated , Annoyed , Pissed",2024-10-13 12:31:15,7,True,-2.0,2.0
-103,1513,"Relaxed , Tired , Okay , Meh , Sleepy",2024-10-13 22:00:56,7,True,0.0,1.0
-103,1515,"Ready for bed , Tired , Relax , Okay , Quiet",2024-10-14 22:30:06,7,True,-2.0,0.0
-103,1517,"Okay , Relieved , Fine , Tired , Complacent",2024-10-15 17:01:02,7,True,0.0,1.0
-103,1518,"Happy , Cheerful , Delighted , Winning , Joyous",2024-10-15 22:01:21,7,True,1.0,0.0
-103,1521,"Tired , Exhausted , Spent , Depleted , Fatigued",2024-10-16 22:01:21,7,True,-2.0,0.0
-103,1523,"Tired , Exhausted , Foggy , Spent , Fatigued",2024-10-17 22:11:37,7,True,-2.0,0.0
-103,1563,"Happy , Excited , Relaxed , Relieved , Friyay",2024-10-18 17:01:11,7,True,1.0,0.0
-91,652,I am feeling relaxed . I am happy i attended homecoming today and was able to hang out with friends and coworkers to have a fun day . I am also feeling ready for tomorrow since I have some stressful projects coming up .,2024-10-26 22:25:57,7,False,2.0,1.0
-91,653,"I am currently feeling very calm . I am completing the work I said I would do today , which makes me happy . I am also sad that I couldn’t do my campus job today because of a transport issue , but it’s ok .",2024-10-27 17:00:33,7,False,2.0,1.0
-91,655,"I am currently feeling tired but I am also very happy . I was able to eat a good breakfast at work today which was nice , and got a decent night’s sleep last night which I am happy about . I am also hungry at the moment .",2024-10-28 17:01:29,7,False,0.0,2.0
-91,656,I am currently feeling happy . I am in class helping other students learn and giving them advice about how to solve the problems we are being given in the class . I am glad to be collaborating with them .,2024-10-28 22:09:03,7,False,1.0,0.0
-91,660,Currently I am feeling content . I woke up feeling refreshed and am very energized at the moment . I am excited to go to class today because we are going to do some group work today and I have friends in class to see .,2024-10-30 17:08:07,7,False,-1.0,0.0
-91,661,"I am feeling very happy right now . I am attending an event that my roommate is hosting on campus . I am helping out with it and having a good time hanging out . I am also feeling kind if tired , I was up late last night .",2024-10-30 22:51:42,7,False,0.0,1.0
-91,662,I am currently feeling very happy . I am at work helping my boss get through some projects for the day . I am also excited for today since it’s halloween . I will be going to a party with my girlfriend tonight to have a good time and enjoy ourselves .,2024-10-31 12:21:28,7,False,0.0,2.0
-91,663,I am currently feeling very happy . I am excited for Halloween and parties and a lot of other fun activities that are happening tonight . I am also content because I think I did a good job at work today . I was going around helping my boss .,2024-10-31 17:01:24,7,False,0.0,0.0
-91,665,"I am currently feeling very happy . Halloween was fun last night , and I had a good time hanging out with people and going out for the night . I also am glad to have met some new people who were really cool last night .",2024-11-01 17:00:40,7,False,1.0,0.0
-91,667,I am currently feeling very happy but also very tired . I was up late last night and I had to wake up early today for work . My work for the day is a large shift that is a very important conference for the ORG on campus .,2024-11-02 12:23:00,7,False,1.0,0.0
-91,669,I am currently feeling very happy right now because I am watching one of my favorite hockey teams play and they are winning . I am also feeling tired from not sleeping well last night and getting woken up early this morning to loud banging in my dorm .,2024-11-03 17:16:58,7,False,2.0,1.0
-91,673,"I am currently feeling very annoyed . I missed the survey from this morning so I know I probably won’t be getting that extra bonus for completing all of them . I am otherwise feeling decent , slightly tired .",2024-11-04 22:16:59,7,False,1.0,0.0
-91,676,I am currently feeling stressed out because I am late for my class . I woke up late today and took a long time to get ready for class . I am also slightly annoyed because I stopped myself from investing in some stocks last night and now they have all shot up from the election .,2024-11-06 17:30:06,7,False,-1.0,0.0
-91,677,"I am currently feeling very tired and sluggish . I definitely need to fix my sleep schedule tonight and go to bed early , especially since I have work early in the morning tomorrow and the day after . It would also be nice to wake up before 12pm normally .",2024-11-06 22:12:46,7,False,0.0,0.0
-91,678,"I am currently feeling very tired . I have not been getting very good sleep the past week or so , and it is getting very annoying having little sleep each night or waking up super late and starting my day late . I had to buy melatonin for this issue .",2024-11-07 12:07:41,7,False,1.0,0.0
-91,680,I am currently feeling very tired from today . I drank an energy drink before to keep myself awake to do some work throughout the day and so I can fall asleep easily tonight . It didn’t work too well and I didn’t get much work done .,2024-11-07 22:02:51,7,False,0.0,0.0
-91,651,"Happy , Relaxed , Excited , Enthusiastic , Energetic",2024-10-26 17:04:35,7,True,1.0,2.0
-91,654,"Happy , Energetic , Enthusiastic , Hungry , Focused",2024-10-27 22:03:20,7,True,1.0,1.0
-91,657,"Calm , Relaxed , Hungry , Happy , Enthusiastic",2024-10-29 17:00:51,7,True,1.0,0.0
-91,658,"Happy , Joyful , Excited , Content , Hungry",2024-10-29 22:32:59,7,True,0.0,0.0
-91,664,"Enthusiastic , Happy , Joyful , Excited , Energetic",2024-10-31 22:04:08,7,True,0.0,0.0
-91,666,"Happy , Joyful , Content , Full , Excited",2024-11-01 22:00:59,7,True,1.0,0.0
-91,668,"Happy , Excited , Enthusiastic , Tired , Content",2024-11-02 17:01:00,7,True,1.0,0.0
-91,671,"Tired , Happy , Hopeful , Content , Full",2024-11-03 22:13:59,7,True,1.0,0.0
-91,672,"Happy , Tired , Enthusiastic , Content , Excited",2024-11-04 17:24:48,7,True,1.0,0.0
-91,674,"Tired , Exhausted , Quiet , Content , Hungry",2024-11-05 17:15:38,7,True,0.0,0.0
-91,675,"Tired , Anxious , Exhausted , Slow , Sluggish",2024-11-05 22:05:56,7,True,0.0,1.0
-91,679,"Tired , Hyper , Anxious , Nervous , Exhausted",2024-11-07 17:01:07,7,True,1.0,0.0
-91,682,"Tired , Energetic , Full , Happy , Excited",2024-11-08 12:06:16,7,True,1.0,0.0
-91,683,"Tired , Hungry , Happy , Energetic , Hopeful",2024-11-08 17:16:46,7,True,1.0,0.0
-91,684,"Tired , Anxious , Happy , Doubtful , Excited",2024-11-08 22:03:18,7,True,0.0,1.0
 45,4572,"Stressed , Happy , Exhausted , Foggy , Drained",2021-05-04 12:38:00,1,True,-2.0,0.0
 45,4573,"Nauseated , Tired , Stressed",2021-05-05 15:12:00,1,True,-2.0,0.0
 45,4574,"Defeated , Loved , Spent",2021-05-06 13:20:36,1,True,0.0,1.0
@@ -1882,29 +2088,6 @@ user_id,text_id,text,timestamp,collection_phase,is_words,valence,arousal
 108,1905,"At the moment and right now I feel excites because I get to have amazing and wonderful time with family , friends we get to talk about amazing things and doing fun stuffs together like playing games and watching series together which always mke me happy and less worried about life hitches",2024-10-26 17:23:30,7,False,1.0,0.0
 108,1911,"Happy , Calm , Excited , Joyful , Rejoicing",2024-10-26 22:08:17,7,True,2.0,1.0
 108,1912,"I am happy and currently active without any form of depression or nervous . I am currently excited and calm , I am not nervous and worried about anything I am good and not depressed at all . I am not thicking about anything bad and not feeling sad",2024-10-27 12:01:42,7,False,2.0,1.0
-79,5156,"I presently have mixed feelings - tipsy , euphoria and enthusiastic . A perfect combo for the Sunday unwinding . The whole week was mentally and psychologically draining though . It ' s been quite a fun day with family and friends outside enjoying the cool evening breeze .",2024-09-08 17:57:16,7,False,2.0,2.0
-79,5157,"Feeling neutral , no special feelings at all . Hoping to keep up with the new week ahead . Being an optimistic I wish and pray for the best . My optimism is at a all time high right now with great lookouts ahead .",2024-09-09 12:06:37,7,False,0.0,1.0
-79,5158,"Currently feeling neutral , no emotional , psychological or mental stress available at the moment with no anxieties or stresses clouding my thoughts , a clear sense of mind and clear sense of purpose . Nothing more nothing less",2024-09-09 17:18:07,7,False,1.0,1.0
-79,5163,"Today , I feel grateful and appreciative because God gave me another day to live , and I ' m happy because of it . I realize that we should not always let the day pass without thanking our creator . And also to my family for always supporting me and keeping me motivated . I knew my journey to the dream and goals in my life would not be an easy .",2024-09-12 17:25:31,7,False,1.0,1.0
-79,5164,"I currently feel okay , a little bit hooked up with work chores and getting to   settle down for the day is taking more than I initially expected . I expectedly a warm day with great emotions unfortunately the atmosphere isn ' t as welcoming as it supposed to .",2024-09-13 12:19:32,7,False,2.0,0.0
-79,5167,"I feel now that I am a person worthy of attention , the I have knowledge and capabilities that are needed in the world , that I can support an intelligent conversation and negotiate like a pro . Notwithstanding the nature of the conversation , I feel so powerful right now after defending a very crucial project in front of guests and VIPs .",2024-09-14 12:16:20,7,False,2.0,1.0
-79,5174,"Feelings are messages from your body and mind about how you are experiencing something emotionally . They are not right or wrong , good or bad , but are instead a reflection of what is happening in the moment . I am feeling lost . I am not satisfied with myself . I have seen the best version of myself and try to keep it consistent",2024-09-17 22:59:19,7,False,1.0,1.0
-79,5175,"I am feeling much better now , though tired and sluggish but I consider my current situation and feelings not worst as compared to others . There isn ' t much to do now and nothing stressful . Though tired , fatigued and calm , I experience much inner peace at the moment with less worries over some things I cannot control .",2024-09-18 12:23:41,7,False,-2.0,0.0
-79,5177,"My initial feelings right about now is that I think the day is going to be hard but at the same time easy . I say its going to be hard because , of the level that the work I ' ve got to do . I say its going to be easy because if I focus and complete all of my assignments right then the day will go by easy",2024-09-19 12:44:04,7,False,2.0,1.0
-79,5178,"Honestly not too well , I feel less affectionate to the the things I used to like , just today I got a text from my sister with a not too good content . It actually feels so horrible to have received such news few hours ago . I ' m just all by myself , quite , calm and composed so as not to draw unnecessary attention and sympathy to myself .",2024-09-19 17:39:00,7,False,0.0,0.0
-79,5159,"Positive , Optimistic , Calm , Energetic , Quite",2024-09-10 17:17:10,7,True,-2.0,0.0
-79,5160,"Happy , Contentment , Gratitude , Love , Pride",2024-09-11 12:36:27,7,True,0.0,2.0
-79,5161,"Calm , Optimistic , Light , Aspirational , Nervous",2024-09-11 17:02:23,7,True,2.0,2.0
-79,5162,"Nervous , Jittery , Active , Optimistic , Calm",2024-09-12 12:49:30,7,True,-2.0,2.0
-79,5165,"Dismay , Homesick , Neutral , Nervous , Jittery",2024-09-13 17:14:35,7,True,-1.0,1.0
-79,5166,"Happy , Calm , Joyful , Observational , Truthful",2024-09-13 22:59:17,7,True,2.0,1.0
-79,5168,"Happy , Enthusiastic , Optimistic , Fun , Agile",2024-09-14 17:57:59,7,True,2.0,2.0
-79,5169,"Exhausted , Tired , Down , Refueling , Made",2024-09-15 12:05:03,7,True,-1.0,2.0
-79,5170,"Happy , Anxious , Cslm , Suspense , Nervous",2024-09-15 17:12:46,7,True,2.0,2.0
-79,5171,"Quiet , Calm , Observant , Optimistic , Happy",2024-09-16 12:59:53,7,True,0.0,0.0
-79,5172,"Lively , Enthusiastic , Calm , Inspiration , Hope",2024-09-16 17:15:11,7,True,2.0,2.0
-79,5173,"Calm , Focus , Optimistic , Nervous , Tired",2024-09-17 17:22:44,7,True,0.0,1.0
-79,5176,"Lively , Nervous , Calm , Proud , Glad",2024-09-18 17:08:18,7,True,2.0,2.0
 81,5207,I ' m currently feeling a little down because I ' m sick but I have to keep on going to raise my children . I ' m also hopeful that I can get rid of this by the end of the day . I ' m also feeling unsupported because I ' m a single mother .,2024-09-23 17:23:30,7,False,0.0,1.0
 81,5208,I ' m feeling a little aggravated and unsupported . Being a single mother is hard and having to co-parent makes it even harder when you ' re not on the same page . I ' m also feeling sluggish due to being sick .,2024-09-23 22:22:43,7,False,0.0,1.0
 81,5209,"Exhausted , Overwhelmed , Unsupported , Annoyed",2024-09-24 12:08:24,7,True,-2.0,0.0
@@ -2001,25 +2184,6 @@ user_id,text_id,text,timestamp,collection_phase,is_words,valence,arousal
 131,3063,"sweaty , excited , chill , idk , neutral",2024-10-13 22:42:09,7,True,0.0,2.0
 131,3064,"high , hungry , happy , good , good",2024-10-14 17:15:13,7,True,1.0,1.0
 131,3065,"heavy , focused , relaxed , chill , happy",2024-10-14 22:25:44,7,True,1.0,1.0
-179,4529,"I’m not bursting with energy but I’m waking with a gentle enthus , My senses are heightened , I want to laugh , I’m alive and I’m feeling it , I feel calm",2024-09-22 22:58:00,7,True,1.0,1.0
-179,4530,"Not really feeling good , Feeling like something is wrong but can’t figure out what , I wish I’m not experiencing this at the moment , Hate it when I can’t reach something I wish to get done , I feel bad",2024-09-23 12:06:34,7,True,-1.0,1.0
-179,4531,I ' m feeling pretty neutral about a lot of things I don ' t have strong feelings either way .\ nI’m not really interested in the outcome . I ' m just okay with whatever happens .\ nI’m really bothered and trying to make it look natural,2024-09-23 22:15:05,7,False,0.0,1.0
-179,4532,"Understanding , Calm , Lively , Calmness , Balance",2024-09-24 12:15:47,7,True,0.0,1.0
-179,4533,"Feeling lost in thoughts with a little touch of sadness , a bit disappointed but not devastated .\ nFeeling mildly nostalgic , happiness mixed a touch of sadness .\ nLonging for someone dearly to me and feeling withdrawn at same time .",2024-09-24 22:45:19,7,False,-1.0,1.0
-179,4534,I’m feeling neither particularly happy or unhappy at the moment just going about my daily routine .\ nEverything seems fairly manageable at the moment with no emotional intensity .\ nMy feelings are neither decidedly positive or negative,2024-09-25 12:08:35,7,False,0.0,1.0
-179,4535,I’m currently feeling the quietness in form of a river flowing through me like a calm ocean .\ nThe quietness has brought me a sense of peace .\ nI might say I Feels so calm and collected in the serene moments,2024-09-25 22:32:57,7,False,0.0,0.0
-179,4536,"Indifferent , No opinion , Undecided , No strong feelings , It’s fine",2024-09-26 17:34:52,7,True,0.0,1.0
-179,4537,"Calm , Unbiased , Composed , Stable , Balance",2024-09-26 22:29:36,7,True,0.0,1.0
-179,4538,"Awaken , Active , Lively , Bold , Vigorous",2024-09-27 12:02:33,7,True,0.0,2.0
-179,4539,"As I settled into the couch , surrounded by th comfort familiarity of home my sluggish body finally began to relax , surrendering to the exhaustion .\ nStruggling to shake of the sluggish tiredness away from my body",2024-09-28 17:55:13,7,False,-1.0,0.0
-179,4540,"Neutral , Calm , Unbiased , Stable , Compose",2024-09-29 12:58:32,7,True,0.0,1.0
-179,4541,"The warm atmosphere seems to enveloped me in a Damp hug , leaving me feeling somewhat sluggish and lethargic , leaving me unable to summon the energy to tackle even the simplest of task .\ nFeels like hitting a wall",2024-09-29 17:14:35,7,False,-1.0,0.0
-179,4542,"I feel the quiet atmosphere enveloped me calming my racing thoughts , soft whispering fills the room calming my disturbed nerves .\ nMy mind feels calm like still pond , flowing to and fro and peaceful like a calm ocean",2024-09-30 12:47:46,7,False,0.0,0.0
-179,4543,"Quiet , Calm , Reserved , Compose , Relaxed",2024-09-30 17:54:05,7,True,0.0,0.0
-179,4544,"I’m feeling quiet in the quiet hours of the morning , as the world awakens , I found solace in the silence , my thoughts awakened and my spirit renewed .\ nThe quiet rhythm of playing sound creates a calming melody washing away my worries and anxiety , my soul feels peaceful",2024-10-01 12:41:02,7,False,0.0,0.0
-179,4545,"Somber , Sad , Pensive , Wistful , Unhappy",2024-10-01 22:47:51,7,True,-1.0,1.0
-179,4546,"Neutral , Unbiased , Detached , Preserve , Unbothered",2024-10-03 12:32:16,7,True,0.0,1.0
-179,4547,"Neutral , Impartial , Serene , Calm , Stable",2024-10-03 17:47:01,7,True,0.0,1.0
 15,802,"Hot , Tired , Happy , Active , Friendly",2021-06-09 20:12:27,1,True,1.0,2.0
 15,803,"Happy , Active , Hot , Tired , Motivated",2021-06-10 13:56:17,1,True,2.0,1.0
 15,804,"Tired , Active , Motivated , Exhausted , Fun",2021-06-11 13:10:56,1,True,1.0,1.0
@@ -2063,6 +2227,32 @@ user_id,text_id,text,timestamp,collection_phase,is_words,valence,arousal
 77,5131,"Unbothered , Unhappy , Tired , Down , Emotional",2024-11-22 12:06:14,7,True,0.0,2.0
 77,5132,"Drunk , Pain , Emotional , Drained , Tired",2024-11-22 17:03:34,7,True,-2.0,0.0
 77,5133,"Drunk , High , Unbothered , Tired , Numb",2024-11-22 22:03:05,7,True,-2.0,0.0
+39,2947,"Energetic , Content , Calm",2021-03-30 12:07:34,1,True,0.0,1.0
+39,2948,"Happy , Nuetral , Comfortable",2021-03-31 12:07:03,1,True,0.0,1.0
+39,2949,"Energetic , Happy , Content",2021-04-03 13:01:19,1,True,1.0,0.0
+39,2950,"Sad , Unmotivated , Content",2021-04-06 13:17:16,1,True,-1.0,1.0
+39,2951,"Happy , Content , Motivated",2021-04-07 12:19:09,1,True,1.0,1.0
+39,2943,"Happy , Content , Motivated",2021-04-08 12:20:43,1,True,1.0,1.0
+39,2944,"Tired , Content , ORG",2021-04-09 12:30:02,1,True,-1.0,0.0
+39,2945,"Calm , Content , Little tired",2021-04-11 12:28:16,1,True,2.0,0.0
+39,2946,"Happy , Motivated , Content",2021-04-12 12:01:51,1,True,1.0,2.0
+52,5135,"Ill , Anxious , Sad , Overwhelmed , Scared",2021-06-09 12:05:43,1,True,-2.0,0.0
+52,5136,"Sick , Tired , Nervous , Stressed , Fearful",2021-06-10 12:01:54,1,True,-2.0,0.0
+52,5137,"Tired , Uncomfortable , Lightheaded , Anxious , Dull",2021-06-11 15:02:57,1,True,0.0,1.0
+52,5138,"Lonely , Depressed , Stressed , Anxious , Bored",2021-06-12 12:04:12,1,True,0.0,1.0
+52,5139,"Surprised , Happy , Content , Special , Confused",2021-06-13 12:45:07,1,True,0.0,2.0
+52,5140,"Surprised , Happy , Loved , Anxious , Wired",2021-06-14 12:18:57,1,True,2.0,1.0
+52,5141,"Apprehensive , Grateful , Talkative , Tired , Dehydrated",2021-06-15 12:48:12,1,True,1.0,1.0
+52,5142,"Tired , Dehydrated , Sluggish , Sick , Numb",2021-06-16 12:07:39,1,True,-2.0,0.0
+52,5134,"Stressed , Happy , Excited , Talkative , Content",2021-06-18 12:21:01,1,True,1.0,2.0
+28,1790,"optimistic , passionate , creative , anxious , tired",2021-03-25 12:42:57,1,True,1.0,0.0
+28,1791,"Happy , Creative , Tired , excited , productive",2021-03-26 12:28:44,1,True,2.0,0.0
+28,1792,"excited , rested , joyful , homie , proactive",2021-03-30 12:03:34,1,True,2.0,1.0
+28,1793,"satisfied , happy , hopeful , cheerful , sleepy",2021-04-01 15:03:05,1,True,2.0,2.0
+28,1794,"sleepy , optimistic , excited , spontaneous , proud",2021-04-02 12:11:32,1,True,2.0,1.0
+28,1787,"Sleepy , Enthusiastic , Creative , Affectionate , Joyful",2021-04-05 12:47:17,1,True,2.0,0.0
+28,1788,"Happy , Content , Rested , Creative , Motivated",2021-04-07 18:16:20,1,True,2.0,2.0
+28,1789,"Tired , Sleepy , Calm , Relaxed , Careless",2021-04-10 16:28:41,1,True,-1.0,0.0
 4,279,"Motivated , Friendly , Attentive , Anxious , Overwhelmed",2021-06-11 13:42:03,1,True,1.0,0.0
 4,280,"Active , Competitive , Nostalgic , Sociable , Nervous",2021-06-12 19:43:30,1,True,1.0,1.0
 4,281,"Anxious , Nervous , Tired , Overwhelmed , Positive",2021-06-13 14:06:41,1,True,1.0,0.0
@@ -2071,25 +2261,6 @@ user_id,text_id,text,timestamp,collection_phase,is_words,valence,arousal
 4,284,"Nervous , Anxious , Overwhelmed , Over worked , Tired",2021-06-16 12:24:40,1,True,-2.0,2.0
 4,285,"Relaxed , Outgoing , Cheerful , Attentive , Aware",2021-06-17 14:02:11,1,True,0.0,1.0
 4,286,"Stressed , Overwhelmed , Anxious , Fearful , Confused",2021-06-18 13:58:56,1,True,0.0,1.0
-138,3466,"Tired , Nervous , Content , Happy , Productive",2024-11-08 12:36:57,7,True,0.0,1.0
-138,3467,I feel tired . I also feel overworked and burnt out . I have 2 children under the age of 3 and I work 3 jobs and it’s a lot . The outcome of the elections stresses me as a women and immigrant . I’m worried about people being more racist and xenophobic and I’m worried about raising my children in this climate,2024-11-08 17:37:14,7,False,0.0,1.0
-138,3468,"Hungry , Tired , Happy , Hungry , Drained",2024-11-08 22:02:17,7,True,2.0,1.0
-138,3469,"I’m overworked and underpaid and I feel so burned out .   Working 3 jobs and having 2 under 3 aged kids is so tiring , I’m constantly dropping the ball and letting someone down . I just need a break or a vacation . I think about wanting a drink often but I feel like I can’t because I can’t afford being drunk or having a hangover .",2024-11-09 17:04:04,7,False,-2.0,0.0
-138,3470,I just ate dinner with the in-laws and now I’m trying to set up their dinner . It’s a very frustrating process as I keep hitting snags . I am sad because I’m missing time with my kids . They are happy and I’m happy that they are happy but I miss them .,2024-11-09 22:12:08,7,False,1.0,0.0
-138,3472,"Tired , Disappointed , Anxious , Tired , Content",2024-11-10 12:37:37,7,True,2.0,0.0
-138,3473,"Tired , Content , Happy , Nervous , Tired",2024-11-10 17:07:53,7,True,-2.0,0.0
-138,3474,It’s been a super long day and I’m going to bed early . I’m very very tired from not sleeping well and just a long day all together . The kids got new beds so they are having a hard time which is making me feel even more tired and burnt out .,2024-11-11 22:27:26,7,False,-2.0,0.0
-138,3475,"I’m exhausted . The little one bumped her head and had to rush to urgent care to evaluate whether she needs stitches so I feel nervous and worried for my child . And because she’s my child , my anxiety is through the roof .",2024-11-12 22:05:26,7,False,-2.0,0.0
-138,3476,"I’m happy because I’m home with my family , I’m just so exhausted and tired . But my daughter called me her hero so I’m just so happy and feeling loved . I’m tired from working and lack of sleep but my babies make me so incredibly happy .",2024-11-13 17:02:09,7,False,-2.0,0.0
-138,3477,I’m sad because my library card expired and I just realized . This is also the first moment I’m getting to myself in days so it’s nice to just sit in the quiet . I feel content and motivated to get some laundry put away .,2024-11-13 22:02:50,7,False,0.0,0.0
-138,3478,"angry , frustrated , tired , tired , tired",2024-11-14 12:10:44,7,True,0.0,1.0
-138,3479,"Im sad because I heard one of my friends will be leaving . Im tired from working so much and my children make me feel so happy whenever I’m even just looking at them . So I’m happy , tired , exhausted , stressed , and anxious .",2024-11-14 17:01:55,7,False,-2.0,0.0
-138,3480,I’m feeling super tired because I have not had a break from teaching class and back to back meetings all day . Fridays is my busiest and most stressful day . It’s also my happiest day as I’m maximizing my student interaction . I can’t wait to spend the weekend with my kids so I’m also happy . Happy and tired and content .,2024-11-15 17:26:15,7,False,2.0,1.0
-138,3482,"Tired , Content , Happy , Exhausted , Happy",2024-11-15 22:03:37,7,True,2.0,0.0
-138,3483,I’m home with the children and they are a lot but I’m also happy because I get to spend time with them . My mother in law is also trying my patience is running thin so I’m trying to hard to feel patient but I am getting frustrated .,2024-11-16 12:42:07,7,False,0.0,1.0
-138,3484,Im so exhausted after running after my kids for 4 hours at ORG    . Im so run down and feel like I’m gonna get sick which would suck because I have 3 jobs . I’m happy my kids had fun but I’m just extremely exhausted .,2024-11-16 22:02:31,7,False,-2.0,0.0
-138,3485,"Tired , Happy , Content , Excited , Exhausted",2024-11-18 12:13:32,7,True,1.0,2.0
-138,3486,"Tired , Quiet , Loved , Happy , Happy",2024-11-21 17:11:39,7,True,0.0,0.0
 126,2892,"Content and relaxed . I just ate dinner (two grilled cheese sandwiches with turkey) and am winding down for the day . I’m calm and ready for the upcoming week . I’m on the phone with my boyfriend , and we are simply relaxing and spending time with each other . There is nothing too stressful going on in my life so I’m rather laid back right now .",2024-09-22 22:28:07,7,False,2.0,0.0
 126,2893,"I feel okay .   Not too excited or happy for anything in particular but not drained or upset .   I feel very neutral , but slightly upbeat .   I ' m almost done with classes for today and am not stressed out over any homework or assignments .   I feel fine at work , nothing is bothering me , but I do feel bored sometimes .",2024-09-23 17:35:34,7,False,1.0,0.0
 126,2894,"I ' m about to take the first half of my Spanish quiz .   I ' m a little nervous , but trying not to let it get to me .   I really want to do well , so I ' m feeling a bit anxious about my performance .   I ' m trying not to work myself up and remain calm by grounding myself .   I know that after this class , I will feel much better , regardless of how I do .   This is the only thing that ' s really on my mind , I ' m really focused on my performance .",2024-09-24 12:13:04,7,False,-1.0,2.0
@@ -2108,24 +2279,16 @@ user_id,text_id,text,timestamp,collection_phase,is_words,valence,arousal
 126,2908,"I feel okay . I’m definitely tired and my head feels like it’s full of sand (clogged sinuses) but emotionally I’m fine . I don’t have any homework for the rest of the week and no pressing concerns or projects . I’m just going to focus on taking it easy for the next few days to get rid of what I have , but I’m at a nice steady neutral right now .",2024-10-02 22:27:32,7,False,0.0,1.0
 126,2909,"Sick , Down , Meh , Tired , Drained",2024-10-03 12:18:13,7,True,-2.0,0.0
 126,2910,"I feel okay . Nothing exciting is going on , I’m just trying to relax and rest to purge my sickness out . I feel a bit of FOMO watching all of my friends hang out while I just rest , but it’s fine I guess . It’s just a bit sucky .",2024-10-04 17:44:00,7,False,-1.0,0.0
-141,3576,I feel tipsy very stressed and tired today I feel so sick and tired but I’m gonna be fine just a little bit drunk too took a few bottles i don’t really know what’s wrong with me right now am just stressed out but I’m gonna be okay \n,2024-08-26 22:37:35,7,False,1.0,1.0
-141,3578,I feel stressed out but at the same time a little bit happy and I took a few bottles of alcohol outside in my garage today so am stressed out and a little bit drunk not that drunk I just feel really tired and stressed out,2024-08-30 22:14:36,7,False,1.0,1.0
-141,3580,"I feel so empty and lost right now ,I do not have the right words I need to explain this kinda feeling but I feel lost and confused ,I am hopeful anyways hoping it all get better and I get to know what’s going on",2024-09-01 12:41:00,7,False,-1.0,1.0
-141,3581,"It’s Monday and PERSON got no time to slack or feel down ,I am happy about this new week and hope all goodness comes with it .\ nI am active ,cheerful ,happy about the new week and of course PERSON gat to win my bosses heart This week .",2024-09-02 12:55:43,7,False,0.0,2.0
-141,3582,I am so glad that my work got acknowledged today \nThis happened several months back and now it feels like I am on top of the world \nI know this means I gat to push harder go further and do stuffs right \nBut yes am not stopping I keep pushing,2024-09-02 22:11:27,7,False,1.0,1.0
-141,3583,"I feel glad about today and all that u have seen and heard so far ,I am hopeful and excited for great news and greatness today I would say that has made me positive and somewhat happy too \nI should do a great job at work to feel even better",2024-09-03 12:32:15,7,False,0.0,1.0
-141,3572,"Normal , Calm , Reserved , Nil , Nil",2024-08-24 17:29:36,7,True,0.0,1.0
-141,3573,"Unhappy , Feeling natural , Stressed , Tired , Nothing else",2024-08-24 22:01:03,7,True,0.0,0.0
-141,3575,"Active , Tipsy , Lively , Drunk , Drained",2024-08-25 22:04:51,7,True,0.0,2.0
-141,3577,"Happy , A bit joyful , Glad , Impressed , Joyful",2024-08-30 12:49:30,7,True,1.0,2.0
-141,3579,"Sad , Tired , Stressed , Annoyed , Nervous",2024-08-31 22:22:53,7,True,-1.0,1.0
-141,3584,"Stressed , Tired , Downcast , Sad , Annoyed",2024-09-03 22:05:17,7,True,-2.0,0.0
 173,4442,"I’m feeling good , happy , and accomplished at this moment . I’ve had a good day with loved ones and have been relaxing and just enjoying the day . Its refreshing to have a day without too many plans or too much going on . I’m really enjoying the day so far .",2024-11-01 17:50:48,7,False,2.0,1.0
 173,4438,"Excited , Hopeful , Tired , Annoyed , Optimistic",2024-10-26 12:13:33,7,True,1.0,1.0
 173,4439,"Tired , Annoyed , Sick , Frustrated , Exhausted",2024-10-27 17:01:19,7,True,-1.0,0.0
 173,4440,"Tired , Rested , Sick , Content , Ready",2024-10-27 22:57:53,7,True,0.0,1.0
 173,4441,"Tired , Content , Accomplished , Frustrated , Hopeful",2024-10-28 22:01:21,7,True,0.0,1.0
 173,4443,"Tired , Proud , Stressed , Excited , Nervous",2024-11-04 12:07:31,7,True,1.0,0.0
+44,4057,"Sunburned , Tired , Busy , Content , Happy",2021-06-11 14:09:06,1,True,2.0,0.0
+44,4058,"Tired , Itchy , Sick , Neutral , Calm",2021-06-15 17:48:01,1,True,0.0,1.0
+44,4059,"Stressed , Tired , Busy , Irritated , Overwhelmed",2021-06-17 13:05:42,1,True,0.0,2.0
+44,4060,"Stressed , Tired , Content , Happy , Annoyed",2021-06-18 13:56:38,1,True,1.0,0.0
 87,379,I am a bit jittery and anxious . I am feeling pretty awake and focused but anxious about other life events currently . I did get a full night ' s of sleep . I don ' t have anything else to add but it ' s telling me I need more charactera,2024-11-14 12:47:33,7,False,-1.0,2.0
 87,381,I am currently very happy and content . Slightly sleepy but solely because I am relaxed and at ease . I am excited about my plans for tonight and currently feeling productive . I am in a positive mindset,2024-11-16 17:01:50,7,False,2.0,1.0
 87,382,I am currently feeling fairly calm and content . I am not overly anxious or stressed . I am a bit sleepy but feel happy about how I spent my day . Overall i have a positive mindset and am in a good place .,2024-11-17 22:15:12,7,False,2.0,0.0
@@ -2146,10 +2309,6 @@ user_id,text_id,text,timestamp,collection_phase,is_words,valence,arousal
 1,202,"I’ve been feeling fine personally . I’ve been trying to stay positive , but because of the tragedic events of yesterday it’s been very hard to do . Business at the bar sucked because sone many ppl didn’t come out last night . I feel like I’m cursed because there has been one event after another that has severely effected business .",2021-06-13 13:15:07,1,False,0.0,1.0
 1,203,"I feel great . I’ve had a day off . I’m going to go to my mom’s birthday . I love having dinner with my mom . She always treats me , but tonight I think I’ll treat her .   So I’m not sure if that maters . I’m just say that because it makes me feel happy to be having dinner with my mom .",2021-06-16 12:03:12,1,False,2.0,1.0
 1,204,"I feel great today . I am well rested . I have a positive attitude about how the rest of the day will go . I feel energized , so work today should be great .    I don’t think that my mood will change . I’m very stable right now .",2021-06-17 12:38:38,1,False,2.0,2.0
-31,1961,"over the weekend , my friends dad and dog both died so i have been feeling sorry for him and helping him book travel to GPE to be with his family . It’s pretty much all i have spent time or energy on .",2021-03-30 12:35:54,1,False,0.0,0.0
-31,1962,i am still feeling the same as i was yesterday ; sad for my friend . i had a nice meal last night and was able to spend some time on myself yesterday which made me happy . i would like to be more productive on my days off .,2021-03-31 12:03:38,1,False,1.0,1.0
-31,1963,i ran my fastest 5k ever yesterday ! i have been doing a running workout program for one week and am proud of myself for sticking to it . i usually lose interest/drive in workout programs pretty quickly but i have done the workouts every day so far,2021-04-01 12:21:54,1,False,2.0,2.0
-31,1964,i did not have restful sleep last night . i had “server nightmares” and woke up in a panic this morning . i had a good night at work last night but i really did not want to be there for some reason ; despite working with my favorite people,2021-04-02 12:14:39,1,False,-1.0,0.0
 14,724,"In the past twenty four hours I have been feeling very very tired , and a little stressed . I am in my first semester of nursing school , and just started a new job . I just feel tired all the time and have a lack of social life .",2021-06-08 18:11:57,1,False,-1.0,0.0
 14,725,I have been feeling very happy . I have also been feeling very high energy . I have also been feeling more positive . Overall I am feeling very very good . I have been making sure to drink a lot more water which I believe helps,2021-06-15 16:29:45,1,False,2.0,1.0
 14,723,I fell asleep early and forgot to set my alarm for for . So then I woke up late and I was already supposed to be at work the time I had woke up . So then I had to rush to work and was one hour late thank goodness my boss is nice and let me slide on this one,2021-06-17 13:11:30,1,False,-2.0,0.0
