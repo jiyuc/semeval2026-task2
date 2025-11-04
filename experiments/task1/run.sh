@@ -24,6 +24,7 @@ echo " Checking and pulling model if needed"
 echo "===================================="
 
 # Ensure model directory exists
+export OLLAMA_MODELS="$SCRATCH_DIR/ollama_models"
 mkdir -p "$OLLAMA_MODELS"
 
 echo "===================================="
