@@ -18,7 +18,7 @@ singularity build ollama_latest.sif docker://ollama/ollama:latest
   
 ### Run
 ```bash
-sbatch run.sh
+source run.sh
 ```
 
 ### Evaluation
