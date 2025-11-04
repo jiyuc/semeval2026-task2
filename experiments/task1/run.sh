@@ -14,14 +14,8 @@ module load cuda       # if needed for GPU
 
 # Set directories
 SCRATCH_DIR=/scratch3/bol107/table_generation_eacl
-MODEL_NAME="gemma3:12b" # check models are downloaded before
-PYTHON_SCRIPT="table_generation.py"
 
 export OLLAMA_HOST="http://127.0.0.1:11434"
-
-echo "===================================="
-echo " Checking and pulling model if needed"
-echo "===================================="
 
 # Ensure model directory exists
 export OLLAMA_MODELS="$SCRATCH_DIR/ollama_models"
@@ -40,15 +34,19 @@ sleep 25   # increase if model is large
 echo "===================================="
 echo " Checking if model exists"
 echo "===================================="
-# Check if the model exists (by name) via running server
-apptainer exec --nv -B "$SCRATCH_DIR:/olla_bin" --env OLLAMA_MODELS="$SCRATCH_DIR/ollama_models" ollama_latest.sif ollama list | grep -q "$MODEL_NAME"
+MODELS=("gemma3:12b" "gemma3:27b")
 
-if [ $? -ne 0 ]; then
-    echo "Model $MODEL_NAME not found — pulling..."
-    apptainer exec --nv -B "$SCRATCH_DIR:/olla_bin" --env OLLAMA_MODELS="$SCRATCH_DIR/ollama_models" ollama_latest.sif ollama pull "$MODEL_NAME"
-else
-    echo "Model $MODEL_NAME already exists."
-fi
+for MODEL_NAME in "${MODELS[@]}"; do
+    # Check if the model exists (by name) via running server
+    apptainer exec --nv -B "$SCRATCH_DIR:/olla_bin" --env OLLAMA_MODELS="$SCRATCH_DIR/ollama_models" ollama_latest.sif ollama list | grep -q "$MODEL_NAME"
+
+    if [ $? -ne 0 ]; then
+        echo "Model $MODEL_NAME not found — pulling..."
+        apptainer exec --nv -B "$SCRATCH_DIR:/olla_bin" --env OLLAMA_MODELS="$SCRATCH_DIR/ollama_models" ollama_latest.sif ollama pull "$MODEL_NAME"
+    else
+        echo "Model $MODEL_NAME already exists."
+    fi
+done
 
 # Activate conda environment
 conda activate necva_env
