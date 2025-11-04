@@ -1,0 +1,25 @@
+{
+  "url": "http://127.0.0.1:11434/api/chat",
+  "models": ["gpt-oss:20b", "gpt-oss:120b", "gemma3:27b"],
+  "thinking": ["low", "medium"],
+  "modes": ["zero_shot"],
+  "max_retries": 5,
+  "wait_time": 2,
+  "num_ctx": 500,
+  "few_shot": {
+    "k": 3,
+    "seed": 42
+  },
+  "prompt": {
+    "base": "You are a helpful assistant that predicts emotional valence and arousal of a text.\n- Valence ranges from -2 (very negative) to 2 (very positive)\n- Arousal ranges from 0 (low) to 2 (high)",
+    "zero_shot": "Given the text: \"{text}\"\nReturn your prediction as a JSON: {{\"valence\": <number>, \"arousal\": <number>}}",
+    "few_shot_random": "Here are some examples:\n{examples}\nGiven the text: \"{text}\"\nReturn your prediction as a JSON: {{\"valence\": <number>, \"arousal\": <number>}}",
+    "few_shot_bm25": "Here are some examples:\n{examples}\nGiven the text: \"{text}\"\nReturn your prediction as a JSON: {{\"valence\": <number>, \"arousal\": <number>}}"
+  },
+  "data": {
+    "folds": [1, 2, 3, 4, 5],
+    "train_template": "../semeval_2026_task2/split/subtask1_train_cv{}.csv",
+    "test_template": "../semeval_2026_task2/split/subtask1_test_cv{}.csv",
+    "output_dir": "../semeval_2026_task2/prediction"
+  }
+}
