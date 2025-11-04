@@ -20,3 +20,10 @@ singularity build ollama_latest.sif docker://ollama/ollama:latest
 ```bash
 sbatch run.sh
 ```
+
+### Evaluation
+```bash
+python your_script.py \
+    --base_dir "prediction/gpt-oss:120b/zero_shot" \
+    --file_template "test_cv{n}_low_feelings_general_pred.csv"
+```
