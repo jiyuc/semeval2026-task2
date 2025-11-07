@@ -1,12 +1,4 @@
-# Ollama Inference Job
-
-## Overview
-Run Ollama LLM inference on a GPU node using an Apptainer (`.sif`) container.
-
-## Build singularity
-```
-singularity build ollama_latest.sif docker://ollama/ollama:latest
-```
+# SemEval - 2026 Task 2: Predicting Variation in Emotional Valence and Arousal over Time from Ecological Essays
 
 ## Dataset
 
@@ -14,6 +6,16 @@ The split dataset and their feeling included version is in [teams channel](https
 ## TAKS1 
 
 ### Zero & Few shot
+#### Ollama Inference Job
+
+#### Overview
+Run Ollama LLM inference on a GPU node using an Apptainer (`.sif`) container.
+
+#### Build singularity
+```
+singularity build ollama_latest.sif docker://ollama/ollama:latest
+```
+
 #### Files 
 - `ollama_latest.sif` – Apptainer container with Ollama  
 - `task1_inference.py` – Python inference script  
