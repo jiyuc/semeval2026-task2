@@ -28,6 +28,8 @@ os.environ["WANDB_LOG_MODEL"]="end"
 # turn off watch to log faster
 os.environ["WANDB_WATCH"]="false"
 
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
+
 
 class DataPreprocessor:
     def __init__(
@@ -278,13 +280,11 @@ class JointRobertaRegressor(PreTrainedModel):
         super().__init__(AutoConfig.from_pretrained(base_model_name))
         self.config = AutoConfig.from_pretrained(base_model_name)
         self.backbone = AutoModelForSequenceClassification.from_pretrained(base_model_name,
-                                                                    num_labels=self.config.hidden_size,  # Regression: only 1 output label
-                                                                    problem_type="regression",  # This ensures it's set up for regression (not classification)
+                                                                    num_labels=self.config.num_labels,  # Regression: only 1 output label
                                                                 )
-        self.hidden = self.config.hidden_size
         self.dropout = nn.Dropout(0.1)
         # Define a simple Feedforward Network (FNN) for processing the concatenated embeddings
-        self.regression = nn.Linear(self.hidden + 1, 1),  # [H + 1] because we concatenate scale with embeddings
+        self.regression_head = nn.Linear(self.backbone.config.hidden_size+1, 1)  # [H + 1] because we concatenate scale with embeddings
 
     @staticmethod
     def _scaler(value: torch.Tensor):
@@ -326,14 +326,15 @@ class JointRobertaRegressor(PreTrainedModel):
 
         # 3) Get last hidden state from the encoder output
         last_hidden_state = encoder_outputs.last_hidden_state  # [B, L, H]
+        cls_hidden_state = last_hidden_state[:, 0, :] # the [CLS] token
 
-        # 4) Concatenate the scale with the last hidden state for each token
-        scale_expanded = scale.unsqueeze(1).expand(-1, L, -1)  # [B, L, 1] - repeat for each token
-        concatenated = torch.cat((last_hidden_state, scale_expanded), dim=-1)  # [B, L, H + 1]
+        # 4) Concatenate the scale with the last hidden state for the [CLS] token
+        concatenated = torch.cat((cls_hidden_state, scale), dim=-1)  # [B, 1, H + 1]
 
         # 5) Pass the concatenated embedding through the Feedforward Network (FNN)
-        _concatenated = self.dropout(concatenated)
-        logits = self.regression(_concatenated).mean(dim=1).squeeze(-1)  # [B, L, 1] - token-wise output for each token
+        concatenated = self.dropout(concatenated)
+
+        logits = self.regression_head(concatenated).mean(dim=1).squeeze(-1)  # [B, 1, 1] - token-wise output for each token
 
 
         # 6) Compute loss if labels are provided
@@ -390,6 +391,7 @@ class RegressionTrainer:
             logging_dir=logging_dir,
             report_to=report_to,
             run_name=run_name,
+            logging_steps=10,
         )
         self._trainer = None
 

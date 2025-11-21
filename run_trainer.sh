@@ -1,24 +1,24 @@
-for i in {1..2}
-do
-  python3 task1_trainer.py \
-    --train data/split/subtask1_train_cv${i}.csv \
-    --validation data/split/subtask1_test_cv${i}.csv \
-    --model cardiffnlp/twitter-roberta-base-sentiment-latest \
-    --output_dir ./results \
-    --save_dir ./model/semeval2026_subtask1_xlm_arousal_reg_base_cv${i} \
-    --epochs 5 \
-    --max_length 256 \
-    --train_bs 32 \
-    --eval_bs 32 \
-    --dropout_rate 0.1 \
-    --learning_rate 1e-5 \
-    --label arousal \
-    --report_to wandb \
-    --scale_min -2 \
-    --scale_max 2 \
-    --run_name twitter_roberta_sentiment_cnt_dropout1e-1_arousal_cv${i} \
-    --continual 1
-done
+#for i in {1..2}
+#do
+#  python3 task1_trainer.py \
+#    --train data/split/subtask1_train_cv${i}.csv \
+#    --validation data/split/subtask1_test_cv${i}.csv \
+#    --model cardiffnlp/twitter-roberta-base-sentiment-latest \
+#    --output_dir ./results \
+#    --save_dir ./model/semeval2026_subtask1_xlm_arousal_reg_base_cv${i} \
+#    --epochs 5 \
+#    --max_length 256 \
+#    --train_bs 32 \
+#    --eval_bs 32 \
+#    --dropout_rate 0.1 \
+#    --learning_rate 1e-5 \
+#    --label arousal \
+#    --report_to wandb \
+#    --scale_min -2 \
+#    --scale_max 2 \
+#    --run_name twitter_roberta_sentiment_cnt_dropout1e-1_arousal_cv${i} \
+#    --continual 1
+#done
 #--calibration_data data/hallmark.csv
 #cardiffnlp/twitter-xlm-roberta-base \
 
@@ -47,26 +47,27 @@ done
 
 ## Task 2a
 ### Finetune
-#for i in {1..5}
-#do
-#  TRAIN_CSV="data/SemEval2026/data/split/subtask2a_train_cv${i}.csv"
-#  TEST_CSV="data/SemEval2026/data/split/subtask2a_test_cv${i}.csv"
-#  BASE_MODEL="cardiffnlp/twitter-xlm-roberta-base"
-#
-#  python3 joint_state_exponential_decay.py \
-#    --train ${TRAIN_CSV} \
-#    --validation ${TEST_CSV} \
-#    --model ${BASE_MODEL} \
-#    --output_dir ./results \
-#    --save_dir ./joint_decay_semeval2026_subtask2a_xlm_valence_reg_base \
-#    --epochs 5 \
-#    --train_bs 16 \
-#    --eval_bs 32 \
-#    --learning_rate 2e-5 \
-#    --label "state_change_valence" \
-#    --feature "valence" \
-#    --report_to none
-#done
+for i in {1..2}
+do
+  TRAIN_CSV="./split/subtask2a_train_cv${i}.csv"
+  TEST_CSV="./split/subtask2a_test_cv${i}.csv"
+  BASE_MODEL="cardiffnlp/twitter-roberta-base-sentiment-latest"
+
+  python3 joint_state_exponential_decay.py \
+    --train ${TRAIN_CSV} \
+    --validation ${TEST_CSV} \
+    --model ${BASE_MODEL} \
+    --output_dir ./results \
+    --save_dir ./joint_decay_semeval2026_subtask2a_xlm_valence_reg_base \
+    --epochs 5 \
+    --train_bs 8 \
+    --eval_bs 32 \
+    --learning_rate 2e-5 \
+    --label "valence" \
+    --feature "valence" \
+    --report_to wandb \
+    --run_name twitter_roberta_sentiment_cnt_dropout1e-1_exp_decay_valence_cv${i}
+done
 
 #for i in {1..5}
 #do
