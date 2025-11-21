@@ -148,7 +148,7 @@ class DataPreprocessor:
                     'state1': example1[f'{self.feature}'],
                     'time_diff': self._exponential_decay(example1[f'{self.feature}'], example1, example2),
                     # self._calculate_time_diff(example1, example2),
-                    f'{self.label}': example1[self.label],
+                    f'{self.label}': example2[self.label],  # predict the valence/arousal of the second sequence
                     'timestamp1': example1['timestamp'],
                     'timestamp2': example2['timestamp'],
                 })
@@ -167,8 +167,7 @@ class DataPreprocessor:
         The columns are joined in the order: text1, state1, text2.
         """
         return {
-            # 'text': f"{example['text1']} {str(example['state1'])} {example['text2']}"# {example['time_diff']}"
-            'text': f"state1: {str(example['state1'])} [SEP] content1: {example['text1']} [SEP] content2: {example['text2']} [SEP] time: {example['time_diff']}"  # the time_diff and initial state will be explicitly encoded
+            'text': f"state1: {str(example['state1'])} [SEP] content1: {example['text1']} [SEP] Time Elapse: {example['time_diff']} [SEP] content2: {example['text2']}"
         }
 
     def _create_text_column(self, paired_dataset):
@@ -279,20 +278,13 @@ class JointRobertaRegressor(PreTrainedModel):
         super().__init__(AutoConfig.from_pretrained(base_model_name))
         self.config = AutoConfig.from_pretrained(base_model_name)
         self.backbone = AutoModelForSequenceClassification.from_pretrained(base_model_name,
-                                                                    num_labels=1,  # Regression: only 1 output label
+                                                                    num_labels=self.config.hidden_size,  # Regression: only 1 output label
                                                                     problem_type="regression",  # This ensures it's set up for regression (not classification)
                                                                 )
         self.hidden = self.config.hidden_size
-
+        self.dropout = nn.Dropout(0.1)
         # Define a simple Feedforward Network (FNN) for processing the concatenated embeddings
-        self.fnn = nn.Sequential(
-            nn.Linear(self.hidden + 1, self.hidden),  # [H + 1] because we concatenate scale with embeddings
-            nn.ReLU(),
-            nn.Linear(self.hidden, self.hidden),
-            nn.ReLU(),
-            nn.Linear(self.hidden, 1)  # Final output for regression (1 label)
-        )
-
+        self.regression = nn.Linear(self.hidden + 1, 1),  # [H + 1] because we concatenate scale with embeddings
 
     @staticmethod
     def _scaler(value: torch.Tensor):
@@ -332,7 +324,6 @@ class JointRobertaRegressor(PreTrainedModel):
         scale = time_diff.view(B, 1, 1).squeeze(-1)  # [B, 1]
         # print(scale)
 
-
         # 3) Get last hidden state from the encoder output
         last_hidden_state = encoder_outputs.last_hidden_state  # [B, L, H]
 
@@ -341,12 +332,11 @@ class JointRobertaRegressor(PreTrainedModel):
         concatenated = torch.cat((last_hidden_state, scale_expanded), dim=-1)  # [B, L, H + 1]
 
         # 5) Pass the concatenated embedding through the Feedforward Network (FNN)
-        output = self.fnn(concatenated)  # [B, L, 1] - token-wise output for each token
+        _concatenated = self.dropout(concatenated)
+        logits = self.regression(_concatenated).mean(dim=1).squeeze(-1)  # [B, L, 1] - token-wise output for each token
 
-        # 6) Aggregate the token-wise outputs to get a single regression value per sequence (e.g., mean)
-        logits = output.mean(dim=1).squeeze(-1)  # [B, 1] - mean over sequence length L for regression
 
-        # 7) Compute loss if labels are provided
+        # 6) Compute loss if labels are provided
         loss = None
         if labels is not None:
             loss = nn.functional.mse_loss(logits.view(-1), labels.view(-1).float())
@@ -379,6 +369,7 @@ class RegressionTrainer:
             save_total_limit: int = 2,
             eval_strategy: str = "epoch",
             save_strategy: str = "epoch",
+            run_name: str = "default",
     ):
         self.model_name = model_name
         self.tokenizer = AutoTokenizer.from_pretrained(model_name)
@@ -398,6 +389,7 @@ class RegressionTrainer:
             save_total_limit=save_total_limit,
             logging_dir=logging_dir,
             report_to=report_to,
+            run_name=run_name,
         )
         self._trainer = None
 
@@ -477,6 +469,7 @@ def main():
     parser.add_argument("--save_dir", type=str, default="./saved_model", help="Directory to save the model")
     parser.add_argument("--label", type=str, default="state_change_valence", help="The target label name.")
     parser.add_argument("--feature", type=str, default="valence", help="The valence or arousal feature.")
+    parser.add_argument("--run_name", type=str, default="default", help="Name of the run.")
     args = parser.parse_args()
 
     data_files = {"train": args.train, "validation": args.validation}
@@ -492,6 +485,7 @@ def main():
         num_epochs=args.epochs,
         weight_decay=args.weight_decay,
         report_to=args.report_to,
+        run_name=args.run_name,
     )
     pre = DataPreprocessor(
         data_files=data_files,
