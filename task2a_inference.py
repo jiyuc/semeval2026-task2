@@ -111,7 +111,7 @@ def _predict(
                 logits = np.array([float(logits)], dtype=np.float32)
             preds_all.extend(logits.tolist())
 
-    return np.asarray([round(n, 0) for n in preds_all], dtype=np.int32)
+    return np.asarray([round(n, 0) for n in preds_all], dtype=np.int8)  # round to the closest integer
 
 
 def main():

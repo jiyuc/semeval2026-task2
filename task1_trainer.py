@@ -1,15 +1,22 @@
 import argparse
 import numpy as np
 from typing import Dict, Tuple, Any
-from datasets import load_dataset, DatasetDict
+from datasets import load_dataset, DatasetDict, concatenate_datasets, Features, Value
 from transformers import (
     AutoTokenizer,
     AutoModelForSequenceClassification,
     TrainingArguments,
     Trainer,
+    RobertaForSequenceClassification,
+    PreTrainedModel,
+    AutoConfig,
 )
+from transformers.modeling_outputs import SequenceClassifierOutput
 import evaluate
 import os
+import torch.nn as nn
+from sklearn.preprocessing import MinMaxScaler
+import torch
 
 # set the wandb project where this run will be logged
 os.environ["WANDB_PROJECT"]="semeval2026"
@@ -34,8 +41,9 @@ class DataPreprocessor:
     def __init__(
         self,
         data_files: Dict[str, str],
+        calibration_data: Dict[str, str],
         label: str = "valence",
-        feature_range: Tuple[float, float] = (-2, 2),
+        # feature_range: Tuple[float, float] = (-2, 2),
         text_col_candidates=("text", "Tweet", "text_body"),
         label_col_candidates=("valence", "Intensity Score", "arousal"),
     ):
@@ -50,11 +58,12 @@ class DataPreprocessor:
             label_col_candidates: Possible label column names to normalize to the given feature name.
         """
         self.data_files = data_files
+        self.calibration_data = calibration_data
         self.label = label
-        self.feature_range = feature_range
+        # self.feature_range = feature_range
         self.text_col_candidates = text_col_candidates
         self.label_col_candidates = label_col_candidates
-        self._scaler_params = None  # (vmin, vmax, scale, min_adj)
+        self._scaler = None
 
     def load(self) -> DatasetDict:
         """
@@ -63,7 +72,78 @@ class DataPreprocessor:
         Returns:
             A DatasetDict with 'train'/'validation'/optional 'test' splits.
         """
-        return load_dataset("csv", data_files=self.data_files)
+
+        dataset = load_dataset("csv", data_files=self.data_files)
+
+        # # Calculate the frequency of each label in the training set
+        # label_counts = dataset["train"].features[self.label]
+        # label_frequency = dataset["train"].to_pandas()[self.label].value_counts()
+        #
+        # print(f"Original label distribution: {label_frequency}")
+        #
+        # # Find the maximum number of instances per label (to balance to)
+        # max_label_count = label_frequency.max()
+        #
+        # # Duplicate data for underrepresented labels
+        # balanced_train = []
+        #
+        # for label_value in [-2, -1, 0, 1, 2]:
+        #     # Filter the instances for the current label
+        #     label_data = dataset["train"].filter(lambda x: x[self.label] == label_value)
+        #
+        #     # Calculate how many times to duplicate based on the imbalance
+        #     duplication_factor = int(round(max_label_count / len(label_data), 0))
+        #     # print(duplication_factor)
+        #
+        #     # If the label is underrepresented, duplicate it
+        #     if duplication_factor > 1:
+        #         duplicated_data = concatenate_datasets([label_data] * duplication_factor)
+        #         balanced_train.append(duplicated_data)
+        #     else:
+        #         balanced_train.append(label_data)
+        #
+        # # Concatenate all the balanced data back together
+        # balanced_train_dataset = concatenate_datasets(balanced_train)
+        #
+        # # Shuffle the dataset after duplication
+        # balanced_train_dataset = balanced_train_dataset.shuffle(seed=42)
+        #
+        # # Replace the original train split with the balanced one
+        # dataset["train"] = balanced_train_dataset
+        # label_frequency = dataset["train"].to_pandas()[self.label].value_counts()
+        # print(f"After balance label distribution: {label_frequency}")
+
+        features = Features({'user_id': Value('int64'),
+                             'text_id': Value('int64'),
+                             'text': Value('string'),
+                             'timestamp': Value('string'),
+                             'collection_phase': Value('int64'),
+                             'is_words': Value('bool'),
+                             'valence': Value('float64'),
+                             'arousal': Value('float64')})
+
+        if self.calibration_data:
+            calibration_dataset = load_dataset("csv", data_files=self.calibration_data, features=features)["calibration"]
+
+            train_dataset = dataset["train"]
+
+            # Inject calibration data into the training data
+            alpha = int(0.1 * len(train_dataset)) // len(calibration_dataset)
+            repeated_calibration = concatenate_datasets([calibration_dataset] * alpha)
+
+            # Combine training data with repeated calibration data
+            combined_train = concatenate_datasets([train_dataset, repeated_calibration])
+
+            # Shuffle the combined dataset
+            combined_train = combined_train.shuffle(seed=42)
+
+            # Replace original train dataset
+            dataset["train"] = combined_train
+
+        # dataset["train"] = dataset["train"].filter(lambda e: e["is_words"])
+        dataset = dataset.map(lambda e: {"text": e["text"].lower()})
+        # dataset["test"] = dataset["test"].filter(lambda e: e["is_words"])
+        return dataset
 
     def _normalize_columns(self, ds: DatasetDict) -> DatasetDict:
         """
@@ -102,50 +182,15 @@ class DataPreprocessor:
         except (TypeError, ValueError):
             return {self.label: None}
 
-    def _has_target(self, example: Dict[str, Any]) -> bool:
-        """
-        Predicate for filtering out rows with missing targets.
+    # def _has_target(self, example: Dict[str, Any]) -> bool:
+    #     """
+    #     Predicate for filtering out rows with missing targets.
+    #
+    #     Returns:
+    #         True if target exists, else False.
+    #     """
+    #     return example[self.label] is not None
 
-        Returns:
-            True if target exists, else False.
-        """
-        return example[self.label] is not None
-
-    @staticmethod
-    def _fit_minmax_on_split(ds_split, col: str, feature_range: Tuple[float, float]) -> Tuple[float, float, float, float]:
-        """
-        Compute MinMax parameters on a split.
-
-        Returns:
-            (vmin, vmax, scale, min_adj) tuple to apply x*scale + min_adj.
-        """
-        arr = np.asarray(ds_split[col], dtype=np.float32)
-        vmin = float(np.min(arr))
-        vmax = float(np.max(arr))
-        if vmax == vmin:
-            scale = 0.0
-            min_adj = feature_range[0]
-        else:
-            scale = (feature_range[1] - feature_range[0]) / (vmax - vmin)
-            min_adj = feature_range[0] - vmin * scale
-        return vmin, vmax, scale, min_adj
-
-    @staticmethod
-    def _apply_minmax(batch: Dict[str, Any], col: str, scale: float, min_adj: float) -> Dict[str, Any]:
-        """
-        Apply precomputed MinMax scaling to a batch.
-
-        Returns:
-            Dict with scaled values under the original column name.
-        """
-
-        return batch # uncomment this line to skip the scaling
-        vals = np.asarray(batch[col], dtype=np.float32)
-        if scale == 0.0:
-            scaled = np.full_like(vals, fill_value=min_adj, dtype=np.float32)
-        else:
-            scaled = vals * scale + min_adj
-        return {col: scaled.tolist()}
 
     @staticmethod
     def _to_labels(batch: Dict[str, Any], from_col: str) -> Dict[str, Any]:
@@ -157,6 +202,7 @@ class DataPreprocessor:
         """
         vals = np.array(batch[from_col], dtype=np.float32)
         return {"labels": vals}
+
 
     def prepare(
         self,
@@ -181,30 +227,32 @@ class DataPreprocessor:
         """
         dataset = self.load()
         dataset = self._normalize_columns(dataset)
-
         dataset = dataset.map(self._clean_target)
-        dataset = dataset.filter(self._has_target)
+        # dataset = dataset.filter(self._has_target)
 
-        # Fit scaler on train split
-        vmin, vmax, scale, min_adj = self._fit_minmax_on_split(
-            dataset["train"], col=self.label, feature_range=self.feature_range
-        )
-        self._scaler_params = (vmin, vmax, scale, min_adj)
+        # # Initialize the MinMaxScaler on the training data labels
+        # labels = [example[self.label] for example in dataset["train"] if example[self.label] is not None]
+        # # self._scaler = MinMaxScaler(feature_range=self.feature_range)
+        # # _ = self._scaler.fit(np.array(labels).reshape(-1, 1))
+        #
+        # # Create a mapping to scale the labels to [0, 1]
+        # def scale_labels(example):
+        #     if example[self.label] is not None:
+        #         example[self.label] = self._scaler.transform([[example[self.label]]])[0][0]
+        #     return example
+        #
+        # print(f"Before scaling [{min(dataset["train"][self.label])}, {max(dataset["train"][self.label])}]")
+        # dataset = dataset.map(scale_labels)
+        # print(f"After scaling [{min(dataset["train"][self.label])}, {max(dataset["train"][self.label])}]")
 
-        # Apply scaling to all available splits consistently
-        for split in dataset.keys():
-            print(f"Before scaling {self.label} (train): min={min(dataset[split][self.label]):.4f} max={max(dataset[split][self.label]):.4f}")
-
-            dataset[split] = dataset[split].map(
-                self._apply_minmax,
-                batched=True,
-                fn_kwargs={"col": self.label, "scale": scale, "min_adj": min_adj},
-            )
-
-            print(f"After scaling {self.label} (train): min={min(dataset[split][self.label]):.4f} max={max(dataset[split][self.label]):.4f}")
 
         # Tokenization
         def _preprocess(batch):
+            # texts = batch["text"]
+            # emotions = batch["emotions"]
+            #
+            # # Concatenate text and emotions (adding a space between them)
+            # concatenated = [text + " " + emotion for text, emotion in zip(texts, emotions)]
             return tokenizer(
                 batch["text"], truncation=True, padding="max_length", max_length=max_length
             )
@@ -222,16 +270,55 @@ class DataPreprocessor:
 
         return encoded
 
-    def scaler_info(self) -> Tuple[float, float, float, float]:
-        """
-        Get fitted scaler parameters (vmin, vmax, scale, min_adj).
 
-        Returns:
-            Tuple of MinMax parameters computed on the train split.
-        """
-        if self._scaler_params is None:
-            raise RuntimeError("Scaler parameters are not available before calling prepare().")
-        return self._scaler_params
+
+# Modify the model to extract the [CLS] token and add a regression head
+class RoBERTaWithRegressionHead(PreTrainedModel):
+    """
+    Apply a joint modeling approach to RoBERTa for regression with temporal scaling.
+    """
+    def __init__(self, base_model_name: str, dropout_rate: float = 0.1):
+        super().__init__(AutoConfig.from_pretrained(base_model_name))
+        self.config = AutoConfig.from_pretrained(base_model_name)
+        self.backbone = AutoModelForSequenceClassification.from_pretrained(base_model_name,
+                                                                    num_labels=self.config.num_labels,
+                                                                )
+        # # Freeze the backbone parameters
+        # for param in self.backbone.parameters():
+        #     param.requires_grad = False
+
+        self.dropout = nn.Dropout(dropout_rate)
+        self.regression_head = nn.Linear(self.backbone.config.hidden_size, 1)  # Regression head
+
+    def forward(self, input_ids, attention_mask=None, token_type_ids=None, labels=None):
+        # Pass inputs through roberta
+        outputs = self.backbone.roberta(input_ids=input_ids,
+                                  attention_mask=attention_mask,
+                                  token_type_ids=token_type_ids)
+
+        # Get the last hidden state (of shape [batch_size, seq_length, hidden_size])
+        last_hidden_state = outputs.last_hidden_state
+
+        # Extract the hidden state corresponding to the [CLS] token (index 0)
+        cls_hidden_state = last_hidden_state[:, 0, :]  # Shape: [batch_size, hidden_size]
+
+        # Apply dropout
+        cls_hidden_state = self.dropout(cls_hidden_state)
+
+        # Pass the [CLS] token hidden state through the regression head
+        logits = self.regression_head(cls_hidden_state).mean(dim=1).squeeze(-1)
+
+        loss = None
+        if labels is not None:
+            # Compute MSE loss
+            loss = nn.functional.mse_loss(logits.view(-1), labels.view(-1).float())
+
+        # If labels are provided, calculate and return the loss
+        return SequenceClassifierOutput(
+            loss=loss,
+            logits=logits,
+        )
+
 
 
 class MetricComputer:
@@ -249,6 +336,7 @@ class MetricComputer:
         self._mae = evaluate.load("mae")
         self._rmse = evaluate.load("mse")
         self._f1 = evaluate.load("f1")  # the predictions are rounded to the closest categorical integer, thus, enable f1
+
 
     def compute(self, eval_pred):
         """
@@ -269,7 +357,7 @@ class MetricComputer:
         rmse_val = float(self._rmse.compute(predictions=preds, references=labels, squared=False)["mse"])
 
         f1_val = float(self._f1.compute(predictions=[round(n, 0) for n in np.squeeze(preds)],
-                                        references=np.squeeze(labels).astype(np.int8),
+                                        references=np.squeeze(labels),
                                         average="weighted")["f1"])
 
         return {
@@ -290,6 +378,7 @@ class RegressionTrainer:
     def __init__(
         self,
         model_name: str,
+        continual: bool,
         output_dir: str = "./results",
         learning_rate: float = 2e-5,
         train_bs: int = 16,
@@ -303,12 +392,15 @@ class RegressionTrainer:
         save_total_limit: int = 2,
         eval_strategy: str = "epoch",
         save_strategy: str = "epoch",
+        run_name: str = "subtask1",
+        dropout_rate: float = 0.1,
     ):
         """
         Configure model, tokenizer, and training arguments.
 
         Args:
             model_name: Pretrained model identifier or local path.
+            continual: Finetune on emotion/sentiment analyzer or from foundational RoBERTa
             output_dir: Directory for checkpoints and outputs.
             learning_rate: Optimizer learning rate.
             train_bs: Per-device train batch size.
@@ -325,11 +417,19 @@ class RegressionTrainer:
         """
         self.model_name = model_name
         self.tokenizer = AutoTokenizer.from_pretrained(model_name)
-        self.model = AutoModelForSequenceClassification.from_pretrained(
-            model_name,
-            num_labels=1,
-            problem_type="regression",
-        )
+
+        if continual:
+            print(f"Continuing finetuning on {model_name}")
+            self.model = RoBERTaWithRegressionHead(self.model_name, dropout_rate=dropout_rate)
+        else:
+            print(f"Finetuning on {model_name}")
+            self.model = self.model = AutoModelForSequenceClassification.from_pretrained(
+                    model_name,
+                    num_labels=1,
+                    problem_type="regression"
+                )
+
+
         self.args = TrainingArguments(
             output_dir=output_dir,
             eval_strategy=eval_strategy,
@@ -345,6 +445,8 @@ class RegressionTrainer:
             save_total_limit=save_total_limit,
             logging_dir=logging_dir,
             report_to=report_to,
+            logging_steps=10,
+            run_name=run_name,
         )
         self._trainer = None
 
@@ -414,6 +516,7 @@ def main():
             --save_dir ./xlm_valence_reg_model
     """
     parser = argparse.ArgumentParser(description="Fine-tune a regression model on valence/arousal data.")
+    parser.add_argument("--run_name", required=True, default="subtask1", type=str, help="Name of the run.")
     parser.add_argument("--train", required=True, help="Path to training CSV.")
     parser.add_argument("--validation", required=True, help="Path to validation CSV.")
     parser.add_argument("--test", help="Path to test CSV (optional).")
@@ -424,21 +527,29 @@ def main():
     parser.add_argument("--learning_rate", type=float, default=2e-5, help="Learning rate.")
     parser.add_argument("--train_bs", type=int, default=16, help="Per-device train batch size.")
     parser.add_argument("--eval_bs", type=int, default=32, help="Per-device eval batch size.")
+    parser.add_argument("--dropout_rate", type=float, default=0.1, help="Dropout rate.")
     parser.add_argument("--epochs", type=int, default=5, help="Number of training epochs.")
     parser.add_argument("--weight_decay", type=float, default=0.01, help="Weight decay.")
     parser.add_argument("--report_to", default="none", help="Reporting integration for Trainer.")
     parser.add_argument("--label", type=str, default="valence", help="The target label name.")
     parser.add_argument("--scale_min", type=float, default=-2, help="Min of scaling range.")
     parser.add_argument("--scale_max", type=float, default=2, help="Max of scaling range.")
+    parser.add_argument("--calibration_data", default=None, help="Provide the data source for calibration.")
+    parser.add_argument("--continual", default=0, help="Indicate whether to continue finetune an emotion detector or only fine-tune from foundation")
     args = parser.parse_args()
 
     data_files = {"train": args.train, "validation": args.validation}
     if args.test:
         data_files["test"] = args.test
 
+    if args.calibration_data:
+        calibration_data = {'calibration': args.calibration_data}
+    else: calibration_data = None
+
     # Build components
     reg = RegressionTrainer(
         model_name=args.model,
+        continual=bool(args.continual),
         output_dir=args.output_dir,
         learning_rate=args.learning_rate,
         train_bs=args.train_bs,
@@ -446,17 +557,20 @@ def main():
         num_epochs=args.epochs,
         weight_decay=args.weight_decay,
         report_to=args.report_to,
+        run_name=args.run_name
 
     )
     pre = DataPreprocessor(
         data_files=data_files,
+        calibration_data=calibration_data,
         label=args.label,
-        feature_range=(args.scale_min, args.scale_max),
     )
-    metrics = MetricComputer()
 
     # Prepare data
     encoded = pre.prepare(tokenizer=reg.tokenizer, max_length=args.max_length)
+
+    # define metrics
+    metrics = MetricComputer()
 
     # Build, train, evaluate
     _ = reg.build_trainer(encoded, metrics)
@@ -470,7 +584,6 @@ def main():
     # Save artifacts
     reg.save(args.save_dir)
     print(f"Final model and tokenizer saved in {args.save_dir}")
-
 
 if __name__ == "__main__":
     main()

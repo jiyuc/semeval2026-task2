@@ -1,37 +1,30 @@
-# ... existing code ...
+# Python 3.12
+# Inference script for valence/arousal regression using a fine-tuned (XLM-)RoBERTa-base model.
+# - Loads a saved model directory (from task1 fine-tuning)
+# - Prepares inputs exactly like training (single-text inputs)
+# - Predicts and writes integer-rounded predictions back to the CSV under the requested target column.
+
+import argparse
+import os
+from typing import List
+
+import numpy as np
+import pandas as pd
+import torch
+from transformers import AutoTokenizer, AutoModelForSequenceClassification
 from tqdm import tqdm
+from sklearn.preprocessing import MinMaxScaler
 
 
-def _ensure_cols(df: pd.DataFrame, col_names: List[str]) -> None:
-    missing = [c for c in col_names if c not in df.columns]
+def _ensure_cols(df: pd.DataFrame, required: List[str]) -> None:
+    missing = [c for c in required if c not in df.columns]
     if missing:
         raise ValueError(f"Missing columns in CSV: {missing}")
-# ... existing code ...
 
 
-def _prepare_inference_dataframe(df: pd.DataFrame, feature_col: str) -> pd.DataFrame:
-    # Build consecutive pairs per user_id (same as training)
-    parts = []
-    for uid, group in df.groupby("user_id", sort=False):
-        if len(group) < 2:
-            continue
-        parts.append(_build_pairs_for_user(group, feature_col))
-    if not parts:
-        return pd.DataFrame(columns=["user_id", "text_id", "text"])
-    paired_df = pd.concat(parts, ignore_index=True)
-
-    # Compose the single 'text' input as in training combine_text()
-    paired_df["text"] = (
-        paired_df["text1"].astype(str)
-        + " "
-        + paired_df["state1"].astype(str)
-        + " "
-        + paired_df["text2"].astype(str)
-        + " "
-        + paired_df["time_diff"].astype(str)
-    )
-    return paired_df[["user_id", "text_id", "text"]]
-# ... existing code ...
+def _default_out_path(input_csv: str, target: str) -> str:
+    base, ext = os.path.splitext(input_csv)
+    return f"{base}.{target}.predicted{ext}"
 
 
 def _predict(
@@ -42,7 +35,7 @@ def _predict(
     device: str | None = None,
 ) -> np.ndarray:
     tokenizer = AutoTokenizer.from_pretrained(model_dir)
-    model = AutoModelForSequenceClassification.from_pretrained(model_dir)
+    model = AutoModelForSequenceClassification.from_pretrained(model_dir, num_labels=1)
     model.eval()
 
     if device is None:
@@ -64,52 +57,46 @@ def _predict(
             enc = {k: v.to(device_t) for k, v in enc.items()}
             out = model(**enc)
             logits = out.logits.squeeze(-1).detach().cpu().numpy()
-            if logits.ndim == 0:  # single item
+            if logits.ndim == 0:
                 logits = np.array([float(logits)], dtype=np.float32)
             preds_all.extend(logits.tolist())
 
-    return np.asarray([round(n) for n in preds_all], dtype=np.int8)  # round to int
-# ... existing code ...
+    # round to closest integer and cast to small int
+    # preds_all = MinMaxScaler(feature_range=(-2.0, 2.0)).fit_transform(preds_all).flatten()
+    return np.asarray([round(n, 0) for n in preds_all], dtype=np.int8)
 
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Run inference with a fine-tuned RoBERTa-base model and write rounded predictions back to CSV."
+        description="Run inference with a fine-tuned RoBERTa-base regression model and write predictions back to CSV."
     )
     parser.add_argument("--csv", required=True, help="Path to input CSV (same schema as training).")
-    parser.add_argument("--model_dir", required=True, help="Directory that contains the fine-tuned model and tokenizer.")
+    parser.add_argument("--model_dir", required=True, help="Directory containing the fine-tuned model/tokenizer.")
     parser.add_argument("--target",
                         choices=["valence", "arousal"],
                         required=True,
-                        help="Which column to fill with predictions (rounded to int).")
-    parser.add_argument("--batch_size", type=int, default=32, help="Batch size for inference.")
-    parser.add_argument("--max_length", type=int, default=512, help="Tokenizer max length.")
+                        help="Which target to predict; determines destination column name to write.")
+    parser.add_argument("--text_col", default="text",
+                        help="Name of text column if different from 'text'.")
+    parser.add_argument("--batch_size", type=int, default=32)
+    parser.add_argument("--max_length", type=int, default=512)
     parser.add_argument("--output_csv", default=None,
-                        help="Optional output CSV path. If omitted, writes alongside input with a suffix.")
+                        help="Optional output CSV path; if omitted, writes alongside the input with a suffix.")
     args = parser.parse_args()
 
-    # Load CSV
     df = pd.read_csv(args.csv)
 
-    # Validate columns present (must match training data schema for task1-style inputs)
-    _ensure_cols(
-        df,
-        [
-            "text",
-            "user_id",
-            "text_id",
-            "timestamp",
-        ],
-    )
+    # Ensure required columns exist to mirror training schema for task1
+    _ensure_cols(df, [args.text_col])#, "user_id", "text_id", "timestamp"])
 
-    # Tokenize plain 'text' rows (no pairing for this inference; predicts current state)
-    texts = df["text"].astype(str).tolist()
+    texts = df[args.text_col].fillna("").astype(str).tolist()
     if len(texts) == 0:
+        # still ensure column exists and save out
         if args.target not in df.columns:
             df[args.target] = np.nan
         out_path = args.output_csv or _default_out_path(args.csv, args.target)
         df.to_csv(out_path, index=False)
-        print(f"No texts to predict. Wrote CSV to {out_path}")
+        print(f"No rows to predict. Wrote CSV to {out_path}")
         return
 
     preds = _predict(
@@ -119,15 +106,17 @@ def main():
         max_length=args.max_length,
     )
 
-    # Ensure destination column exists
+    # Create/overwrite the destination column with predictions where missing; keep any existing non-NaNs
     if args.target not in df.columns:
         df[args.target] = np.nan
 
-    # Fill by index; keep any existing non-null values
-    mask_to_fill = df[args.target].isna()
-    df.loc[mask_to_fill, args.target] = np.asarray(preds, dtype=np.int8)[mask_to_fill.values]
+    mask = df[args.target].isna()
+    df.loc[mask, args.target] = preds[mask.values]  # align by row order
 
     out_path = args.output_csv or _default_out_path(args.csv, args.target)
-    df.to_csv(out_path, index=False)
-    print(f"Predictions (rounded) saved to {out_path}")
-# ... existing code ...
+    df.round(2).to_csv(out_path, index=False)
+    print(f"Predictions saved to {out_path}")
+
+
+if __name__ == "__main__":
+    main()
