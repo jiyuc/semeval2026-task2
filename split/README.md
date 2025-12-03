@@ -115,3 +115,18 @@ where,
 > Note 2: We also provide additional columns in the detailed file train_subtask2b_detailed.csv to show the intermediate values used for computing the released labels: text_num, num_texts_per_user, group, mean_valence_half1, mean_valence_half2, mean_arousal_half1, mean_arousal_half2.
 
 > Note 3: We also provide a trimmed version with only user_id and disposition_change columns (train_subtask2b_user_disposition.csv): user_id, disposition_change_valence, disposition_change_arousal. 
+
+
+### Auxilary Information
+We applied a series of *off-the-shelf* language models to make inference on the original text as auxilary context
+
+- [Emotions:](https://huggingface.co/cardiffnlp/twitter-roberta-base-emotion-latest) `{"0": "anger", "1": "anticipation", "2": "disgust", "3": "fear", "4": "joy", "5": "love", "6": "optimism", "7": "pessimism", "8": "sadness", "9": "surprise", "10": "trust"}`
+
+- [Sentiment:](https://huggingface.co/cardiffnlp/twitter-roberta-large-topic-sentiment-latest)`{ "0": "strongly negative", "1": "negative", "2": "negative or neutral", "3": "positive", "4": "strongly positive" }`
+
+- [Irony:](https://huggingface.co/cardiffnlp/twitter-roberta-base-irony)`irony or non-irony`
+
+- [Topic:](https://huggingface.co/cardiffnlp/twitter-roberta-base-topic-latest)`{ "0": "arts_&_culture", "1": "business_&_entrepreneurs", "2": "celebrity_&_pop_culture", "3": "diaries_&_daily_life", "4": "family", "5": "fashion_&_style", "6": "film_tv_&_video", "7": "fitness_&_health", "8": "food_&_dining", "9": "gaming", "10": "learning_&_educational", "11": "music", "12": "news_&_social_concern", "13": "other_hobbies", "14": "relationships", "15": "science_&_technology", "16": "sports", "17": "travel_&_adventure", "18": "youth_&_student_life" }`
+
+-[Emoji:](https://huggingface.co/cardiffnlp/twitter-roberta-base-emoji-latest) 100emojis 
+
