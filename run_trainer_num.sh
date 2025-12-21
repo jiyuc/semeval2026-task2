@@ -58,25 +58,40 @@
 
 for COL in valence arousal;
 do
-  for i in {1..4}
+  for i in {1..2}
   do
     TRAIN_CSV="data/split/subtask2a_train_cv${i}.csv"
     TEST_CSV="data/split/subtask2a_test_cv${i}.csv"
     BASE_MODEL="cardiffnlp/twitter-xlm-roberta-base"
 
-    python3 task2a_trainer_num.py \
-        --run_name xlm_roberta_base_num_latest_${COL}_cv${i} \
+    python3 task2a_trainer_extra.py \
+        --run_name xlm_roberta_base_extra_${COL}_cv${i} \
         --train ${TRAIN_CSV} \
         --validation ${TEST_CSV} \
         --model ${BASE_MODEL} \
         --output_dir ./results \
-        --epochs 3 \
-        --train_bs 16 \
-        --eval_bs 32 \
-        --learning_rate 2e-5 \
+        --epochs 10 \
+        --train_bs 8 \
+        --eval_bs 8 \
+        --learning_rate 1e-3 \
         --label state_change_${COL} \
         --feature ${COL} \
         --report_to "wandb"
+
+#    python3 task2a_trainer.py \
+#        --run_name xlm_roberta_base_default_${COL}_cv${i} \
+#        --train ${TRAIN_CSV} \
+#        --validation ${TEST_CSV} \
+#        --model ${BASE_MODEL} \
+#        --output_dir ./results \
+#        --epochs 3 \
+#        --train_bs 8 \
+#        --eval_bs 8 \
+#        --learning_rate 1e-4 \
+#        --label state_change_${COL} \
+#        --feature ${COL} \
+#        --report_to "wandb"
+
   done
 done
 

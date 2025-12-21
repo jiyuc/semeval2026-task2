@@ -5,13 +5,13 @@ from datasets import load_dataset, DatasetDict, Dataset
 import wandb
 import math
 import os
+os.environ["TOKENIZERS_PARALLELISM"]="false"
 
 from transformers import (
     AutoTokenizer,
     TrainingArguments,
     Trainer,
     AutoModel, RobertaConfig,
-    DataCollatorWithPadding
 )
 import evaluate
 from datetime import datetime
@@ -19,9 +19,10 @@ import pandas as pd
 import torch
 import torch.nn as nn
 from torch.nn import MSELoss
-from transformers import RobertaModel, AutoConfig, BertPreTrainedModel
+
+from transformers import AutoConfig, BertPreTrainedModel
 from transformers.modeling_outputs import SequenceClassifierOutput
-from sklearn.preprocessing import StandardScaler
+
 
 # os.environ['WANDB_API_KEY'] = '1e99e9ffac3110635b72b4581c56dc7cf58c6fa4'
 
@@ -35,20 +36,17 @@ os.environ["WANDB_LOG_MODEL"]="end"
 os.environ["WANDB_WATCH"]="false"
 
 
+
 class DataPreprocessor:
     def __init__(
             self,
             data_files: Dict[str, str],
             label: str = "",
             feature: str = "",
-            text_col_candidates=("text", "Tweet", "text_body"),
-            label_col_candidates=("valence", "Intensity Score", "arousal"),
     ):
         self.data_files = data_files
         self.label = label
         self.feature = feature
-        self.text_col_candidates = text_col_candidates
-        self.label_col_candidates = label_col_candidates
 
 
     def load(self) -> DatasetDict:
@@ -57,40 +55,6 @@ class DataPreprocessor:
         """
         return load_dataset("csv", data_files=self.data_files)
 
-    def _normalize_columns(self, ds: DatasetDict) -> DatasetDict:
-        """
-        Normalize text and label column names to 'text' and self.feature.
-        """
-        train_cols = ds["train"].column_names
-        if "text" not in train_cols:
-            for cand in self.text_col_candidates:
-                if cand in train_cols:
-                    ds = ds.rename_column(cand, "text")
-                    break
-
-        train_cols = ds["train"].column_names
-        if self.label not in train_cols:
-            for cand in self.label_col_candidates:
-                if cand in train_cols:
-                    ds = ds.rename_column(cand, self.label)
-                    break
-        return ds
-
-    def _clean_target(self, example: Dict[str, Any]) -> Dict[str, Any]:
-        """
-        Convert target to float and set invalid to None so downstream filter can drop them.
-        """
-        v = example.get(self.label)
-        try:
-            return {self.label: float(v)}
-        except (TypeError, ValueError):
-            return {self.label: None}
-
-    def _has_target(self, example: Dict[str, Any]) -> bool:
-        """
-        Predicate for filtering out rows with missing targets.
-        """
-        return example[self.label] is not None
 
     @staticmethod
     def _to_labels(batch: Dict[str, Any], from_col: str) -> Dict[str, Any]:
@@ -100,14 +64,14 @@ class DataPreprocessor:
         vals = np.array(batch[from_col], dtype=np.float32)
         return {"labels": vals}
 
-    def _calculate_time_diff(self, example1, example2) -> float:
+    def _calculate_time_diff(self, prev, curr) -> float:
         """
         Calculate the time difference between two consecutive examples.
         """
         time_format = "%Y-%m-%d %H:%M:%S"  # Assumes the timestamp is in the format of 'YYYY-MM-DD HH:MM:SS'
-        time1 = datetime.strptime(example1['timestamp'], time_format)
-        time2 = datetime.strptime(example2['timestamp'], time_format)
-        return (time2 - time1).total_seconds() / (3600*24) # convert to hours
+        curr = datetime.strptime(curr['timestamp'], time_format)
+        prev = datetime.strptime(prev['timestamp'], time_format)
+        return (curr - prev).total_seconds() / (3600*24) # convert to hours
 
 
     def _generate_collection_phase_sample_by_user_id(self, dataset: Dataset) -> Dataset:
@@ -136,11 +100,12 @@ class DataPreprocessor:
                 phase_samples.append({
                     'user_id': user_id,
                     'collection_phase': phase_id,
-                    'text1': prev_prev['text'].lower(),
+                    # 'text1': prev_prev['text'].lower(),
                     'text2': prev['text'].lower(),
                     'state1': prev_prev[f'{self.feature}'],
                     'state2': prev[f'{self.feature}'],
                     'state_change': prev_prev[f'{self.label}'],
+                    'time_diff': self._calculate_time_diff(prev_prev, prev),
                     f'{self.label}': prev[self.label]  # the state change in the last of each phase to predict
                 })
 
@@ -159,8 +124,9 @@ class DataPreprocessor:
         """
         return {
             'text': f"state change: {example['state_change']} "
-                    f"</s> state: {example['text2']} text: {str(example['state2'])} "
-                    f"</s> state: {example['text1']} text: {str(example['state1'])}"
+                    f"</s> time difference: {example['time_diff']} "
+                    f"</s> previous state: {str(example['state1'])} "
+                    f"</s> current state: {example['state2']} text: {str(example['text2'])}"
         }
 
     def _create_text_column(self, paired_dataset):
@@ -255,13 +221,26 @@ class RobertaRegressionHead(nn.Module):
 
     def __init__(self, config):
         super(RobertaRegressionHead, self).__init__()
-        self.dense = nn.Linear(config.hidden_size, config.hidden_size)
+        self.dense = nn.Linear(config.hidden_size + 5, config.hidden_size)
         self.dropout = nn.Dropout(config.hidden_dropout_prob)
         self.out_proj = nn.Linear(config.hidden_size, config.num_labels)
 
+        self.fnn = nn.Linear(4, 1)
+
     def forward(self, features, **kwargs):
         x = features[:, 0, :]  # take <s> token (equiv. to [CLS])
+        B = x.size(0)
         x = self.dropout(x)
+
+        state1 = kwargs.get("state1", 0.0).view(B, 1)
+        state2 = kwargs.get("state2", 0.0).view(B, 1)
+        state_change = kwargs.get("state_change", 0.0).view(B, 1)
+        time_diff = kwargs.get("time_diff", 0.0).view(B, 1)
+
+        y = self.fnn(torch.cat([state1, state2, state_change, time_diff], dim=-1)) # use a layer to train relation
+
+
+        x = torch.cat([x, time_diff, state1, state2, state_change, y], dim=-1)
         x = self.dense(x)
         x = torch.tanh(x)
         x = self.dropout(x)
@@ -286,20 +265,23 @@ class RobertaForSequenceRegression(BertPreTrainedModel):
 
         # Load the base RobertaModel (with pretrained weights)
         self.roberta = AutoModel.from_pretrained(base_model_name, config=config, add_pooling_layer=False)
-        self.classifier = RobertaRegressionHead(config)
+        self.regressor = RobertaRegressionHead(config)
 
         # Initialize weights
         self.post_init()
 
     def forward(self, input_ids, attention_mask=None, token_type_ids=None, position_ids=None, head_mask=None,
-                labels=None, state1=None, state2=None, state_change=None):
+                labels=None, state1=None, state2=None, state_change=None, time_diff=None):
         outputs = self.roberta(input_ids,
                                attention_mask=attention_mask,
                                token_type_ids=token_type_ids,
                                position_ids=position_ids,
                                head_mask=head_mask)
         sequence_output = outputs[0]
-        logits = self.classifier(sequence_output)
+        logits = self.regressor(sequence_output, state1=state1,
+                                state2=state2,
+                                state_change=state_change,
+                                time_diff=time_diff)
 
 
         loss = None
@@ -331,19 +313,19 @@ class CustomDataCollator:
                 "attention_mask": f["attention_mask"]
             })
 
-        # Pad the text features
+        # # Pad the text features
         batch = self.tokenizer.pad(
             text_features,
-            padding=True,
+            # padding=True,
             return_tensors="pt"
-        )
+        )  # vectorization
 
         # Add the numeric features manually
         if "labels" in features[0]:
             batch["labels"] = torch.tensor([f["labels"] for f in features], dtype=torch.float32)
         
         # Add the extra features requested by user
-        for key in ["state1", "state2", "state_change"]:
+        for key in ["state1", "state2", "state_change", "time_diff"]:
             if key in features[0]:
                 batch[key] = torch.tensor([f[key] for f in features], dtype=torch.float32)
 
@@ -488,14 +470,14 @@ def main():
     trainer = reg.build_trainer(encoded, metrics)
     reg.fit()
 
-    eval_split_name = "test" if "test" in encoded else "validation"
-    results = reg.evaluate(encoded[eval_split_name])
-    print(f"{eval_split_name} results:", results)
+    # eval_split_name = "test" if "test" in encoded else "validation"
+    # results = reg.evaluate(encoded[eval_split_name])
+    # print(f"{eval_split_name} results:", results)
 
     # Save final model if requested
-    if args.save_dir:
-        reg.save(args.save_dir)
-        print(f"Final model and tokenizer saved in {args.save_dir}")
+    # if args.save_dir:
+    #     reg.save(args.save_dir)
+    #     print(f"Final model and tokenizer saved in {args.save_dir}")
 
 
 if __name__ == "__main__":
