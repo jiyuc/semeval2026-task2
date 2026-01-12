@@ -34,7 +34,7 @@ from sklearn.metrics import (
 # Regression Model Wrapper
 # -----------------------------
 class Gemma3ForRegression(nn.Module):
-    def __init__(self, model_name):
+    def __init__(self, model_name="unsloth/gemma-3-270m-it"):
         super().__init__()
         # Load pretrained GEMMA3
         self.gemma3 = AutoModelForCausalLM.from_pretrained(model_name, device_map="auto")
@@ -46,7 +46,7 @@ class Gemma3ForRegression(nn.Module):
             input_ids=input_ids,
             attention_mask=attention_mask
         )
-
+        # Take hidden state of last token
         last_hidden_state = outputs.last_hidden_state  # (batch, seq_len, hidden)
         pooled = last_hidden_state[:, -1, :]           # (batch, hidden)
         preds = self.regression_head(pooled)          # (batch, 2)
@@ -63,25 +63,31 @@ class Gemma3ForRegression(nn.Module):
 # Dataset Preprocessing
 # -----------------------------
 def preprocess_dataset_for_regression(df, tokenizer, context, max_length=512):
+    task_instruction = (
+        "You are an emotion analysis assistant. "
+        "Given the context, "
+        "predict the valence and arousal."
+    )
     if context == "text":
-        texts = df['text'].fillna("").tolist()
+        texts = df['context'].fillna("").tolist()
     elif context == "feelings":
-        # Use feelings if available; fallback to text
-        texts = [
-            f if isinstance(f, str) and f.strip() != "" else t
-            for f, t in zip(df["feelings"], df["text"])
-        ]
-
+        texts = df['feelings'].fillna('').tolist()
     elif context == "both":
         # Combine both (if available)
         texts = [
             f"Text: {t.strip()} | Feelings: {f.strip()}" if isinstance(f, str) and f.strip() != "" else t.strip()
-            for f, t in zip(df["feelings"], df["text"])
+            for t, f in zip(df["context"], df["feelings"])
         ]
-
+    combined_texts = []
+    for item in texts:
+        prompt = (
+                f"{task_instruction}\n"
+                f"Context: {item}"
+                )
+        combined_texts.append(prompt)
     labels = df[['valence', 'arousal']].values.astype(float)
     encodings = tokenizer(
-        texts,
+        combined_texts,
         truncation=True,
         padding=True,
         max_length=max_length,
@@ -164,7 +170,7 @@ def main():
     parser.add_argument("--context", type=str, default="both", choices=["text", "feelings", "both"], help="Select which context to use for extraction: 'text', 'feelings', or 'both'.")
     parser.add_argument("--max_length", type=int, default=512)
     parser.add_argument("--batch_size", type=int, default=4)
-    parser.add_argument("--epochs", type=int, default=3)
+    parser.add_argument("--epochs", type=int, default=5)
     parser.add_argument("--lr", type=float, default=5e-5)
     args = parser.parse_args()
 
@@ -179,31 +185,32 @@ def main():
     train_split = int(len(train_df) * 0.8)
     train_dataset = preprocess_dataset_for_regression(train_df.iloc[:train_split], tokenizer, args.context, args.max_length)
     eval_dataset = preprocess_dataset_for_regression(train_df.iloc[train_split:], tokenizer, args.context, args.max_length)
-    test_dataset = preprocess_dataset_for_regression(test_df, tokenizer, args.context, args.max_length)
+    # test_dataset = preprocess_dataset_for_regression(test_df, tokenizer, args.context, args.max_length)
 
     # Initialize model
     model = Gemma3ForRegression(args.model_name)
 
     # Training arguments
     training_args = TrainingArguments(
-        output_dir=f"{args.output_dir}/{args.context}_model",
-        per_device_train_batch_size=args.batch_size,
-        per_device_eval_batch_size=args.batch_size,
-        num_train_epochs=args.epochs,
-        learning_rate=args.lr,
-        logging_steps=50,
-        eval_strategy="steps",     # evaluate every eval_steps
-        eval_steps=50,             # must match save frequency ideally
-        save_strategy="steps",     # save checkpoint every save_steps
-        save_steps=50,
-        save_total_limit=3,
-        load_best_model_at_end=True,
-        metric_for_best_model="r2",
-        greater_is_better=True,
-        fp16=True,
-        report_to="none",
-        save_safetensors=False
-    )
+    output_dir=f"{args.output_dir}/model",
+    per_device_train_batch_size=args.batch_size,
+    per_device_eval_batch_size=args.batch_size,
+    num_train_epochs=args.epochs,
+    learning_rate=args.lr,
+    weight_decay=1e-4,              # ✅ L2 regularization
+    logging_steps=50,
+    eval_strategy="steps",     # evaluate every eval_steps
+    eval_steps=50,             # must match save frequency ideally
+    save_strategy="steps",     # save checkpoint every save_steps
+    save_steps=50,
+    save_total_limit=3,
+    load_best_model_at_end=True,
+    metric_for_best_model="r2",
+    greater_is_better=True,
+    fp16=True,
+    report_to="none",
+    save_safetensors=False
+)
     # Trainer
     trainer = Trainer(
         model=model,
@@ -221,41 +228,50 @@ def main():
     tokenizer.save_pretrained(best_model_path)
     print(f"Best model saved to {best_model_path}")
 
+
+
+    task_instruction = (
+        "You are an emotion analysis assistant. "
+        "Given the context, "
+        "predict the valence and arousal."
+    )
     # Predictions
     if args.context == "text":
-        texts = test_df['text'].fillna("").tolist()
+        texts = test_df['context'].fillna("").tolist()
     elif args.context == "feelings":
-        texts = [
-        f if isinstance(f, str) and f.strip() != "" else t
-        for f, t in zip(test_df["feelings"], test_df["text"])
-       ] 
+        texts = test_df['feelings'].fillna('').tolist() 
     elif args.context == "both":
         # Combine both (if available)
-        texts = [
-            f"Text: {t.strip()} | Feelings: {f.strip()}"
-            if isinstance(f, str) and f.strip() != ""
-            else t.strip()
-            for f, t in zip(test_df["feelings"], test_df["text"])
+         texts = [
+            f"Text: {t.strip()} | Feelings: {f.strip()}" if isinstance(f, str) and f.strip() != "" else t.strip()
+            for t, f in zip(test_df["context"], test_df["feelings"])
         ]
-    #texts = test_df['text'].tolist()
-    preds = predict_valence_arousal(trainer.model, tokenizer, texts)
-    #print(preds)
+    combined_texts = []
+    for item in texts:
+        prompt = (
+                f"{task_instruction}\n"
+                f"Context: {item}"
+                )
+        combined_texts.append(prompt)
+
+    preds = predict_valence_arousal(trainer.model, tokenizer, combined_texts)
+
     results_df = pd.DataFrame({
-        "text": texts,
+        # "text": combined_texts,
+        "user_id": test_df["user_id"].tolist(),
+        "text_id": test_df["text_id"].tolist(),
         "pred_valence": [p["valence"] for p in preds],
         "pred_arousal": [p["arousal"] for p in preds],
-        "true_valence": test_df["valence"].tolist(),
-        "true_arousal": test_df["arousal"].tolist()
     })
 
     #results_df = results_df.dropna(subset=["pred_valence", "pred_arousal", "true_valence", "true_arousal"])
-    metrics = evaluate_predictions(results_df)
+    # metrics = evaluate_predictions(results_df)
 
-    print("\n===== Evaluation Metrics =====")
-    for target, values in metrics.items():
-        print(f"\n[{target.upper()}]")
-        for k, v in values.items():
-            print(f"{k}: {v:.4f}")
+    # print("\n===== Evaluation Metrics =====")
+    # for target, values in metrics.items():
+    #     print(f"\n[{target.upper()}]")
+    #     for k, v in values.items():
+    #         print(f"{k}: {v:.4f}")
             
     results_df.to_csv(f"{args.output_dir}/{args.context}_test_predictions.csv", index=False)
     print(f"Predictions saved to {args.output_dir}/{args.context}_test_predictions.csv")
