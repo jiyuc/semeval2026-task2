@@ -27,25 +27,49 @@ from datasets import Dataset
 # Model Definition
 # -----------------------------
 class Gemma3ForRegression(nn.Module):
-    def __init__(self, model_name):
+    def __init__(self, model_name, freeze_gemma3=True):
         super().__init__()
-        self.gemma3 = AutoModelForCausalLM.from_pretrained(model_name, device_map="auto")
+        self.gemma3 = AutoModelForCausalLM.from_pretrained(
+            model_name,
+            device_map="auto"
+        )
         hidden_size = self.gemma3.config.hidden_size
-        self.regression_head = nn.Linear(hidden_size, 2)  # ΔValence & ΔArousal
+
+        self.valence_head = nn.Sequential(
+            nn.Linear(hidden_size, 1),
+            nn.Tanh()       # [-1, 1]
+        )
+
+        self.arousal_head = nn.Sequential(
+            nn.Linear(hidden_size, 1),
+            nn.Sigmoid()    # [0, 1]
+        )
+
+        if freeze_gemma3:
+            for param in self.gemma3.parameters():
+                param.requires_grad = False
+
 
     def forward(self, input_ids=None, attention_mask=None, labels=None):
         outputs = self.gemma3.model(
             input_ids=input_ids,
             attention_mask=attention_mask
         )
-        last_hidden_state = outputs.last_hidden_state
-        pooled = last_hidden_state[:, -1, :]
-        preds = self.regression_head(pooled)
+
+        # Better pooling than last token
+        hidden = outputs.last_hidden_state
+        mask = attention_mask.unsqueeze(-1)
+
+        pooled = (hidden * mask).sum(1) / mask.sum(1)
+
+        valence = self.valence_head(pooled) * 2     # [-2, 2]
+        arousal = self.arousal_head(pooled) * 2     # [0, 2]
+
+        preds = torch.cat([valence, arousal], dim=1)
 
         loss = None
         if labels is not None:
-            loss_fn = nn.MSELoss()
-            loss = loss_fn(preds, labels)
+            loss = nn.MSELoss()(preds, labels)
 
         return {"loss": loss, "logits": preds}
 
@@ -53,216 +77,233 @@ class Gemma3ForRegression(nn.Module):
 # -----------------------------
 # Dataset Preprocessing
 # -----------------------------
-def build_state_change_pairs(df, context="both"):
+def build_state_pairs_with_history(df, context="both", split="train", history_len=5):
     """
-    Build pairs of (previous, current) entries per user_id.
-    Computes Δ valence/arousal from absolute valence/arousal.
-    Supports context = 'text', 'feelings', or 'both'.
+    Adaptive history:
+    - Use min(history_len, available_history)
+    - Causal: train prev=t-2 target=t-1, test prev=t-1
+    - History contains numeric deltas
     """
-    df = df.sort_values(by=["user_id", "timestamp"]).reset_index(drop=True)
+    df = df.sort_values(
+        ["user_id", "collection_phase", "timestamp"]
+    ).reset_index(drop=True)
+
     pairs = []
 
-    for uid, user_df in df.groupby("user_id"):
-        user_df = user_df.sort_values("timestamp")
-        for i in range(1, len(user_df)):
-            prev_row = user_df.iloc[i - 1]
-            curr_row = user_df.iloc[i]
+    for user_id, user_df in df.groupby("user_id"):
+        phases = list(user_df.groupby("collection_phase"))
 
-            # Compute Δ from valence/arousal
-            state_change_valence = curr_row["valence"] - prev_row["valence"]
-            state_change_arousal = curr_row["arousal"] - prev_row["arousal"]
+        # TEST → only last collection phase
+        if split == "test":
+            phases = [max(phases, key=lambda x: x[0])]
 
-            pair = {
-                "user_id": uid,
-                "state_change_valence": state_change_valence,
-                "state_change_arousal": state_change_arousal,
+        for phase_id, phase_df in phases:
+            phase_df["timestamp"] = pd.to_datetime(
+                phase_df["timestamp"], dayfirst=True, errors="coerce"
+            )
+            phase_df = phase_df.sort_values("timestamp")
+
+            if split in ["train", "validation"]:
+                if len(phase_df) < 3:
+                    continue
+                history_pool = phase_df.iloc[:-2]
+                prev_row = phase_df.iloc[-2]
+                target_row = phase_df.iloc[-1]
+            else:
+                if len(phase_df) < 2:
+                    continue
+                history_pool = phase_df.iloc[:-1]
+                prev_row = phase_df.iloc[-1]
+                target_row = None
+
+            # Adaptive history
+            history_df = history_pool.iloc[-history_len:]
+
+            history_va = []
+            prev_val, prev_ar = None, None
+            for _, row in history_df.iterrows():
+                if prev_val is not None:
+                    delta_v = row.valence - prev_val
+                    delta_a = row.arousal - prev_ar
+                    history_va.append(f"({row.valence:.2f}, {row.arousal:.2f}, Δv={delta_v:.2f}, Δa={delta_a:.2f})")
+                else:
+                    history_va.append(f"({row.valence:.2f}, {row.arousal:.2f}, Δv=0.00, Δa=0.00)")
+                prev_val, prev_ar = row.valence, row.arousal
+
+            item = {
+                "user_id": user_id,
+                "collection_phase": phase_id,
+                "history_va": " → ".join(history_va),
+                "prev_valence": prev_row.valence,
+                "prev_arousal": prev_row.arousal,
             }
 
-            # Add context-specific fields
-            if context == "text":
-                pair["prev_text"] = str(prev_row.get("text", ""))
-                pair["curr_text"] = str(curr_row.get("text", ""))
+            if target_row is not None:
+                item["valence"] = target_row.valence
+                item["arousal"] = target_row.arousal
 
-            elif context == "feelings":
-                pair["prev_feelings"] = str(prev_row.get("feelings", ""))
-                pair["curr_feelings"] = str(curr_row.get("feelings", ""))
+            if context in ["text", "both"]:
+                item["text"] = str(prev_row.get("context", ""))
+            if context in ["feelings", "both"]:
+                item["feelings"] = str(prev_row.get("feelings", ""))
 
-            elif context == "both":
-                pair["prev_text"] = str(prev_row.get("text", ""))
-                pair["curr_text"] = str(curr_row.get("text", ""))
-                pair["prev_feelings"] = str(prev_row.get("feelings", ""))
-                pair["curr_feelings"] = str(curr_row.get("feelings", ""))
-
-            else:
-                raise ValueError("context must be one of ['text', 'feelings', 'both']")
-
-            pairs.append(pair)
+            pairs.append(item)
 
     return pd.DataFrame(pairs)
 
+def preprocess_dataset(df, tokenizer, context="both", max_length=512):
+    instruction = (
+        "You are an emotion forecasting model.\n"
+        "Given the emotional trajectory of a person over time, "
+        "predict the NEXT valence and arousal."
+    )
 
-def preprocess_dataset_for_regression(df, tokenizer, context="both", max_length=512):
-    """
-    Tokenize previous + current entries for Δ regression.
-    Supports context = 'text', 'feelings', or 'both'.
-    """
-    combined_texts = []
+    prompts = []
 
     for _, row in df.iterrows():
-        prev_text = str(row.get("prev_text", ""))
-        curr_text = str(row.get("curr_text", ""))
-        prev_feelings = str(row.get("prev_feelings", "")) or prev_text
-        curr_feelings = str(row.get("curr_feelings", "")) or curr_text
+        prompt = (
+            f"{instruction}\n\n"
+            f"Emotional History (Valence, Arousal, Δvalence, Δarousal):\n"
+            f"{row.history_va}\n\n"
+            f"Most Recent State:\n"
+            f"Valence={row.prev_valence:.3f}, "
+            f"Arousal={row.prev_arousal:.3f}\n"
+        )
 
         if context == "text":
-            combined_texts.append(f"Previous: {prev_text.strip()} || Current: {curr_text.strip()}")
+            prompt += f"Context Text: {row.text}"
         elif context == "feelings":
-            combined_texts.append(f"Previous: {prev_feelings.strip()} || Current: {curr_feelings.strip()}")
-        elif context == "both":
-            combined_texts.append(
-                f"Previous: {prev_text.strip()} | Feelings: {prev_feelings.strip()} || "
-                f"Current: {curr_text.strip()} | Feelings: {curr_feelings.strip()}"
-            )
+            prompt += f"Self-Reported Feelings: {row.feelings}"
         else:
-            raise ValueError("context must be one of ['text', 'feelings', 'both']")
+            prompt += (
+                f"Context Text: {row.text} | "
+                f"Self-Reported Feelings: {row.feelings}"
+            )
 
-    labels = df[['state_change_valence', 'state_change_arousal']].values.astype(float)
+        prompts.append(prompt)
+
+    labels = df[["valence", "arousal"]].values.astype("float32")
 
     encodings = tokenizer(
-        combined_texts,
-        truncation=True,
+        prompts,
         padding=True,
+        truncation=True,
         max_length=max_length,
         return_tensors="pt"
     )
-    encodings['labels'] = torch.tensor(labels, dtype=torch.float)
+
+    encodings["labels"] = torch.tensor(labels)
     return Dataset.from_dict(encodings)
 
-
-# -----------------------------
+# =========================================================
 # Metrics
-# -----------------------------
-def compute_metrics(pred):
-    preds = pred.predictions
-    labels = pred.label_ids
-    mse = mean_squared_error(labels, preds)
-    mae = mean_absolute_error(labels, preds)
-    r2 = r2_score(labels, preds)
-    return {"mse": mse, "mae": mae, "r2": r2}
+# =========================================================
+def compute_metrics(eval_pred):
+    preds = eval_pred.predictions
+    labels = eval_pred.label_ids
 
+    return {
+        "mse": mean_squared_error(labels, preds),
+        "mae": mean_absolute_error(labels, preds),
+        "r2": r2_score(labels, preds)
+    }
 
-# -----------------------------
-# Prediction Helper
-# -----------------------------
-def predict_state_changes(model, tokenizer, df_pairs, context="both", max_length=512, device=None):
-    """
-    Predict Δ valence & arousal using previous + current entries.
-    """
-    if device is None:
-        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+# =========================================================
+# Test Prediction (Δ only)
+# =========================================================
+def predict_deltas(model, tokenizer, df, context="both", max_length=512):
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model.to(device)
     model.eval()
 
+    instruction = (
+        "You are an emotion forecasting model.\n"
+        "Given the emotional trajectory of a person over time, "
+        "predict the NEXT valence and arousal."
+    )
+
     results = []
-    for _, row in tqdm(df_pairs.iterrows(), desc="Predicting Δ state changes", total=len(df_pairs)):
-        # Build input according to context
+
+    for _, row in tqdm(df.iterrows(), total=len(df), desc="Predicting"):
+        prompt = (
+            f"{instruction}\n\n"
+            f"Emotional History (Valence, Arousal, Δvalence, Δarousal):\n"
+            f"{row.history_va}\n\n"
+            f"Most Recent State:\n"
+            f"Valence={row.prev_valence:.3f}, "
+            f"Arousal={row.prev_arousal:.3f}\n"
+        )
+
         if context == "text":
-            prev = str(row.get("prev_text", ""))
-            curr = str(row.get("curr_text", ""))
-            text_input = f"Previous: {prev.strip()} || Current: {curr.strip()}"
-
+            prompt += f"Context Text: {row.text}"
         elif context == "feelings":
-            prev = str(row.get("prev_feelings", "")) or str(row.get("prev_text", ""))
-            curr = str(row.get("curr_feelings", "")) or str(row.get("curr_text", ""))
-            text_input = f"Previous: {prev.strip()} || Current: {curr.strip()}"
-
-        elif context == "both":
-            prev_text = str(row.get("prev_text", ""))
-            curr_text = str(row.get("curr_text", ""))
-            prev_feelings = str(row.get("prev_feelings", "")) or prev_text
-            curr_feelings = str(row.get("curr_feelings", "")) or curr_text
-            text_input = f"Previous: {prev_text.strip()} | Feelings: {prev_feelings.strip()} || Current: {curr_text.strip()} | Feelings: {curr_feelings.strip()}"
-
+            prompt += f"Self-Reported Feelings: {row.feelings}"
         else:
-            raise ValueError("context must be one of ['text', 'feelings', 'both']")
+            prompt += (
+                f"Context Text: {row.text} | "
+                f"Self-Reported Feelings: {row.feelings}"
+            )
 
-        # Tokenize & predict
-        inputs = tokenizer(text_input, max_length=max_length, return_tensors="pt", truncation=True, padding=True).to(device)
+        inputs = tokenizer(
+            prompt,
+            return_tensors="pt",
+            truncation=True,
+            max_length=max_length
+        ).to(device)
+
         with torch.no_grad():
-            outputs = model(**inputs)
-        preds = outputs["logits"].cpu().numpy()[0]
+            preds = model(**inputs)["logits"][0].cpu().numpy()
 
         results.append({
-            "pred_state_change_valence": float(preds[0]),
-            "pred_state_change_arousal": float(preds[1])
+            "pred_state_change_valence": preds[0] - row.prev_valence,
+            "pred_state_change_arousal": preds[1] - row.prev_arousal
         })
 
-    return results
+    return pd.DataFrame(results)
 
 
-# -----------------------------
-# Evaluation Function
-# -----------------------------
-def evaluate_predictions(df):
-    results = {}
-    for var in ["state_change_valence", "state_change_arousal"]:
-        true = df[f"true_{var}"].dropna().astype(float)
-        pred = df.loc[true.index, f"pred_{var}"].astype(float)
 
-        mse = mean_squared_error(true, pred)
-        rmse = np.sqrt(mse)
-        mae = mean_absolute_error(true, pred)
-        r2 = r2_score(true, pred)
-        pearson, _ = pearsonr(true, pred)
-
-        bins = 5
-        true_bins = pd.cut(true, bins=bins, labels=False)
-        pred_bins = pd.cut(pred, bins=bins, labels=False)
-        f1 = f1_score(true_bins, pred_bins, average="weighted")
-
-        results[var] = {
-            "MSE": mse,
-            "RMSE": rmse,
-            "MAE": mae,
-            "R2": r2,
-            "Pearson": pearson,
-            "Weighted F1": f1
-        }
-    return results
-
-
-# -----------------------------
+# =========================================================
 # Main
-# -----------------------------
+# =========================================================
 def main():
-    parser = argparse.ArgumentParser(description="Gemma3 Δ Valence/Arousal Forecasting (Previous + Current Texts)")
-    parser.add_argument("--model_name", type=str, default="unsloth/gemma-3-270m-it")
-    parser.add_argument("--train_data_file", type=str, required=True)
-    parser.add_argument("--test_data_file", type=str, required=True)
-    parser.add_argument("--output_dir", type=str, default="./gemma3_state_change")
-    parser.add_argument("--context", type=str, default="both", choices=["text", "feelings", "both"])
-    parser.add_argument("--max_length", type=int, default=1024)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--model_name", default="unsloth/gemma-3-270m-it")
+    parser.add_argument("--train_data_file", required=True)
+    parser.add_argument("--test_data_file", required=True)
+    parser.add_argument("--output_dir", default="./gemma3_state_change")
+    parser.add_argument("--context", choices=["text", "feelings", "both"], default="both")
+    parser.add_argument("--history_len", type=int, default=5)
+    parser.add_argument("--max_length", type=int, default=512)
     parser.add_argument("--batch_size", type=int, default=4)
-    parser.add_argument("--epochs", type=int, default=3)
-    parser.add_argument("--lr", type=float, default=5e-5)
+    parser.add_argument("--epochs", type=int, default=20)       # ✅ longer training
+    parser.add_argument("--lr", type=float, default=1e-3)       # ✅ higher LR for head
     args = parser.parse_args()
 
     tokenizer = AutoTokenizer.from_pretrained(args.model_name)
 
     train_df = pd.read_csv(args.train_data_file)
     test_df = pd.read_csv(args.test_data_file)
+    # test_df = test_df[test_df["is_forecasting_user"] == True]
 
-    # Build pairs and compute Δ internally
-    train_pairs = build_state_change_pairs(train_df, args.context)
-    test_pairs = build_state_change_pairs(test_df,  args.context)
+    train_pairs = build_state_pairs_with_history(
+        train_df, args.context, "train", args.history_len
+    )
+    test_pairs = build_state_pairs_with_history(
+        test_df, args.context, "test", args.history_len
+    )
 
-    # Split train/val
-    train_split = int(len(train_pairs) * 0.8)
-    train_dataset = preprocess_dataset_for_regression(train_pairs.iloc[:train_split], tokenizer, args.context, args.max_length)
-    eval_dataset = preprocess_dataset_for_regression(train_pairs.iloc[train_split:], tokenizer, args.context, args.max_length)
-    test_dataset = preprocess_dataset_for_regression(test_pairs, tokenizer, args.context, args.max_length)
+    split = int(0.8 * len(train_pairs))
+    train_ds = preprocess_dataset(
+        train_pairs[:split], tokenizer, args.context, args.max_length
+    )
+    val_ds = preprocess_dataset(
+        train_pairs[split:], tokenizer, args.context, args.max_length
+    )
 
     model = Gemma3ForRegression(args.model_name)
+    for param in model.gemma3.parameters():
+        param.requires_grad = False
 
     training_args = TrainingArguments(
         output_dir=f"{args.output_dir}/task2a_{args.context}_model",
@@ -284,53 +325,37 @@ def main():
         save_safetensors=False
     )
 
+
     trainer = Trainer(
         model=model,
         args=training_args,
-        train_dataset=train_dataset,
-        eval_dataset=eval_dataset,
+        train_dataset=train_ds,
+        eval_dataset=val_ds,
         tokenizer=tokenizer,
         compute_metrics=compute_metrics
     )
 
     trainer.train()
-    best_model_path = f"{args.output_dir}/task2a_{args.context}_best_model"
-    trainer.save_model(best_model_path)
-    tokenizer.save_pretrained(best_model_path)
+    best_model_path = f"{args.output_dir}/task2a_{args.context}_best_model" 
+    trainer.save_model(best_model_path) 
+    tokenizer.save_pretrained(best_model_path) 
     print(f"Best model saved to {best_model_path}")
 
-    # Predictions
-    preds = predict_state_changes(trainer.model, tokenizer, test_pairs, args.context, args.max_length)
+    delta_preds = predict_deltas(
+        trainer.model,
+        tokenizer,
+        test_pairs,
+        args.context,
+        args.max_length
+    )
 
-    # Build results dataframe
-    results_data = {
-        "user_id": test_pairs["user_id"],
-        "pred_state_change_valence": [p["pred_state_change_valence"] for p in preds],
-        "pred_state_change_arousal": [p["pred_state_change_arousal"] for p in preds],
-        "true_state_change_valence": test_pairs["state_change_valence"].tolist(),
-        "true_state_change_arousal": test_pairs["state_change_arousal"].tolist()
-    }
+    results_df = pd.concat(
+        [test_pairs[["user_id"]].reset_index(drop=True), delta_preds],
+        axis=1
+    )
 
-    if args.context in ["text", "both"]:
-        results_data["prev_text"] = test_pairs["prev_text"]
-        results_data["curr_text"] = test_pairs["curr_text"]
-
-    if args.context in ["feelings", "both"]:
-        results_data["prev_feelings"] = test_pairs.get("prev_feelings", [""] * len(test_pairs))
-        results_data["curr_feelings"] = test_pairs.get("curr_feelings", [""] * len(test_pairs))
-
-    results_df = pd.DataFrame(results_data)
-
-    metrics = evaluate_predictions(results_df)
-    print("\n===== Δ State Change Evaluation Metrics =====")
-    for target, values in metrics.items():
-        print(f"\n[{target.upper()}]")
-        for k, v in values.items():
-            print(f"{k}: {v:.4f}")
-
-    results_df.to_csv(f"{args.output_dir}/task2a_{args.context}_test_predictions.csv", index=False)
+    results_df.to_csv(f"{args.output_dir}/task2a_{args.context}_test_predictions.csv", index=False) 
     print(f"Predictions saved to {args.output_dir}/task2a_{args.context}_test_predictions.csv")
-
 
 if __name__ == "__main__":
     main()
