@@ -302,8 +302,7 @@ def main():
     )
 
     model = Gemma3ForRegression(args.model_name)
-    for param in model.gemma3.parameters():
-        param.requires_grad = False
+
 
     training_args = TrainingArguments(
         output_dir=f"{args.output_dir}/task2a_{args.context}_model",
@@ -336,10 +335,10 @@ def main():
     )
 
     trainer.train()
-    best_model_path = f"{args.output_dir}/task2a_{args.context}_best_model" 
-    trainer.save_model(best_model_path) 
-    tokenizer.save_pretrained(best_model_path) 
-    print(f"Best model saved to {best_model_path}")
+    # best_model_path = f"{args.output_dir}/task2a_{args.context}_best_model" 
+    # trainer.save_model(best_model_path) 
+    # tokenizer.save_pretrained(best_model_path) 
+    # print(f"Best model saved to {best_model_path}")
 
     delta_preds = predict_deltas(
         trainer.model,
